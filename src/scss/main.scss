@@ -172,21 +172,23 @@ section, nav, footer { position: relative; z-index: 1; }
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.6rem 1.5rem;
-  border: none;
+  border: 2px solid var(--mbx-green);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
   text-decoration: none;
   box-shadow: 0 2px 12px rgba(36, 192, 95, 0.25);
   cursor: pointer;
 
+  // Hover → invert: dark bg with green text
   &:hover {
-    background: #1da34f;
-    color: var(--mbx-light-text);
+    background: var(--mbx-light-text);
+    color: var(--mbx-green);
+    border-color: var(--mbx-light-text);
     transform: translateY(-1px);
-    box-shadow: 0 4px 18px rgba(36, 192, 95, 0.4);
+    box-shadow: 0 4px 18px rgba(17, 27, 33, 0.3);
   }
 }
 
@@ -1113,4 +1115,32 @@ section, nav, footer { position: relative; z-index: 1; }
 // ═══════════════════════════════════════════
 @media (max-width: 768px) {
   .navbar-mbx .nav-link, .navbar-mbx-light .nav-link { font-size: 0.95rem; }
+}
+// ═══════════════════════════════════════════
+// RELEASE NOTES CARD
+// ═══════════════════════════════════════════
+.release-notes-card {
+  background: #fff;
+  border: 1px solid rgba(17, 27, 33, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(17, 27, 33, 0.04);
+}
+
+.release-notes-header {
+  background: linear-gradient(135deg, rgba(36, 192, 95, 0.08), rgba(36, 192, 95, 0.02));
+  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--mbx-light-text);
+  border-bottom: 1px solid rgba(17, 27, 33, 0.08);
+
+  span { color: var(--mbx-green); }
+}
+
+.release-notes-body {
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--mbx-light-text2);
+  line-height: 1.7;
 }

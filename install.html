@@ -26,7 +26,7 @@
           <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About</a></li>
         </ul>
         <button class="btn-lang-light me-2" id="langToggle">ع</button>
-        <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="nav_download">
+        <a class="btn-pill-green" data-version-url data-i18n="nav_download">
           Download <span class="btn-arrow">⬇</span>
         </a>
       </div>
@@ -41,13 +41,14 @@
       <p class="section-sub-light mx-auto mb-4" data-i18n="install_sub">
         A complete step-by-step guide. No admin rights required.
       </p>
-      <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="install_dl_btn">
+      <a class="btn-pill-green" data-version-url data-i18n="install_dl_btn">
         Download mbiXaddin.zip <span class="btn-arrow">⬇</span>
       </a>
     </div>
   </section>
 
   <!-- ══════ STEP 01 — DOWNLOAD ══════ -->
+<!-- ══════ STEP 01 — DOWNLOAD ══════ -->
   <section class="section-light-alt py-5">
     <div class="container py-3">
       <div class="row g-5 align-items-center">
@@ -58,31 +59,57 @@
             Get the latest .zip from the official Releases page. The file contains
             the .vsto installer plus all required dependencies.
           </p>
-          <a class="btn-pill-light mt-3" data-link="downloads.latest_zip">
+          <a class="btn-pill-light mt-3" data-version-url>
             mbiXaddin.zip <span class="btn-arrow">⬇</span>
           </a>
         </div>
         <div class="col-lg-7">
+
+          <!-- Download Card -->
           <div class="download-card">
             <div class="download-card-header">
               <span class="download-icon">📦</span>
               <div>
-                <div class="download-name">mbiXaddin.zip</div>
+                <div class="download-name">mbiXaddin <span data-version>v—</span></div>
                 <div class="download-meta">Latest stable release</div>
               </div>
             </div>
             <div class="download-card-body">
-              <div class="dl-row"><span class="dl-key">Type</span><span>Compressed Folder</span></div>
-              <div class="dl-row"><span class="dl-key">Size</span><span>~5.6 MB</span></div>
-              <div class="dl-row"><span class="dl-key">Source</span><a data-link="social.github_repo">GitHub Releases</a></div>
-              <div class="dl-row"><span class="dl-key">Verified</span><span class="text-success">✓ SHA256</span></div>
+              <div class="dl-row">
+                <span class="dl-key">Version</span>
+                <span data-version>—</span>
+              </div>
+              <div class="dl-row">
+                <span class="dl-key">Type</span>
+                <span>Compressed Folder (.zip)</span>
+              </div>
+              <div class="dl-row">
+                <span class="dl-key">SHA-256</span>
+                <span class="text-success" data-version-sha>verifying...</span>
+              </div>
+              <div class="dl-row">
+                <span class="dl-key">Source</span>
+                <a data-link="social.github_repo">GitHub Releases</a>
+              </div>
             </div>
           </div>
+
+          <!-- Release Notes Card -->
+          <div class="release-notes-card mt-3">
+            <div class="release-notes-header">
+              📝 Release Notes — <span data-version></span>
+            </div>
+            <div class="release-notes-body" data-version-notes>
+              Loading release notes...
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
+  
   <!-- ══════ STEP 02 — UNBLOCK ══════ -->
   <section class="section-light py-5">
     <div class="container py-3">
