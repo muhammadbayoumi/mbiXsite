@@ -27,7 +27,7 @@
         </ul>
         <button class="btn-lang-light me-2" id="langToggle">ع</button>
         <a class="btn-pill-green" data-version-url data-i18n="nav_download">
-          Download <span class="btn-arrow">⬇</span>
+          Download <i class="bi bi-download btn-arrow"></i>
         </a>
       </div>
     </div>
@@ -42,7 +42,7 @@
         A complete step-by-step guide. No admin rights required.
       </p>
       <a class="btn-pill-green" data-version-url data-i18n="install_dl_btn">
-        Download mbiXaddin.zip <span class="btn-arrow">⬇</span>
+        Download mbiXaddin.zip <i class="bi bi-download btn-arrow"></i>
       </a>
     </div>
   </section>
@@ -60,7 +60,7 @@
             the .vsto installer plus all required dependencies.
           </p>
           <a class="btn-pill-light mt-3" data-version-url>
-            mbiXaddin.zip <span class="btn-arrow">⬇</span>
+            mbiXaddin.zip <i class="bi bi-download btn-arrow"></i>
           </a>
         </div>
         <div class="col-lg-7">
@@ -68,7 +68,7 @@
           <!-- Download Card -->
           <div class="download-card">
             <div class="download-card-header">
-              <span class="download-icon">📦</span>
+              <i class="bi bi-file-earmark-zip download-icon"></i>
               <div>
                 <div class="download-name">mbiXaddin <span data-version>v—</span></div>
                 <div class="download-meta">Latest stable release</div>
@@ -97,7 +97,7 @@
           <!-- Release Notes Card -->
           <div class="release-notes-card mt-3">
             <div class="release-notes-header">
-              📝 Release Notes — <span data-version></span>
+              <i class="bi bi-card-text"></i> Release Notes — <span data-version></span>
             </div>
             <div class="release-notes-body" data-version-notes>
               Loading release notes...
@@ -146,14 +146,14 @@
             </div>
             <div class="w11-body">
               <div class="w11-row">
-                <span class="w11-zip-icon">🗂</span>
+                <i class="bi bi-file-earmark-zip w11-zip-icon"></i>
                 <input class="w11-input" value="mbiXaddin.zip" readonly />
               </div>
 
               <div class="w11-prop"><span class="w11-lbl">Type of file:</span><span>Compressed (zipped) Folder (.zip)</span></div>
               <div class="w11-prop">
                 <span class="w11-lbl">Opens with:</span>
-                <span class="w11-opens"><span class="w11-mini-icon">📁</span> Windows Explorer</span>
+                <span class="w11-opens"><i class="bi bi-folder-fill w11-mini-icon"></i> Windows Explorer</span>
                 <button class="w11-change-btn">Change...</button>
               </div>
               <hr class="w11-hr"/>
@@ -220,12 +220,12 @@
             </div>
             <div class="vsto-body">
               <div class="vsto-warn-row">
-                <div class="vsto-warn-icon">⚠</div>
+                <i class="bi bi-exclamation-triangle vsto-warn-icon"></i>
                 <div class="vsto-warn-content">
                   <div class="vsto-warn-title">Publisher cannot be verified</div>
                   <div class="vsto-warn-sub">Are you sure you want to install this customization?</div>
                 </div>
-                <div class="vsto-globe-icon">🌐</div>
+                <i class="bi bi-globe vsto-globe-icon"></i>
               </div>
 
               <div class="vsto-meta">
@@ -235,7 +235,7 @@
               </div>
 
               <div class="vsto-warning-box">
-                <span class="vsto-shield">🛡</span>
+                <i class="bi bi-shield-fill vsto-shield"></i>
                 <span class="vsto-warning-text">
                   While Office customizations can be useful, they can potentially harm your computer.
                   If you do not trust the source, do not install this software.
@@ -266,7 +266,7 @@
             with all controls ready to use.
           </p>
           <a class="btn-pill-light mt-2" href="ribbon.html" data-i18n="s4_btn">
-            View Ribbon Tour <span class="btn-arrow">→</span>
+            View Ribbon Tour <i class="bi bi-arrow-right btn-arrow"></i>
           </a>
         </div>
         <div class="col-lg-7">
@@ -379,7 +379,7 @@
       <div class="row g-3">
         <div class="col-md-6">
           <div class="trouble-card-light">
-            <div class="trouble-icon">🚫</div>
+            <i class="bi bi-x-octagon-fill trouble-icon"></i>
             <div class="trouble-title-light" data-i18n="t1_title">Tab not appearing in Excel</div>
             <div class="trouble-desc-light" data-i18n="t1_desc">
               Did you Unblock the zip BEFORE extracting? If not — delete the extracted folder,
@@ -389,7 +389,7 @@
         </div>
         <div class="col-md-6">
           <div class="trouble-card-light">
-            <div class="trouble-icon">🔒</div>
+            <i class="bi bi-lock-fill trouble-icon"></i>
             <div class="trouble-title-light" data-i18n="t2_title">"Cannot install" error</div>
             <div class="trouble-desc-light" data-i18n="t2_desc">
               Make sure all Excel windows are closed before running .vsto.
@@ -399,7 +399,7 @@
         </div>
         <div class="col-md-6">
           <div class="trouble-card-light">
-            <div class="trouble-icon">🛡</div>
+            <i class="bi bi-shield-fill-check trouble-icon"></i>
             <div class="trouble-title-light" data-i18n="t3_title">Antivirus blocks installer</div>
             <div class="trouble-desc-light" data-i18n="t3_desc">
               Add the extracted folder to your antivirus exclusion list,
@@ -409,13 +409,13 @@
         </div>
         <div class="col-md-6">
           <div class="trouble-card-light">
-            <div class="trouble-icon">💬</div>
+            <i class="bi bi-chat-dots-fill trouble-icon"></i>
             <div class="trouble-title-light" data-i18n="t4_title">Need more help?</div>
             <div class="trouble-desc-light" data-i18n="t4_desc">
               Open an issue on GitHub — we respond within 24 hours.
             </div>
             <a class="btn-pill-light mt-2" data-link="support.issues" data-i18n="t4_btn">
-              Open GitHub Issue <span class="btn-arrow">→</span>
+              Open GitHub Issue <i class="bi bi-arrow-right btn-arrow"></i>
             </a>
           </div>
         </div>

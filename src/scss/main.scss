@@ -74,9 +74,15 @@ section, nav, footer { position: relative; z-index: 1; }
   color: var(--mbx-light-text);
 
   &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
     background-image:
-      linear-gradient(rgba(17, 27, 33, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(17, 27, 33, 0.025) 1px, transparent 1px);
+      linear-gradient(rgba(36, 192, 95, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(36, 192, 95, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
   }
 }
 
@@ -1144,3 +1150,41 @@ section, nav, footer { position: relative; z-index: 1; }
   color: var(--mbx-light-text2);
   line-height: 1.7;
 }
+
+// ═══════════════════════════════════════════
+// BOOTSTRAP ICONS COLORS & SIZING
+// ═══════════════════════════════════════════
+.bi.btn-arrow { font-size: 0.9rem; }
+
+.bi.download-icon {
+  font-size: 2.2rem;
+  color: var(--mbx-green);
+}
+
+.bi.trouble-icon {
+  font-size: 1.6rem;
+  color: var(--mbx-green);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+// VSTO icons
+.bi.vsto-warn-icon { font-size: 1.5rem; color: #c80000; }
+.bi.vsto-globe-icon {
+  font-size: 2rem;
+  color: #4a8db8;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.85;
+}
+.bi.vsto-shield { font-size: 1.1rem; color: #b8860b; flex-shrink: 0; }
+
+// Windows 11 dialog icons
+.bi.w11-zip-icon {
+  font-size: 1.8rem;
+  color: #f9a825;
+  width: 36px;
+  text-align: center;
+}
+.bi.w11-mini-icon { font-size: 0.95rem; color: #f9a825; }
