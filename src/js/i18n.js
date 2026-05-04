@@ -106,7 +106,7 @@ function applyLang(lang) {
   // Toggle button text
   const toggle = document.getElementById('langToggle');
   if (toggle) {
-    toggle.textContent = lang === 'en' ? 'عربي' : 'EN';
+  toggle.textContent = lang === 'en' ? 'ع' : 'EN';
   }
 
   // Apply translations
