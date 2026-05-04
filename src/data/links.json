@@ -1,0 +1,23 @@
+{
+  "downloads": {
+    "latest_zip": "https://github.com/muhammadbayoumi/mbi-addin/releases/latest/download/mbiXaddin.zip",
+    "all_releases": "https://github.com/muhammadbayoumi/mbi-addin/releases"
+  },
+  "social": {
+    "github_repo":      "https://github.com/muhammadbayoumi/mbi-addin",
+    "github_repo_site": "https://github.com/muhammadbayoumi/mbiXsite",
+    "github_user":      "https://github.com/muhammadbayoumi",
+    "linkedin":         "https://www.linkedin.com/in/muhammad-bayoumi-ali/",
+    "email":            "muhammad.bayoumi.ali@gmail.com"
+  },
+  "endpoints": {
+    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/version.json",
+    "icons_map":        "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/icons_map.json",
+    "icons_base":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/",
+    "sheets_map":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Sheets/sheets_map.json"
+  },
+  "support": {
+    "issues":           "https://github.com/muhammadbayoumi/mbi-addin/issues",
+    "discussions":     "https://github.com/muhammadbayoumi/mbi-addin/discussions"
+  }
+}

@@ -6,10 +6,10 @@
   <title>How to Install — mbiX</title>
   <script type="module" src="/src/js/main.js"></script>
 </head>
-<body>
+<body class="page-light">
 
   <!-- ══════ NAVBAR ══════ -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-mbx fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-mbx-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">mbi<span>X</span></a>
       <button class="navbar-toggler border-0" type="button"
@@ -25,104 +25,57 @@
           <li class="nav-item"><a class="nav-link active" href="install.html" data-i18n="nav_install">Install</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About</a></li>
         </ul>
-        <button class="btn-lang me-2" id="langToggle">ع</button>
-        <a href="#download" class="btn btn-mbx rounded-3" data-i18n="nav_download">Download</a>
+        <button class="btn-lang-light me-2" id="langToggle">ع</button>
+        <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="nav_download">
+          Download <span class="btn-arrow">⬇</span>
+        </a>
       </div>
     </div>
   </nav>
 
   <!-- ══════ HERO ══════ -->
-  <section class="section-dark3" style="padding-top: 130px; padding-bottom: 60px;">
-    <div class="container text-center">
+  <section class="section-light pt-5 pb-5" style="padding-top: 130px !important;">
+    <div class="container py-3 text-center">
       <div class="section-tag mb-2" data-i18n="install_tag">Get Started</div>
-      <h1 class="section-title mb-3" data-i18n="install_title">Install mbiX in Minutes</h1>
-      <p class="section-sub mx-auto" data-i18n="install_sub">
-        Follow the steps below to install mbiX on your Windows machine — no admin rights required.
+      <h1 class="section-title-light mb-3" data-i18n="install_title">Install mbiX in Minutes</h1>
+      <p class="section-sub-light mx-auto mb-4" data-i18n="install_sub">
+        A complete step-by-step guide. No admin rights required.
       </p>
+      <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="install_dl_btn">
+        Download mbiXaddin.zip <span class="btn-arrow">⬇</span>
+      </a>
     </div>
   </section>
 
-  <div class="glow-line"></div>
-
-  <!-- ══════ REQUIREMENTS ══════ -->
-  <section class="section-dark1 py-5">
-    <div class="container py-4">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-4">
-          <div class="section-tag mb-2" data-i18n="req_tag">Step 01</div>
-          <h2 class="section-title mb-3" data-i18n="req_title">Requirements</h2>
-          <p style="color: var(--mbx-text2);" data-i18n="req_desc">
-            Before installing mbiX, make sure your system meets these requirements.
-          </p>
-        </div>
-        <div class="col-lg-8">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="install-req-card">
-                <div class="req-icon">📊</div>
-                <div class="req-title" data-i18n="req_excel">Microsoft Excel</div>
-                <div class="req-detail">2016 / 2019 / 2021 / 365</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="install-req-card">
-                <div class="req-icon">⚙️</div>
-                <div class="req-title" data-i18n="req_net">.NET Framework</div>
-                <div class="req-detail">v4.7.2 or higher</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="install-req-card">
-                <div class="req-icon">🪟</div>
-                <div class="req-title" data-i18n="req_os">Windows</div>
-                <div class="req-detail">10 / 11 (64-bit)</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="install-req-card">
-                <div class="req-icon">🌐</div>
-                <div class="req-title" data-i18n="req_internet">Internet</div>
-                <div class="req-detail" data-i18n="req_internet_d">For first-time sync only</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="glow-line"></div>
-
-  <!-- ══════ DOWNLOAD ══════ -->
-  <section class="section-dark3 py-5" id="download">
-    <div class="container py-4">
+  <!-- ══════ STEP 01 — DOWNLOAD ══════ -->
+  <section class="section-light-alt py-5">
+    <div class="container py-3">
       <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <div class="section-tag mb-2" data-i18n="dl_tag">Step 02</div>
-          <h2 class="section-title mb-3" data-i18n="dl_title">Download Setup</h2>
-          <p style="color: var(--mbx-text2);" data-i18n="dl_desc">
-            Download the latest installer from the official Releases page on GitHub.
-            Always grab the .msi file — it handles registration automatically.
+        <div class="col-lg-5">
+          <div class="step-tag">STEP 01</div>
+          <h2 class="step-title-light" data-i18n="s1_title">Download the Package</h2>
+          <p class="step-desc-light" data-i18n="s1_desc">
+            Get the latest .zip from the official Releases page. The file contains
+            the .vsto installer plus all required dependencies.
           </p>
-          <a href="#" class="btn btn-hero-primary mt-3">⬇ mbiXaddin-v2.0.msi</a>
+          <a class="btn-pill-light mt-3" data-link="downloads.latest_zip">
+            mbiXaddin.zip <span class="btn-arrow">⬇</span>
+          </a>
         </div>
-        <div class="col-lg-6">
-          <div class="terminal-block">
-            <div class="terminal-header">
-              <span class="t-dot r"></span>
-              <span class="t-dot y"></span>
-              <span class="t-dot g"></span>
-              <span class="t-title">Downloads</span>
+        <div class="col-lg-7">
+          <div class="download-card">
+            <div class="download-card-header">
+              <span class="download-icon">📦</span>
+              <div>
+                <div class="download-name">mbiXaddin.zip</div>
+                <div class="download-meta">Latest stable release</div>
+              </div>
             </div>
-            <div class="terminal-body">
-              <div><span class="t-comment"># Latest release</span></div>
-              <div><span class="t-key">file:</span> mbiXaddin-v2.0.msi</div>
-              <div><span class="t-key">size:</span> ~12 MB</div>
-              <div><span class="t-key">checksum:</span> SHA256 verified</div>
-              <div class="mt-2"><span class="t-comment"># What gets installed</span></div>
-              <div><span class="t-val">→</span> %APPDATA%\mbiX\</div>
-              <div><span class="t-val">→</span> mbiXdata.sqlite3</div>
-              <div><span class="t-val">→</span> Excel Add-in registration</div>
+            <div class="download-card-body">
+              <div class="dl-row"><span class="dl-key">Type</span><span>Compressed Folder</span></div>
+              <div class="dl-row"><span class="dl-key">Size</span><span>~5.6 MB</span></div>
+              <div class="dl-row"><span class="dl-key">Source</span><a data-link="social.github_repo">GitHub Releases</a></div>
+              <div class="dl-row"><span class="dl-key">Verified</span><span class="text-success">✓ SHA256</span></div>
             </div>
           </div>
         </div>
@@ -130,62 +83,313 @@
     </div>
   </section>
 
-  <div class="glow-line"></div>
-
-  <!-- ══════ INSTALL STEPS ══════ -->
-  <section class="section-dark1 py-5">
-    <div class="container py-4">
-      <div class="section-tag mb-2 text-center" data-i18n="steps_tag">Step 03</div>
-      <h2 class="section-title mb-5 text-center" data-i18n="steps_title">Run Installer</h2>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <h3 data-i18n="step1_t">Close Excel</h3>
-            <p data-i18n="step1_d">Make sure all Excel windows are closed before running the installer.</p>
-          </div>
+  <!-- ══════ STEP 02 — UNBLOCK ══════ -->
+  <section class="section-light py-5">
+    <div class="container py-3">
+      <div class="row g-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-5">
+          <div class="step-tag">STEP 02</div>
+          <h2 class="step-title-light" data-i18n="s2_title">Unblock the File</h2>
+          <p class="step-desc-light" data-i18n="s2_desc">
+            Windows blocks files downloaded from the internet by default.
+            You must unblock the .zip <strong>before</strong> extraction —
+            otherwise the .vsto installer will fail silently.
+          </p>
+          <ol class="steps-ol">
+            <li data-i18n="s2_l1">Right-click <code>mbiXaddin.zip</code></li>
+            <li data-i18n="s2_l2">Select <strong>Properties</strong> (or press <kbd>Alt</kbd>+<kbd>Enter</kbd>)</li>
+            <li data-i18n="s2_l3">In the <strong>General</strong> tab, check <strong>Unblock</strong></li>
+            <li data-i18n="s2_l4">Click <strong>Apply</strong>, then <strong>OK</strong></li>
+          </ol>
         </div>
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <h3 data-i18n="step2_t">Run the .msi</h3>
-            <p data-i18n="step2_d">Double-click the installer file. Follow the wizard — defaults are fine.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <h3 data-i18n="step3_t">Open Excel</h3>
-            <p data-i18n="step3_d">A new "mbiX" tab appears in the Ribbon. You're ready to sync.</p>
+        <div class="col-lg-7">
+
+          <!-- Windows 11 Properties Dialog -->
+          <div class="w11-dialog">
+            <div class="w11-titlebar">
+              <span class="w11-title-text">mbiXaddin.zip Properties</span>
+              <span class="w11-close">✕</span>
+            </div>
+            <div class="w11-tabs">
+              <span class="w11-tab active">General</span>
+              <span class="w11-tab">Digital Signatures</span>
+              <span class="w11-tab">Security</span>
+              <span class="w11-tab">Details</span>
+              <span class="w11-tab">Previous Versions</span>
+            </div>
+            <div class="w11-body">
+              <div class="w11-row">
+                <span class="w11-zip-icon">🗂</span>
+                <input class="w11-input" value="mbiXaddin.zip" readonly />
+              </div>
+
+              <div class="w11-prop"><span class="w11-lbl">Type of file:</span><span>Compressed (zipped) Folder (.zip)</span></div>
+              <div class="w11-prop">
+                <span class="w11-lbl">Opens with:</span>
+                <span class="w11-opens"><span class="w11-mini-icon">📁</span> Windows Explorer</span>
+                <button class="w11-change-btn">Change...</button>
+              </div>
+              <hr class="w11-hr"/>
+              <div class="w11-prop"><span class="w11-lbl">Location:</span><span>C:\Users\User01\Downloads</span></div>
+              <div class="w11-prop"><span class="w11-lbl">Size:</span><span>5.60 MB (5,879,810 bytes)</span></div>
+              <div class="w11-prop"><span class="w11-lbl">Size on disk:</span><span>5.60 MB (5,881,856 bytes)</span></div>
+              <hr class="w11-hr"/>
+              <div class="w11-prop"><span class="w11-lbl">Created:</span><span>Monday, May 4, 2026, 4:14:21 PM</span></div>
+              <div class="w11-prop"><span class="w11-lbl">Modified:</span><span>Monday, May 4, 2026, 4:14:23 PM</span></div>
+              <div class="w11-prop"><span class="w11-lbl">Accessed:</span><span>Today, May 4, 2026, 4:14:23 PM</span></div>
+              <hr class="w11-hr"/>
+              <div class="w11-prop">
+                <span class="w11-lbl">Attributes:</span>
+                <label class="w11-check"><input type="checkbox"/> Read-only</label>
+                <label class="w11-check"><input type="checkbox"/> Hidden</label>
+                <button class="w11-change-btn ms-auto">Advanced...</button>
+              </div>
+              <div class="w11-prop w11-security-row">
+                <span class="w11-lbl">Security:</span>
+                <span class="w11-security-text">
+                  This file came from another computer and might be blocked to help protect this computer.
+                </span>
+                <label class="w11-unblock-highlight">
+                  <input type="checkbox" checked/> <strong>Unblock</strong>
+                </label>
+              </div>
+            </div>
+            <div class="w11-buttons">
+              <button class="w11-btn w11-btn-primary">OK</button>
+              <button class="w11-btn">Cancel</button>
+              <button class="w11-btn w11-btn-disabled" disabled>Apply</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="glow-line"></div>
-
-  <!-- ══════ CONFIGURE ══════ -->
-  <section class="section-dark3 py-5">
-    <div class="container py-4">
+  <!-- ══════ STEP 03 — VSTO INSTALL ══════ -->
+  <section class="section-light-alt py-5">
+    <div class="container py-3">
       <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <div class="section-tag mb-2" data-i18n="cfg_tag">Step 04</div>
-          <h2 class="section-title mb-3" data-i18n="cfg_title">Configure Google Sheet</h2>
-          <p style="color: var(--mbx-text2);" data-i18n="cfg_desc">
-            mbiX needs 5 system tables in your Google Sheet to know what to sync.
-            Create them once — then add your data as needed.
+        <div class="col-lg-5">
+          <div class="step-tag">STEP 03</div>
+          <h2 class="step-title-light" data-i18n="s3_title">Extract & Run Installer</h2>
+          <p class="step-desc-light" data-i18n="s3_desc">
+            Extract the zip to any folder, then run the .vsto file.
+            Office will show a publisher confirmation — click <strong>Install</strong>.
           </p>
-          <a href="index.html#schema" class="btn btn-hero-secondary mt-2" data-i18n="cfg_btn">View Schema Docs →</a>
+          <ol class="steps-ol">
+            <li data-i18n="s3_l1">Extract <code>mbiXaddin.zip</code></li>
+            <li data-i18n="s3_l2">Open the extracted folder</li>
+            <li data-i18n="s3_l3">Double-click <code>mbiXaddin.vsto</code></li>
+            <li data-i18n="s3_l4">Click <strong>Install</strong> in the dialog</li>
+          </ol>
         </div>
-        <div class="col-lg-6">
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge-skill">SYS_DEFINITIONS</span>
-            <span class="badge-skill">SYS_SCHEMA_RULES</span>
-            <span class="badge-skill">SYS_DATA_SOURCES</span>
-            <span class="badge-skill">SYS_DATA_MAP</span>
-            <span class="badge-skill">SYS_CONFIG_PRESETS</span>
+        <div class="col-lg-7">
+
+          <!-- VSTO Install Dialog -->
+          <div class="vsto-dialog">
+            <div class="vsto-titlebar">
+              <span class="vsto-title-text">Microsoft Office Customization Installer</span>
+              <span class="vsto-close">✕</span>
+            </div>
+            <div class="vsto-body">
+              <div class="vsto-warn-row">
+                <div class="vsto-warn-icon">⚠</div>
+                <div class="vsto-warn-content">
+                  <div class="vsto-warn-title">Publisher cannot be verified</div>
+                  <div class="vsto-warn-sub">Are you sure you want to install this customization?</div>
+                </div>
+                <div class="vsto-globe-icon">🌐</div>
+              </div>
+
+              <div class="vsto-meta">
+                <div class="vsto-meta-row"><span class="vsto-meta-key">Name:</span><span>mbiXaddin</span></div>
+                <div class="vsto-meta-row"><span class="vsto-meta-key">From:</span><span>file:///C:/.../mbiXaddin.vsto</span></div>
+                <div class="vsto-meta-row"><span class="vsto-meta-key">Publisher:</span><span class="vsto-unknown">Unknown Publisher</span></div>
+              </div>
+
+              <div class="vsto-warning-box">
+                <span class="vsto-shield">🛡</span>
+                <span class="vsto-warning-text">
+                  While Office customizations can be useful, they can potentially harm your computer.
+                  If you do not trust the source, do not install this software.
+                  <a class="vsto-more">More Information...</a>
+                </span>
+              </div>
+            </div>
+            <div class="vsto-buttons">
+              <button class="vsto-btn">Install</button>
+              <button class="vsto-btn">Don't Install</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ STEP 04 — RIBBON ══════ -->
+  <section class="section-light py-5">
+    <div class="container py-3">
+      <div class="row g-5 align-items-center flex-lg-row-reverse">
+        <div class="col-lg-5">
+          <div class="step-tag">STEP 04</div>
+          <h2 class="step-title-light" data-i18n="s4_title">Open Excel — You're In</h2>
+          <p class="step-desc-light" data-i18n="s4_desc">
+            Open Microsoft Excel. A new <strong>mbiXaddin</strong> tab will appear in the Ribbon
+            with all controls ready to use.
+          </p>
+          <a class="btn-pill-light mt-2" href="ribbon.html" data-i18n="s4_btn">
+            View Ribbon Tour <span class="btn-arrow">→</span>
+          </a>
+        </div>
+        <div class="col-lg-7">
+
+          <!-- Excel Ribbon (icons loaded from server) -->
+          <div class="excel-ribbon-real">
+            <div class="er-row">
+
+              <div class="er-group">
+                <div class="er-stack">
+                  <div class="er-btn-mini">
+                    <span class="er-icon-img" data-icon="PREMIUM"></span>
+                    Premium
+                  </div>
+                  <div class="er-btn-mini">
+                    <span class="er-icon-img" data-icon="ONLINE"></span>
+                    Online
+                  </div>
+                </div>
+                <div class="er-group-name">User01</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-dropdown">All Regions ▾</div>
+                <div class="er-group-name">Region</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="STANDARD_BOQ"></span>
+                  <div class="er-btn-label">Standard<br/>BOQ <span class="er-arrow">▾</span></div>
+                </div>
+                <div class="er-group-name">BOQ</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="MATERIAL"></span>
+                  <div class="er-btn-label">Material <span class="er-arrow">▾</span></div>
+                </div>
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="LABOR"></span>
+                  <div class="er-btn-label">Labor <span class="er-arrow">▾</span></div>
+                </div>
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="EQUIPMENT"></span>
+                  <div class="er-btn-label">Equipment <span class="er-arrow">▾</span></div>
+                </div>
+                <div class="er-group-name">Resources</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-stack">
+                  <div class="er-dropdown er-dim">Vendor ▾</div>
+                  <div class="er-dropdown er-dim">Supplier ▾</div>
+                </div>
+                <div class="er-group-name">Procurement</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-dropdown er-dim">Sub-Contractor ▾</div>
+                <div class="er-group-name">Third Parties</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="LIQUID_BITUMEN"></span>
+                  <div class="er-btn-label">Liquid<br/>Bitumen</div>
+                </div>
+                <div class="er-btn-large">
+                  <span class="er-icon-large" data-icon="DIESEL"></span>
+                  <div class="er-btn-label">Diesel</div>
+                </div>
+                <div class="er-group-name">Hydrocarbon and Energy Hub</div>
+              </div>
+
+              <div class="er-group">
+                <div class="er-stack">
+                  <div class="er-btn-mini">
+                    <span class="er-icon-img" data-icon="UP_TO_DATE"></span>
+                    Up to Date
+                  </div>
+                  <div class="er-btn-mini">
+                    <span class="er-icon-img" data-icon="ICON_LIBRARY"></span>
+                    Icon Library
+                  </div>
+                  <div class="er-btn-mini">
+                    <span class="er-icon-img" data-icon="REPOSITORY"></span>
+                    Repository
+                  </div>
+                </div>
+                <div class="er-group-name">mbiXaddin</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ TROUBLESHOOTING ══════ -->
+  <section class="section-light-alt py-5">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <div class="section-tag mb-2" data-i18n="trouble_tag">Help</div>
+        <h2 class="step-title-light mx-auto" data-i18n="trouble_title">Troubleshooting</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="trouble-card-light">
+            <div class="trouble-icon">🚫</div>
+            <div class="trouble-title-light" data-i18n="t1_title">Tab not appearing in Excel</div>
+            <div class="trouble-desc-light" data-i18n="t1_desc">
+              Did you Unblock the zip BEFORE extracting? If not — delete the extracted folder,
+              re-download, unblock, and try again.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="trouble-card-light">
+            <div class="trouble-icon">🔒</div>
+            <div class="trouble-title-light" data-i18n="t2_title">"Cannot install" error</div>
+            <div class="trouble-desc-light" data-i18n="t2_desc">
+              Make sure all Excel windows are closed before running .vsto.
+              .NET 4.7.2+ must be installed.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="trouble-card-light">
+            <div class="trouble-icon">🛡</div>
+            <div class="trouble-title-light" data-i18n="t3_title">Antivirus blocks installer</div>
+            <div class="trouble-desc-light" data-i18n="t3_desc">
+              Add the extracted folder to your antivirus exclusion list,
+              or temporarily disable real-time protection during install.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="trouble-card-light">
+            <div class="trouble-icon">💬</div>
+            <div class="trouble-title-light" data-i18n="t4_title">Need more help?</div>
+            <div class="trouble-desc-light" data-i18n="t4_desc">
+              Open an issue on GitHub — we respond within 24 hours.
+            </div>
+            <a class="btn-pill-light mt-2" data-link="support.issues" data-i18n="t4_btn">
+              Open GitHub Issue <span class="btn-arrow">→</span>
+            </a>
           </div>
         </div>
       </div>

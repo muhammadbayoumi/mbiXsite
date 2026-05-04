@@ -1,7 +1,11 @@
 import 'bootstrap';
 import '../scss/main.scss';
 import { initI18n } from './i18n.js';
+import { applyLinks } from './links.js';
+import { applyIcons } from './icons-loader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  applyLinks();
   initI18n();
+  applyIcons();
 });

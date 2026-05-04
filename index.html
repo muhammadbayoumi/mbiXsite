@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- ══════ NAVBAR ══════ -->
+  <!-- ══════ NAVBAR ══════ -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-mbx fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">mbi<span>X</span></a>
@@ -25,13 +25,15 @@
           <li class="nav-item"><a class="nav-link" href="install.html" data-i18n="nav_install">Install</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About</a></li>
         </ul>
-        <button class="btn-lang me-2" id="langToggle">عربي</button>
-        <a href="#install" class="btn btn-mbx rounded-3" data-i18n="nav_download">Download</a>
+        <button class="btn-lang me-2" id="langToggle">ع</button>
+        <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="nav_download">
+          Download <span class="btn-arrow">⬇</span>
+        </a>
       </div>
     </div>
   </nav>
 
-<!-- ══════ HERO ══════ -->
+  <!-- ══════ HERO ══════ -->
   <section class="hero section-dark3" id="hero">
     <div class="container text-center py-5">
       <div class="hero-badge fade-up mb-4" data-i18n="hero_badge">Excel Intelligence Platform · v2.0</div>
@@ -48,28 +50,31 @@
       </p>
 
       <div class="d-flex gap-3 justify-content-center flex-wrap fade-up-d3">
-        <a href="#install" class="btn btn-hero-primary" data-i18n="hero_btn1">Download mbiX</a>
-        <a href="#demo" class="btn btn-hero-secondary" data-i18n="hero_btn2">Interactive Demo →</a>
+        <a class="btn-pill-green" data-link="downloads.latest_zip" data-i18n="hero_btn1">
+          Download mbiX <span class="btn-arrow">⬇</span>
+        </a>
+        <a href="#demo" class="btn-pill-dark-on-dark" data-i18n="hero_btn2">
+          Interactive Demo <span class="btn-arrow">→</span>
+        </a>
       </div>
 
-  
       <!-- Stats -->
       <div class="row justify-content-center g-4 mt-5 fade-up-d4">
         <div class="col-6 col-md-3 text-center">
-          <div class="stat-value">5<span class="text-success">+</span></div>
-          <div class="stat-label">System Tables</div>
+          <div class="stat-value" data-i18n="stat1_val">5<span class="text-success">+</span></div>
+          <div class="stat-label" data-i18n="stat1_lbl">System Tables</div>
         </div>
         <div class="col-6 col-md-3 text-center">
-          <div class="stat-value">3</div>
-          <div class="stat-label">Sync Lanes</div>
+          <div class="stat-value" data-i18n="stat2_val">3</div>
+          <div class="stat-label" data-i18n="stat2_lbl">Sync Lanes</div>
         </div>
         <div class="col-6 col-md-3 text-center">
-          <div class="stat-value">0</div>
-          <div class="stat-label">Ghost Processes</div>
+          <div class="stat-value" data-i18n="stat3_val">0</div>
+          <div class="stat-label" data-i18n="stat3_lbl">Ghost Processes</div>
         </div>
         <div class="col-6 col-md-3 text-center">
-          <div class="stat-value">100<span class="text-success">%</span></div>
-          <div class="stat-label">COM Safe</div>
+          <div class="stat-value" data-i18n="stat4_val">100<span class="text-success">%</span></div>
+          <div class="stat-label" data-i18n="stat4_lbl">COM Safe</div>
         </div>
       </div>
     </div>
@@ -77,11 +82,11 @@
 
   <div class="glow-line"></div>
 
-  <!-- ══════ PLACEHOLDER SECTIONS ══════ -->
+  <!-- ══════ FEATURES (Placeholder) ══════ -->
   <section id="features" class="section-dark1 py-5">
     <div class="container py-5">
-      <div class="section-tag mb-2">Features</div>
-      <h2 class="section-title mb-5">Coming next...</h2>
+      <div class="section-tag mb-2" data-i18n="feat_tag">Features</div>
+      <h2 class="section-title mb-5" data-i18n="feat_title">Coming next...</h2>
     </div>
   </section>
 
