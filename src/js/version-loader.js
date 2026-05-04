@@ -1,19 +1,11 @@
 // ═══════════════════════════════════════════
 // VERSION LOADER
-// Fetches version.json from server and applies:
-//   - data-version       → version number text
-//   - data-version-url   → href = download URL
-//   - data-version-notes → release notes (newlines → <br>)
-//   - data-version-sha   → SHA256 hash
 // ═══════════════════════════════════════════
 
 import { getLink } from './links.js';
 
 let versionCache = null;
 
-/**
- * Loads version.json from the live server.
- */
 export async function loadVersion() {
   if (versionCache) return versionCache;
 
@@ -21,7 +13,7 @@ export async function loadVersion() {
   if (!url) return null;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to load version.json');
     versionCache = await res.json();
     return versionCache;
@@ -31,9 +23,6 @@ export async function loadVersion() {
   }
 }
 
-/**
- * Applies version data to all elements with version attributes.
- */
 export async function applyVersion() {
   const data = await loadVersion();
   if (!data) return;

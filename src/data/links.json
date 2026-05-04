@@ -8,7 +8,7 @@
     "github_repo_site": "https://github.com/muhammadbayoumi/mbiXsite",
     "github_user":      "https://github.com/muhammadbayoumi",
     "linkedin":         "https://www.linkedin.com/in/muhammad-bayoumi-ali/",
-    "email":            "muhammad.bayoumi.ali@gmail.com"
+    "email":            "mailto:muhammad.bayoumi.ali@gmail.com"
   },
   "endpoints": {
     "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/version.json",
@@ -18,6 +18,6 @@
   },
   "support": {
     "issues":           "https://github.com/muhammadbayoumi/mbi-addin/issues",
-    "discussions":     "https://github.com/muhammadbayoumi/mbi-addin/discussions"
+    "discussions":      "https://github.com/muhammadbayoumi/mbi-addin/discussions"
   }
 }

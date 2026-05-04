@@ -1,0 +1,146 @@
+// ═══════════════════════════════════════════
+// EXCEL RIBBON
+// ═══════════════════════════════════════════
+
+.excel-ribbon-real {
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  box-shadow: 0 8px 28px rgba(17, 27, 33, 0.15);
+}
+
+.er-row {
+  display: flex;
+  background: #f3f3f3;
+  padding: 6px 0;
+  overflow-x: auto;
+  min-height: 92px;
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 transparent;
+
+  &::-webkit-scrollbar { height: 4px; }
+  &::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 2px; }
+}
+
+.er-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+  border-right: 1px solid #d4d4d4;
+  position: relative;
+  flex-shrink: 0;
+
+  &:last-child { border-right: none; }
+
+  .er-group-name {
+    font-size: 0.66rem;
+    color: #777;
+    margin-top: 6px;
+    padding-top: 4px;
+    border-top: 1px solid #e6e6e6;
+    width: 100%;
+    text-align: center;
+    min-height: 18px;
+  }
+}
+
+.er-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.er-btn-mini {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+  border: none;
+  background: none;
+  font-family: inherit;
+
+  &:hover { background: rgba(36, 192, 95, 0.1); }
+  &:focus-visible { outline: 2px solid rgba(36, 192, 95, 0.4); outline-offset: -2px; }
+
+  .er-icon-img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+}
+
+.er-btn-large {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  min-width: 56px;
+  transition: background var(--transition-fast);
+  border: none;
+  background: none;
+  font-family: inherit;
+
+  &:hover { background: rgba(36, 192, 95, 0.1); }
+  &:focus-visible { outline: 2px solid rgba(36, 192, 95, 0.4); outline-offset: -2px; }
+
+  .er-icon-large {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 4px;
+  }
+
+  .er-btn-label {
+    font-size: 0.66rem;
+    text-align: center;
+    line-height: 1.15;
+    color: #1a1a1a;
+  }
+
+  .er-arrow {
+    font-size: 0.6rem;
+    color: #555;
+    margin-left: 2px;
+  }
+}
+
+.er-dropdown {
+  border: 1px solid #c0c0c0;
+  background: #fff;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 2px 0;
+  white-space: nowrap;
+  min-width: 100px;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+
+  &:hover { border-color: var(--mbx-green); }
+  &.er-dim { color: #999; background: #f5f5f5; }
+}
+
+.icon-missing {
+  background-color: rgba(255, 0, 0, 0.05) !important;
+  background-image: linear-gradient(45deg, transparent 45%, #ccc 45%, #ccc 55%, transparent 55%) !important;
+}

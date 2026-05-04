@@ -17,7 +17,7 @@ const translations = {
     hero_t3:       'by Real Data.',
     hero_sub:      'mbiX syncs Google Sheets data into a local SQLite database through a full ETL pipeline — giving your Excel workbooks live, validated, schema-driven data.',
     hero_btn1:     'Download mbiX',
-    hero_btn2:     'Interactive Demo →',
+    hero_btn2:     'Interactive Demo',
     stat1_val:     '5+',
     stat1_lbl:     'System Tables',
     stat2_val:     '3',
@@ -27,7 +27,38 @@ const translations = {
     stat4_val:     '100%',
     stat4_lbl:     'COM Safe',
     feat_tag:      'Features',
-    feat_title:    'Coming next...',
+    feat_title:    'Built for Data Engineers',
+    feat_desc:     'Everything you need to bridge Google Sheets and Excel — without the cloud middleware.',
+    feat_1_title:  'ETL Pipeline',
+    feat_1_desc:   'Full extract, transform, load cycle with built-in validation and schema enforcement.',
+    feat_2_title:  'SQLite Engine',
+    feat_2_desc:   'Local, fast, zero-config database that lives inside your Excel Add-in. No server needed.',
+    feat_3_title:  'Schema Governance',
+    feat_3_desc:   'Define rules once. mbiX validates every column, type, and relation before it hits your sheet.',
+    feat_4_title:  'Live Sync',
+    feat_4_desc:   'Pull real-time data from Google Sheets with configurable refresh intervals.',
+    feat_5_title:  'COM Safe',
+    feat_5_desc:   'Native VSTO architecture ensures 100% compatibility with Excel without ghost processes.',
+    feat_6_title:  'Zero Dependencies',
+    feat_6_desc:   'No cloud servers, no subscriptions, no third-party lock-in. Your data stays yours.',
+    how_tag:       'Architecture',
+    how_title:     'How It Works',
+    how_desc:      'A 3-lane sync pipeline that moves data from cloud to workbook in seconds.',
+    how_1_title:   'Configure Tables',
+    how_1_desc:    'Define your system tables in Google Sheets. mbiX reads the schema and knows what to sync.',
+    how_2_title:   'Run Sync',
+    how_2_desc:    'One click triggers the full ETL pipeline. Data is validated, cleaned, and loaded into SQLite.',
+    how_3_title:   'Work in Excel',
+    how_3_desc:    'Your data appears instantly in the Ribbon — ready to query, pivot, and analyze.',
+    demo_tag:      'Live Demo',
+    demo_title:    'See mbiX in Action',
+    demo_desc:     'Watch how a single click transforms raw Google Sheets into structured Excel intelligence.',
+    schema_tag:    'Data Model',
+    schema_title:  'Schema Reference',
+    schema_desc:   '5 system tables power the entire platform. Clean, relational, and version-controlled.',
+    schema_table:  'Table',
+    schema_cols:   'Columns',
+    schema_purpose:'Purpose',
     about_tag:     'The Engineer',
     about_name:    '[Your Name]',
     about_role:    'Software Engineer & Creator of mbiX',
@@ -42,40 +73,7 @@ const translations = {
     install_tag:    'Get Started',
     install_title:  'Install mbiX in Minutes',
     install_sub:    'Follow the steps below to install mbiX on your Windows machine — no admin rights required.',
-    req_tag:        'Step 01',
-    req_title:      'Requirements',
-    req_desc:       'Before installing mbiX, make sure your system meets these requirements.',
-    req_excel:      'Microsoft Excel',
-    req_net:        '.NET Framework',
-    req_os:         'Windows',
-    req_internet:   'Internet',
-    req_internet_d: 'For first-time sync only',
-    dl_tag:         'Step 02',
-    dl_title:       'Download Setup',
-    dl_desc:        'Download the latest installer from the official Releases page on GitHub.',
-    steps_tag:      'Step 03',
-    steps_title:    'Run Installer',
-    step1_t:        'Close Excel',
-    step1_d:        'Make sure all Excel windows are closed before running the installer.',
-    step2_t:        'Run the .msi',
-    step2_d:        'Double-click the installer file. Follow the wizard — defaults are fine.',
-    step3_t:        'Open Excel',
-    step3_d:        'A new "mbiX" tab appears in the Ribbon. You\'re ready to sync.',
-    cfg_tag:        'Step 04',
-    cfg_title:      'Configure Google Sheet',
-    cfg_desc:       'mbiX needs 5 system tables in your Google Sheet to know what to sync.',
-    cfg_btn:        'View Schema Docs →',
-    nav_links:        'Links',
-    links_tag:        'Resources',
-    links_title:      'All mbiX Links',
-    links_sub:        'Quick access to downloads, source code, documentation, and support channels.',
-    link_msi:         'Latest MSI Installer',
-    link_zip:         'ZIP Archive',
-    link_releases:    'All Releases',
-    link_install_guide:'Installation Guide',
-    link_schema:      'Schema Reference',
-    link_about:       'About mbiX',
-    install_dl_btn:  '⬇ Download mbiXaddin.zip',
+    install_dl_btn:  'Download mbiXaddin.zip',
     s1_title:        'Download the Package',
     s1_desc:         'Get the latest .zip from the official Releases page.',
     s2_title:        'Unblock the File',
@@ -92,7 +90,7 @@ const translations = {
     s3_l4:           'Click Install in the dialog',
     s4_title:        "Open Excel — You're In",
     s4_desc:         'Open Excel. A new mbiXaddin tab will appear in the Ribbon.',
-    s4_btn:          'View Ribbon Tour →',
+    s4_btn:          'View Ribbon Tour',
     trouble_tag:     'Help',
     trouble_title:   'Troubleshooting',
     t1_title:        'Tab not appearing in Excel',
@@ -103,7 +101,9 @@ const translations = {
     t3_desc:         'Add the folder to antivirus exclusions.',
     t4_title:        'Need more help?',
     t4_desc:         'Open an issue on GitHub.',
-    t4_btn:          'Open GitHub Issue →',
+    t4_btn:          'Open GitHub Issue',
+    footer_brand:    'mbiX',
+    footer_copy:     '© 2025 mbiX · Excel Intelligence Platform',
   },
   ar: {
     nav_features:  'المميزات',
@@ -119,7 +119,7 @@ const translations = {
     hero_t3:       'ببيانات حقيقية.',
     hero_sub:      'mbiX يقوم بمزامنة بيانات Google Sheets إلى قاعدة بيانات SQLite محلية عبر خط أنابيب ETL كامل — مما يمنح مصنفات Excel بيانات مباشرة ومُتحقق منها.',
     hero_btn1:     'تحميل mbiX',
-    hero_btn2:     '← تجربة تفاعلية',
+    hero_btn2:     'تجربة تفاعلية',
     stat1_val:     '+5',
     stat1_lbl:     'جداول النظام',
     stat2_val:     '3',
@@ -129,7 +129,38 @@ const translations = {
     stat4_val:     '100%',
     stat4_lbl:     'آمن COM',
     feat_tag:      'المميزات',
-    feat_title:    'قريباً...',
+    feat_title:    'مُصمّم لمهندسي البيانات',
+    feat_desc:     'كل ما تحتاجه لربط Google Sheets وExcel — بدون وسيط سحابي.',
+    feat_1_title:  'خط أنابيب ETL',
+    feat_1_desc:   'دورة استخراج وتحويل وتحميل كاملة مع تحقق مدمج وفرض المخطط.',
+    feat_2_title:  'محرك SQLite',
+    feat_2_desc:   'قاعدة بيانات محلية وسريعة داخل إضافة Excel. لا تحتاج خادماً.',
+    feat_3_title:  'حوكمة المخطط',
+    feat_3_desc:   'عرّف القواعد مرة واحدة. يتحقق mbiX من كل عمود ونوع وعلاقة.',
+    feat_4_title:  'مزامنة مباشرة',
+    feat_4_desc:   'اسحب البيانات من Google Sheets بشكل فوري مع فترات تحديث قابلة للضبط.',
+    feat_5_title:  'آمن COM',
+    feat_5_desc:   'بنية VSTO أصلية تضمن توافقاً 100% مع Excel بدون عمليات شبحية.',
+    feat_6_title:  'صفر تبعيات',
+    feat_6_desc:   'بدون خوادم سحابية، بدون اشتراكات، بدون قفل طرف ثالث. بياناتك لك.',
+    how_tag:       'البنية',
+    how_title:     'كيف يعمل',
+    how_desc:      'خط مزامنة بـ 3 مسارات ينقل البيانات من السحابة إلى المصنف في ثوانٍ.',
+    how_1_title:   'إعداد الجداول',
+    how_1_desc:    'عرف جداول النظام في Google Sheets. يقرأ mbiX المخطط ويعرف ما يزامنه.',
+    how_2_title:   'تشغيل المزامنة',
+    how_2_desc:    'نقرة واحدة تشغل خط ETL كامل. البيانات تُتحقق وتُنظف وتُحمل في SQLite.',
+    how_3_title:   'العمل في Excel',
+    how_3_desc:    'تظهر البيانات فوراً في الشريط — جاهزة للاستعلام والتحليل.',
+    demo_tag:      'تجربة حية',
+    demo_title:    'شاهد mbiX أثناء العمل',
+    demo_desc:     'شاهد كيف تحوّل نقرة واحدة بيانات Google Sheets إلى ذكاء منظم في Excel.',
+    schema_tag:    'نموذج البيانات',
+    schema_title:  'مرجع المخطط',
+    schema_desc:   '5 جداول نظام تشغّل المنصة بالكامل. نظيفة، علاقية، ومُحكّمة بالإصدارات.',
+    schema_table:  'الجدول',
+    schema_cols:   'الأعمدة',
+    schema_purpose:'الغرض',
     about_tag:     'المهندس',
     about_name:    '[اسمك هنا]',
     about_role:    'مهندس برمجيات ومبتكر mbiX',
@@ -137,47 +168,14 @@ const translations = {
     story_tag:     'القصة',
     story_title:   'لماذا mbiX؟',
     story_p1:      'كل فريق بيانات يواجه نفس المشكلة: البيانات الحيوية في Google Sheets، لكن العمل الحقيقي يحدث في Excel.',
-    story_p2:      'وُلد mbiX من هذا الإحباط. بدلاً من بناء أداة سحابية أخرى، بنيت الحل حيث يحدث العمل فعلاً — داخل Excel مباشرة.',
+    story_p2:      'وُلد mbiX من هذا الإحباط. بدلاً من بناء أداة سحابية أخرى، بنيت الحل حيث يحدث العمل فعلاً.',
     timeline_1:    'النموذج الأولي — مزامنة أساسية من Google Sheets إلى Excel',
     timeline_2:    'خط أنابيب ETL كامل مع التحقق وقواعد المخطط وPipelineLogger',
     timeline_3:    'Ribbon ديناميكي، ترخيص RSA، محرك التصدير، والإطلاق العام',
     install_tag:    'ابدأ الآن',
     install_title:  'ثبّت mbiX في دقائق',
     install_sub:    'اتبع الخطوات التالية لتثبيت mbiX على جهازك — لا حاجة لصلاحيات المسؤول.',
-    req_tag:        'الخطوة 01',
-    req_title:      'المتطلبات',
-    req_desc:       'قبل تثبيت mbiX، تأكد من توافر هذه المتطلبات.',
-    req_excel:      'مايكروسوفت إكسل',
-    req_net:        '.NET Framework',
-    req_os:         'ويندوز',
-    req_internet:   'الإنترنت',
-    req_internet_d: 'للمزامنة الأولى فقط',
-    dl_tag:         'الخطوة 02',
-    dl_title:       'تحميل المثبّت',
-    dl_desc:        'حمّل أحدث نسخة من صفحة Releases الرسمية على GitHub.',
-    steps_tag:      'الخطوة 03',
-    steps_title:    'تشغيل المثبّت',
-    step1_t:        'أغلق إكسل',
-    step1_d:        'تأكد من إغلاق جميع نوافذ إكسل قبل تشغيل المثبّت.',
-    step2_t:        'شغّل ملف .msi',
-    step2_d:        'انقر مرتين على ملف المثبّت واتبع المعالج — الإعدادات الافتراضية مناسبة.',
-    step3_t:        'افتح إكسل',
-    step3_d:        'سيظهر تبويب جديد "mbiX" في الشريط — جاهز للمزامنة.',
-    cfg_tag:        'الخطوة 04',
-    cfg_title:      'إعداد Google Sheet',
-    cfg_desc:       'يحتاج mbiX إلى 5 جداول نظام في Google Sheet ليعرف ما الذي يزامنه.',
-    cfg_btn:        '← عرض توثيق المخطط',
-    nav_links:        'الروابط',
-    links_tag:        'الموارد',
-    links_title:      'جميع روابط mbiX',
-    links_sub:        'وصول سريع للتحميلات والكود المصدري والوثائق وقنوات الدعم.',
-    link_msi:         'مثبّت MSI الأحدث',
-    link_zip:         'أرشيف ZIP',
-    link_releases:    'جميع الإصدارات',
-    link_install_guide:'دليل التثبيت',
-    link_schema:      'مرجع المخطط',
-    link_about:       'حول mbiX',
-    install_dl_btn:  '⬇ تحميل mbiXaddin.zip',
+    install_dl_btn:  'تحميل mbiXaddin.zip',
     s1_title:        'تحميل الحزمة',
     s1_desc:         'احصل على آخر إصدار .zip من صفحة الإصدارات الرسمية.',
     s2_title:        'إلغاء حظر الملف',
@@ -194,7 +192,7 @@ const translations = {
     s3_l4:           'اضغط تثبيت في النافذة',
     s4_title:        'افتح إكسل — أنت جاهز',
     s4_desc:         'افتح إكسل. سيظهر تبويب جديد mbiXaddin في الشريط.',
-    s4_btn:          '← جولة في الشريط',
+    s4_btn:          'جولة في الشريط',
     trouble_tag:     'المساعدة',
     trouble_title:   'حل المشكلات',
     t1_title:        'التبويب لا يظهر في إكسل',
@@ -205,7 +203,9 @@ const translations = {
     t3_desc:         'أضف المجلد إلى استثناءات برنامج الحماية.',
     t4_title:        'تحتاج مساعدة إضافية؟',
     t4_desc:         'افتح تذكرة على GitHub.',
-    t4_btn:          '← فتح تذكرة GitHub',
+    t4_btn:          'فتح تذكرة GitHub',
+    footer_brand:    'mbiX',
+    footer_copy:     '© 2025 mbiX · Excel Intelligence Platform',
   }
 };
 
@@ -213,15 +213,17 @@ let currentLang = localStorage.getItem('mbx-lang') || 'en';
 
 export function initI18n() {
   applyLang(currentLang);
+}
 
-  const toggle = document.getElementById('langToggle');
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      localStorage.setItem('mbx-lang', currentLang);
-      applyLang(currentLang);
-    });
-  }
+export function setLang(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('mbx-lang', lang);
+  applyLang(lang);
+}
+
+export function getLang() {
+  return currentLang;
 }
 
 function applyLang(lang) {
@@ -233,19 +235,26 @@ function applyLang(lang) {
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   document.body.classList.toggle('is-rtl', lang === 'ar');
 
-  // Toggle button text
-  const toggle = document.getElementById('langToggle');
-  if (toggle) {
-  toggle.textContent = lang === 'en' ? 'ع' : 'EN';
-  }
-
   // Apply translations
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) el.textContent = t[key];
+    if (t[key]) {
+      // Preserve child elements (like icons inside buttons)
+      const preserved = el.querySelectorAll('[data-preserve]');
+      if (preserved.length === 0) {
+        el.textContent = t[key];
+      } else {
+        // For elements with preserved children (like buttons with icons)
+        const icon = el.querySelector('.btn-arrow, i.bi');
+        el.textContent = t[key];
+        if (icon) el.appendChild(icon);
+      }
+    }
   });
-}
 
-export function getLang() {
-  return currentLang;
+  // Update document title if translated
+  const titleEl = document.querySelector('title[data-i18n]');
+  if (titleEl && t[titleEl.dataset.i18n]) {
+    document.title = t[titleEl.dataset.i18n];
+  }
 }

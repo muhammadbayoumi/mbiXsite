@@ -1,16 +1,11 @@
 // ═══════════════════════════════════════════
 // ICONS LOADER
-// Fetches the live icons_map.json from GitHub
-// and builds image URLs for the Ribbon controls
 // ═══════════════════════════════════════════
 
 import { getLink } from './links.js';
 
 let iconsMapCache = null;
 
-/**
- * Loads icons_map.json from the live server (GitHub raw).
- */
 export async function loadIconsMap() {
   if (iconsMapCache) return iconsMapCache;
 
@@ -18,7 +13,7 @@ export async function loadIconsMap() {
   if (!url) return {};
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'force-cache' });
     if (!res.ok) throw new Error('Failed to load icons map');
     iconsMapCache = await res.json();
     return iconsMapCache;
@@ -28,9 +23,6 @@ export async function loadIconsMap() {
   }
 }
 
-/**
- * Applies icons to all elements with [data-icon="ICON_KEY"]
- */
 export async function applyIcons() {
   const elements = document.querySelectorAll('[data-icon]');
   if (!elements.length) return;
@@ -43,6 +35,8 @@ export async function applyIcons() {
     const filename = map[key];
     if (!filename) {
       el.classList.add('icon-missing');
+      el.setAttribute('role', 'img');
+      el.setAttribute('aria-label', `Missing icon: ${key}`);
       return;
     }
 
@@ -50,8 +44,11 @@ export async function applyIcons() {
 
     if (el.tagName === 'IMG') {
       el.src = url;
+      el.alt = key;
     } else {
       el.style.backgroundImage = `url("${url}")`;
+      el.setAttribute('role', 'img');
+      el.setAttribute('aria-label', key);
     }
   });
 }

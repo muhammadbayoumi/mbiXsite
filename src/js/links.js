@@ -1,7 +1,5 @@
 // ═══════════════════════════════════════════
 // LINKS LOADER
-// Loads links.json and applies them to elements
-// with [data-link="path.to.value"]
 // ═══════════════════════════════════════════
 
 import linksData from '../data/links.json';

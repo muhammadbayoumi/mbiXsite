@@ -1,0 +1,69 @@
+// ═══════════════════════════════════════════
+// BASE STYLES
+// ═══════════════════════════════════════════
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background: var(--mbx-dark3);
+  color: var(--mbx-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background var(--transition-slow), color var(--transition-slow);
+}
+
+// Selection styling
+::selection {
+  background: rgba(37, 211, 102, 0.3);
+  color: var(--mbx-cream);
+}
+
+// Focus visible (accessibility)
+:focus-visible {
+  outline: 2px solid var(--mbx-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Reduce motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Skip link
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--mbx-green);
+  color: var(--mbx-dark1);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  z-index: var(--z-modal);
+  transition: top var(--transition-fast);
+
+  &:focus {
+    top: 0;
+  }
+}
