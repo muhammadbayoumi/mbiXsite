@@ -293,14 +293,14 @@ section, nav, footer {
   background: transparent;
   border: 1px solid var(--mbx-text3);
   color: var(--mbx-cream);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   padding: 0.3rem 0;
-  border-radius: 999px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -424,4 +424,97 @@ section, nav, footer {
     left: unset;
     right: calc(-2rem + 2px);
   }
+}
+
+// ═══════════════════════════════════════════
+// INSTALL PAGE
+// ═══════════════════════════════════════════
+.install-req-card {
+  background: var(--mbx-dark2);
+  border: 1px solid var(--mbx-border);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: var(--mbx-green);
+    transform: translateY(-2px);
+  }
+}
+
+.req-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.req-title { font-weight: 700; color: var(--mbx-cream); margin-bottom: 0.25rem; }
+.req-detail { font-size: 0.8rem; color: var(--mbx-text2); }
+
+// Terminal block
+.terminal-block {
+  background: var(--mbx-dark2);
+  border: 1px solid var(--mbx-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: #161d2b;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--mbx-border);
+
+  .t-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .t-dot.r { background: #ff5f57; }
+  .t-dot.y { background: #febc2e; }
+  .t-dot.g { background: #28c840; }
+  .t-title { margin-left: auto; margin-right: auto; font-size: 0.72rem; color: var(--mbx-text3); }
+}
+
+.terminal-body {
+  padding: 14px 18px;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--mbx-cream);
+
+  .t-comment { color: var(--mbx-text3); }
+  .t-key     { color: var(--mbx-green); }
+  .t-val     { color: var(--mbx-blue); }
+}
+
+// Step cards
+.step-card {
+  background: var(--mbx-dark2);
+  border: 1px solid var(--mbx-border);
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--mbx-green);
+    transform: translateY(-2px);
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(36, 192, 95, 0.1);
+    border: 2px solid var(--mbx-green);
+    color: var(--mbx-green);
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--mbx-cream);
+  }
+
+  p { font-size: 0.88rem; color: var(--mbx-text2); margin: 0; }
 }
