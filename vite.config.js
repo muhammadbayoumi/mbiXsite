@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
+  base: '/mbiXsite/',
   build: {
     outDir: 'dist',
     rollupOptions: {
