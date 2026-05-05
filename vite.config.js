@@ -14,7 +14,7 @@ export default defineConfig(({ command }) => ({
         main:    resolve(__dirname, 'index.html'),
         about:   resolve(__dirname, 'about.html'),
         install: resolve(__dirname, 'install.html'),
-        subscription: resolve(__dirname, 'subscription.html'),
+        newsletter: resolve(__dirname, 'join-newsletter.html'),
         help:    resolve(__dirname, 'help-center.html')
       },
       output: {
@@ -49,7 +49,7 @@ export default defineConfig(({ command }) => ({
         const isIndex = pagePath.includes('index.html') && !pagePath.includes('about') && !pagePath.includes('install') && !pagePath.includes('subscription') && !pagePath.includes('help');
         const isAbout = pagePath.includes('about');
         const isInstall = pagePath.includes('install');
-        const isSubscription = pagePath.includes('subscription');
+        const isNewsletter = pagePath.includes('newsletter') || pagePath.includes('join-newsletter');
         const isHelp = pagePath.includes('help');
 
         // Read page URLs from links.json (single source of truth)
@@ -63,14 +63,14 @@ export default defineConfig(({ command }) => ({
           activeHome: isIndex ? ' active' : '',
           activeInstall: isInstall ? ' active' : '',
           activeAbout: isAbout ? ' active' : '',
-          activeSubscription: isSubscription ? ' active' : '',
+          activeNewsletter: isNewsletter ? ' active' : '',
           activeHelp: isHelp ? ' active' : '',
 
           // Page URLs from links.json (single source of truth)
           homeUrl:    pages.home    || 'index.html',
           installUrl: pages.install || 'install.html',
           aboutUrl:   pages.about   || 'about.html',
-          subscriptionUrl: pages.subscription || 'subscription.html',
+          newsletterUrl: pages.newsletter || 'join-newsletter.html',
           helpUrl:    pages.help    || 'help-center.html',
         };
       }
