@@ -144,3 +144,620 @@
   background-color: rgba(255, 0, 0, 0.05) !important;
   background-image: linear-gradient(45deg, transparent 45%, #ccc 45%, #ccc 55%, transparent 55%) !important;
 }
+
+/* EXCEL WINDOW MOCKUP (Step 04) - Real Office 365 Look */
+
+.excel-window {
+  background: #ffffff;
+  border: 1px solid #b0b0b0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Calibri', sans-serif;
+  font-size: 0.72rem;
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 2 / 1;
+}
+
+/* ── Title Bar (Light cream) ── */
+.excel-titlebar {
+  background: #f8f9fa;
+  color: #1a1a1a;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.excel-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Excel Logo (Official Green Square) */
+.excel-logo {
+  width: 22px;
+  height: 22px;
+  background: #217346;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.excel-x-green {
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.excel-filename {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.excel-window-btns {
+  display: flex;
+}
+
+.excel-wbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+  border-radius: 2px;
+}
+
+.excel-wbtn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.excel-wbtn.close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+/* ── Mid Bar (QAT + Title + Comments/Share) ── */
+.excel-midbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 4px 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.excel-qat {
+  display: flex;
+  gap: 4px;
+}
+
+.excel-qat-icon {
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #555;
+}
+
+.excel-qat-icon:hover {
+  background: #e0e0e0;
+}
+
+.excel-title-center {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #555;
+}
+
+.excel-actions-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.excel-comments-btn,
+.excel-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  border-radius: 3px;
+  color: #444;
+  transition: background 0.15s;
+}
+
+.excel-comments-btn:hover {
+  background: #f0f0f0;
+}
+
+.excel-share-btn {
+  background: #217346;
+  color: #fff;
+  border: none;
+}
+
+.excel-share-btn:hover {
+  background: #1a5c38;
+}
+
+/* ── Ribbon Tabs ── */
+.excel-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #c5c5c5;
+  padding: 0 4px;
+  overflow: hidden;
+}
+
+.excel-tab {
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #444;
+  border: none;
+  background: none;
+  font-family: inherit;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.excel-tab:hover {
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.excel-tab.active {
+  color: #217346;
+  background: #fff;
+  font-weight: 600;
+  border-bottom-color: #217346;
+}
+
+/* File Tab — normal */
+.excel-tab-file {
+  background: #f3f3f3;
+  color: #444;
+  font-weight: 400;
+  margin-right: 4px;
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+}
+
+.excel-tab-file:hover {
+  background: #e8e8e8;
+  color: #1a1a1a;
+}
+
+/* mbiX Tab — green (active custom tab) */
+.excel-tab-green {
+  background: #217346;
+  color: #fff;
+  font-weight: 500;
+  margin-right: 4px;
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+}
+
+.excel-tab-green:hover {
+  background: #1a5c38;
+  color: #fff;
+}
+
+/* ── Ribbon Content ── */
+.excel-ribbon-content {
+  display: flex;
+  background: #fff;
+  padding: 4px 6px;
+  border-bottom: 1px solid #d4d4d4;
+  min-height: 72px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.excel-ribbon-empty {
+  display: none;
+}
+
+.excel-ribbon-group {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 8px;
+  border-right: 1px solid #e0e0e0;
+  min-width: 50px;
+  justify-content: space-between;
+}
+
+.excel-ribbon-group:last-child,
+.excel-ribbon-group.excel-rg-last {
+  border-right: none;
+}
+
+.excel-rg-narrow {
+  min-width: 40px;
+  padding: 2px 4px;
+}
+
+.excel-rg-title {
+  font-size: 0.6rem;
+  color: #777;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 2px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.excel-rg-items {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Vertical button */
+.excel-rg-btn-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 2px 4px;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: center;
+  min-width: 42px;
+}
+
+.excel-rg-btn-v:hover {
+  background: #f0f0f0;
+}
+
+.excel-rg-btn-tall {
+  min-height: 48px;
+  justify-content: center;
+}
+
+.excel-rg-btn-compact {
+  min-width: 36px;
+  padding: 2px 2px;
+}
+
+.excel-rg-icon {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1;
+}
+
+.excel-rg-icon-lg {
+  font-size: 1.3rem;
+}
+
+.excel-rg-icon-sm {
+  font-size: 0.85rem;
+}
+
+.excel-rg-icon-gold {
+  color: #c8a000;
+  font-size: 1rem;
+}
+
+/* Online dot */
+.excel-rg-online-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 1px;
+}
+
+.excel-rg-online-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00a651;
+  display: inline-block;
+}
+
+.excel-rg-online-text {
+  font-size: 0.55rem;
+  color: #00a651;
+  font-weight: 600;
+}
+
+.excel-rg-label {
+  font-size: 0.6rem;
+  color: #333;
+  line-height: 1.25;
+  max-width: 56px;
+  word-wrap: break-word;
+}
+
+.excel-rg-caret {
+  font-size: 0.5rem;
+  color: #666;
+  vertical-align: middle;
+}
+
+/* Dropdown */
+.excel-rg-dropdown {
+  border: 1px solid #c0c0c0;
+  padding: 2px 6px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.excel-rg-dropdown:hover {
+  background: #f5f5f5;
+}
+
+/* Dropdown box (All Regions) */
+.excel-rg-dropdown-box {
+  border: 1px solid #c0c0c0;
+  padding: 3px 8px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.excel-rg-dropdown-box:hover {
+  background: #f5f5f5;
+}
+
+.excel-rg-caret-right {
+  font-size: 0.6rem;
+  color: #333;
+  margin-left: 4px;
+}
+
+/* Big arrow on right side of mbiXaddin group */
+.excel-rg-big-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  margin-left: 4px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  align-self: stretch;
+}
+
+.excel-rg-big-arrow:hover {
+  background: #f0f0f0;
+}
+
+/* ── Formula Bar ── */
+.excel-formula-bar {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 6px;
+}
+
+.excel-name-box-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c0c0c0;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.excel-name-box {
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  min-width: 45px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-right: 1px solid #e0e0e0;
+}
+
+.excel-name-box-arrow {
+  font-size: 0.55rem;
+  color: #666;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.excel-formula-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.excel-fb-btn {
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.excel-fb-btn:hover {
+  color: #333;
+}
+
+.excel-formula-input {
+  flex: 1;
+  border: 1px solid #c0c0c0;
+  background: #fff;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  min-height: 20px;
+  border-radius: 2px;
+}
+
+/* ── Column Headers ── */
+.excel-col-headers {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.excel-corner {
+  width: 36px;
+  min-width: 36px;
+  border-right: 1px solid #c0c0c0;
+}
+
+.excel-col-h {
+  flex: 1;
+  min-width: 48px;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 0.68rem;
+  color: #555;
+  border-right: 1px solid #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Grid ── */
+.excel-grid {
+  background: #fff;
+  overflow: hidden;
+}
+
+.excel-row {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 20px;
+}
+
+.excel-row-h {
+  width: 36px;
+  min-width: 36px;
+  background: #f8f9fa;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 0.68rem;
+  color: #555;
+  border-right: 1px solid #c0c0c0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.excel-cell {
+  flex: 1;
+  min-width: 48px;
+  padding: 2px 4px;
+  font-size: 0.72rem;
+  border-right: 1px solid #e8e8e8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Sheet Tabs ── */
+.excel-sheet-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-top: 1px solid #c0c0c0;
+  padding: 2px 0 0 4px;
+}
+
+.excel-sheet-tab {
+  padding: 4px 14px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  background: #d4d4d4;
+  border: 1px solid #b0b0b0;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  margin-right: 2px;
+  font-family: inherit;
+  color: #444;
+}
+
+.excel-sheet-tab:hover {
+  background: #e0e0e0;
+}
+
+.excel-sheet-tab.active {
+  background: #fff;
+  color: #1a1a1a;
+  font-weight: 600;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+/* ── Status Bar ── */
+.excel-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border-top: 1px solid #c0c0c0;
+  padding: 4px 10px;
+  font-size: 0.68rem;
+  color: #555;
+}
+
+.excel-status-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excel-status-ready {
+  font-weight: 500;
+}
+
+.excel-status-icon {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.excel-status-text {
+  color: #666;
+}
+
+.excel-status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excel-status-view {
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #777;
+}
+
+.excel-status-view:hover {
+  color: #333;
+}
+
+.excel-zoom {
+  font-size: 0.68rem;
+  color: #666;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help Center — mbiX | Excel Intelligence Platform</title>
+  <meta name="description" content="Get help with mbiX Excel Add-in installation and troubleshooting."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/help-center.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/help-center.html"/>
+  <meta property="og:title" content="Help Center — mbiX"/>
+  <meta property="og:description" content="Get help with mbiX Excel Add-in."/>
+  <meta property="og:image" content="https://muhammadbayoumi.github.io/mbiXsite/og-image.png"/>
+  <link rel="preconnect" href="https://raw.githubusercontent.com"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+{{> navbar }}
+
+  <main id="main-content">
+    <!-- ══════ HELP CENTER HERO ══════ -->
+    <section class="section-dark3" style="padding-top: 100px;" aria-labelledby="help-title">
+      <div class="container py-5 text-center">
+        <div class="section-tag mb-2">Support</div>
+        <h1 id="help-title" class="section-title mb-3">Help Center</h1>
+        <p class="section-sub mx-auto mb-4">
+          Find answers to common questions and get help with mbiX installation.
+        </p>
+      </div>
+    </section>
+
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <!-- ══════ TROUBLESHOOTING ══════ -->
+    <section class="section-light py-section" aria-labelledby="trouble-title">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="trouble_tag">Help</div>
+          <h2 id="trouble-title" class="step-title-light mx-auto" data-i18n="trouble_title">Troubleshooting</h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-12">
+            <article class="trouble-card-light">
+              <i class="bi bi-x-octagon-fill trouble-icon" aria-hidden="true"></i>
+              <h3 class="trouble-title-light" data-i18n="t1_title">Tab not appearing in Excel</h3>
+              <p class="trouble-desc-light" data-i18n="t1_desc">Did you restart Excel after installation? Close all Excel windows completely, then reopen Excel. The mbiX tab should appear in the Ribbon.</p>
+            </article>
+          </div>
+          <div class="col-12">
+            <article class="trouble-card-light">
+              <i class="bi bi-lock-fill trouble-icon" aria-hidden="true"></i>
+              <h3 class="trouble-title-light" data-i18n="t2_title">"Cannot install" error</h3>
+              <p class="trouble-desc-light" data-i18n="t2_desc">Did you unblock the zip file BEFORE extracting? Right-click the zip → Properties → check "Unblock" → Apply → then extract and run the installer again.</p>
+            </article>
+          </div>
+          <div class="col-12">
+            <article class="trouble-card-light">
+              <i class="bi bi-shield-fill-check trouble-icon" aria-hidden="true"></i>
+              <h3 class="trouble-title-light" data-i18n="t3_title">Antivirus blocks installer</h3>
+              <p class="trouble-desc-light" data-i18n="t3_desc">Add the extracted folder to your antivirus exclusion list.</p>
+            </article>
+          </div>
+          <div class="col-12">
+            <article class="trouble-card-light">
+              <i class="bi bi-chat-dots-fill trouble-icon" aria-hidden="true"></i>
+              <h3 class="trouble-title-light" data-i18n="t4_title">Need more help?</h3>
+              <p class="trouble-desc-light" data-i18n="t4_desc">Open an issue on GitHub — we respond within 24 hours.</p>
+              <a class="btn-pill-light mt-2" data-link="support.issues" data-i18n="t4_btn">Open GitHub Issue <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{> footer }}
+</body>
+</html>

@@ -24,7 +24,8 @@
     "home":    "index.html",
     "about":   "about.html",
     "install": "install.html",
-    "subscription": "subscription.html"
+    "subscription": "subscription.html",
+    "help":    "help-center.html"
   },
   "support": {
     "issues":           "https://github.com/muhammadbayoumi/mbi-addin/issues",

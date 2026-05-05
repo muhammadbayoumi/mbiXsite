@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About — mbiX | Excel Intelligence Platform</title>
-  <meta name="description" content="Meet the engineer behind mbiX."/>
+  <title>Subscription — mbiX | Excel Intelligence Platform</title>
+  <meta name="description" content="Subscribe to mbiX updates and newsletter."/>
   <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/about.html"/>
-  <meta property="og:type" content="profile"/>
-  <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/about.html"/>
-  <meta property="og:title" content="About — mbiX"/>
-  <meta property="og:description" content="Meet the engineer behind mbiX."/>
+  <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/subscription.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/subscription.html"/>
+  <meta property="og:title" content="Subscription — mbiX"/>
+  <meta property="og:description" content="Stay updated with mbiX releases and features."/>
   <meta property="og:image" content="https://muhammadbayoumi.github.io/mbiXsite/og-image.png"/>
   <link rel="preconnect" href="https://raw.githubusercontent.com"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
@@ -31,8 +31,8 @@
         <ul class="navbar-nav ms-auto me-3 gap-1">
           <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav_home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="install.html" data-i18n="nav_install">How to Install</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html" data-i18n="nav_about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="subscription.html" data-i18n="nav_subscription">Subscription</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="subscription.html" data-i18n="nav_subscription">Subscription</a></li>
           <li class="nav-item"><a class="nav-link" href="help-center.html" data-i18n="nav_help">Help Center</a></li>
         </ul>
         <a class="btn-pill-green" data-version-url data-i18n="nav_download">Download <i class="bi bi-download btn-arrow" aria-hidden="true"></i></a>
@@ -41,43 +41,59 @@
   </nav>
 
   <main id="main-content">
-    <!-- ══════ ABOUT HERO ══════ -->
-    <section class="section-dark3" id="about-hero" aria-labelledby="about-name" style="padding-top: 100px;">
-      <div class="container">
-        <div class="row align-items-center g-5 py-5">
-          <!-- Photo -->
-          <div class="col-lg-4 text-center">
-            <div class="about-photo-wrap mx-auto" role="img" aria-label="Profile photo placeholder">
-              <div class="about-photo-placeholder">
-                <i class="bi bi-person-circle"></i>
-                <small>Your Photo</small>
+    <!-- ══════ SUBSCRIPTION HERO ══════ -->
+    <section class="section-dark3" style="padding-top: 100px;" aria-labelledby="sub-title">
+      <div class="container py-5 text-center">
+        <div class="section-tag mb-2">Stay in the Loop</div>
+        <h1 id="sub-title" class="section-title mb-3">Subscribe to mbiX</h1>
+        <p class="section-sub mx-auto mb-4">
+          Get the latest updates, new features, and tips delivered straight to your inbox. No spam — only valuable insights.
+        </p>
+      </div>
+    </section>
+
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <!-- ══════ SUBSCRIPTION FORM ══════ -->
+    <section class="section-dark1 py-section" aria-labelledby="form-title">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div class="subscription-card">
+              <h2 id="form-title" class="section-title mb-4 text-center">Join the Newsletter</h2>
+              <form id="subscriptionForm" class="subscription-form" novalidate>
+                <div class="mb-3">
+                  <label for="subName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="subName" placeholder="John Doe" required/>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="subEmail" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="subEmail" placeholder="john@example.com" required/>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">I'm interested in:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="interestReleases" checked/>
+                    <label class="form-check-label" for="interestReleases">New Releases</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="interestFeatures"/>
+                    <label class="form-check-label" for="interestFeatures">Feature Updates</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="interestTips"/>
+                    <label class="form-check-label" for="interestTips">Excel Tips &amp; Tricks</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn-pill-green w-100">Subscribe <i class="bi bi-bell btn-arrow" aria-hidden="true"></i></button>
+              </form>
+              <div id="subSuccess" class="subscription-success d-none">
+                <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                <h3 class="mt-3">You're Subscribed!</h3>
+                <p>Thank you for joining. We'll be in touch soon.</p>
               </div>
-            </div>
-          </div>
-          <!-- Bio -->
-          <div class="col-lg-8">
-            <div class="section-tag mb-2" data-i18n="about_tag">The Engineer</div>
-            <h1 id="about-name" class="section-title mb-3" data-i18n="about_name">[Your Name]</h1>
-            <p class="mb-3" style="color: var(--mbx-green); font-weight: 600; font-size: 1.1rem;" data-i18n="about_role">Software Engineer & Creator of mbiX</p>
-            <p style="color: var(--mbx-text2); max-width: 600px; line-height: 1.7;" data-i18n="about_bio">
-              The mind behind mbiX — an Excel Intelligence Platform that transforms how teams work with data inside Microsoft Excel.
-            </p>
-            <!-- Skills -->
-            <div class="d-flex flex-wrap gap-2 mt-4" aria-label="Technical skills">
-              <span class="badge-skill">C# / .NET</span>
-              <span class="badge-skill">VSTO</span>
-              <span class="badge-skill">Excel Interop</span>
-              <span class="badge-skill">SQLite</span>
-              <span class="badge-skill">ETL Pipelines</span>
-              <span class="badge-skill">Google Sheets API</span>
-              <span class="badge-skill">COM Interop</span>
-              <span class="badge-skill">UI/UX Design</span>
-            </div>
-            <!-- Social -->
-            <div class="d-flex gap-3 mt-4" aria-label="Social links">
-              <a class="social-link" data-link="social.github_user" rel="noopener noreferrer">GitHub</a>
-              <a class="social-link" data-link="social.linkedin" rel="noopener noreferrer">LinkedIn</a>
-              <a class="social-link" data-link="social.email">Email</a>
             </div>
           </div>
         </div>
@@ -86,39 +102,29 @@
 
     <div class="glow-line" aria-hidden="true"></div>
 
-    <!-- ══════ STORY ══════ -->
-    <section class="section-dark1 py-section" aria-labelledby="story-title">
+    <!-- ══════ WHY SUBSCRIBE ══════ -->
+    <section class="section-dark3 py-section" aria-labelledby="why-title">
       <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-6">
-            <div class="section-tag mb-2" data-i18n="story_tag">The Story</div>
-            <h2 id="story-title" class="section-title mb-4" data-i18n="story_title">Why mbiX?</h2>
-            <p style="color: var(--mbx-text2); line-height: 1.7;" data-i18n="story_p1">
-              Every data team faces the same problem: critical business data lives in Google Sheets, but the real work happens in Excel.
-            </p>
-            <p class="mt-3" style="color: var(--mbx-text2); line-height: 1.7;" data-i18n="story_p2">
-              mbiX was born from this frustration. Instead of building yet another cloud tool, I built the solution where the work actually happens.
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <div class="timeline" role="list" aria-label="Project timeline">
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-dot" aria-hidden="true"></div>
-                <div class="timeline-year">2023</div>
-                <div class="timeline-text" data-i18n="timeline_1">First prototype — basic sync from Google Sheets to Excel</div>
-              </div>
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-dot" aria-hidden="true"></div>
-                <div class="timeline-year">2024</div>
-                <div class="timeline-text" data-i18n="timeline_2">Full ETL pipeline with validation, schema rules, and PipelineLogger</div>
-              </div>
-              <div class="timeline-item" role="listitem">
-                <div class="timeline-dot" aria-hidden="true"></div>
-                <div class="timeline-year">2025</div>
-                <div class="timeline-text" data-i18n="timeline_3">Dynamic Ribbon, RSA licensing, Export Engine, and public release</div>
-              </div>
-            </div>
-          </div>
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2">Benefits</div>
+          <h2 id="why-title" class="section-title mb-3">What You'll Get</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-rocket-takeoff-fill"></i></div>
+            <h3 class="feature-title">Early Access</h3>
+            <p class="feature-desc">Be the first to try new features before public release.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-book-fill"></i></div>
+            <h3 class="feature-title">Insider Guides</h3>
+            <p class="feature-desc">Deep-dive tutorials on Excel automation and data workflows.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-gift-fill"></i></div>
+            <h3 class="feature-title">Exclusive Perks</h3>
+            <p class="feature-desc">Subscriber-only discounts and premium content.</p>
+          </article>
         </div>
       </div>
     </section>

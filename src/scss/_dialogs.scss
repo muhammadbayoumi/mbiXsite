@@ -334,66 +334,71 @@
 }
 
 // ═══════════════════════════════════════════
-// VSTO INSTALL DIALOG
+// VSTO INSTALL DIALOG (Classic Windows)
 // ═══════════════════════════════════════════
 
 .vsto-dialog {
-  background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%);
-  border: 1px solid #999;
+  background: #f0f0f0;
+  border: 1px solid #919191;
   border-radius: 6px;
-  font-family: Tahoma, sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.82rem;
   color: #1a1a1a;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  max-width: 540px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  max-width: 580px;
   margin: 0 auto;
   overflow: hidden;
 }
 
+// ── Title Bar ──
 .vsto-titlebar {
-  background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
-  padding: 6px 12px;
+  background: linear-gradient(180deg, #e8eff8 0%, #cfdded 50%, #b8cce4 50%, #c5d6e8 100%);
+  padding: 7px 12px;
+  border-bottom: 1px solid #a0b4c8;
+
+  .vsto-title-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1a3a5c;
+  }
+}
+
+// ── Warning Header ──
+.vsto-warn-header {
+  background: #ffffff;
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #c0c0c0;
-
-  .vsto-title-text { font-size: 0.78rem; font-weight: 600; }
-  .vsto-close { color: #666; cursor: pointer; transition: color var(--transition-fast); }
-  .vsto-close:hover { color: #c80000; }
-}
-
-.vsto-body { padding: 14px 18px; background: #f5f5f5; }
-
-.vsto-warn-row {
-  display: flex;
-  gap: 12px;
   align-items: flex-start;
-  margin-bottom: 14px;
-  position: relative;
+  gap: 12px;
+
+  .vsto-warn-text { flex: 1; }
+
+  .vsto-warn-title {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .vsto-warn-sub {
+    font-size: 0.82rem;
+    color: #333;
+  }
+
+  .vsto-globe-icon {
+    font-size: 2.2rem;
+    color: #4a8db8;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
 }
 
-.vsto-warn-icon { font-size: 1.5rem; color: #c80000; flex-shrink: 0; }
-.vsto-warn-content { flex: 1; }
-.vsto-warn-title {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #c80000;
-  margin-bottom: 2px;
+// ── Meta Info ──
+.vsto-meta {
+  padding: 12px 18px;
+  background: #f5f5f5;
 }
-.vsto-warn-sub { font-size: 0.82rem; color: #1a1a1a; }
-
-.vsto-globe-icon {
-  font-size: 2rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  opacity: 0.7;
-  color: #4a8db8;
-  flex-shrink: 0;
-}
-
-.vsto-meta { margin: 14px 0; padding: 0 4px; }
 
 .vsto-meta-row {
   display: flex;
@@ -401,26 +406,39 @@
   font-size: 0.82rem;
   gap: 8px;
 
-  .vsto-meta-key { font-weight: 700; min-width: 80px; flex-shrink: 0; }
+  .vsto-meta-key {
+    font-weight: 700;
+    min-width: 75px;
+    flex-shrink: 0;
+    color: #1a1a1a;
+  }
+
+  .vsto-meta-value {
+    color: #333;
+  }
 }
 
-.vsto-unknown { color: #d97706; font-weight: 500; }
-
-.vsto-warning-box {
+// ── Security Warning ──
+.vsto-security-box {
   display: flex;
   gap: 10px;
-  background: #fff8e1;
-  border-left: 4px solid #f9a825;
-  padding: 10px 14px;
-  font-size: 0.78rem;
-  color: #4a3a1a;
+  padding: 12px 18px;
+  background: #f0f0f0;
   align-items: flex-start;
-  margin-top: 10px;
-  border-radius: 0 4px 4px 0;
+
+  .vsto-shield {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    color: #c8a000;
+  }
+
+  .vsto-security-text {
+    font-size: 0.78rem;
+    color: #333;
+    line-height: 1.5;
+  }
 }
 
-.vsto-shield { font-size: 1.2rem; flex-shrink: 0; color: #b8860b; }
-.vsto-warning-text { line-height: 1.5; }
 .vsto-more {
   color: #0066cc;
   cursor: pointer;
@@ -429,10 +447,11 @@
   &:hover { text-decoration: underline; }
 }
 
+// ── Buttons ──
 .vsto-buttons {
-  background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
-  border-top: 1px solid #c0c0c0;
-  padding: 10px 18px;
+  background: #f0f0f0;
+  border-top: 1px solid #d0d0d0;
+  padding: 12px 18px;
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -441,7 +460,7 @@
     background: linear-gradient(180deg, #fdfdfd 0%, #e5e5e5 100%);
     border: 1px solid #999;
     padding: 4px 22px;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     cursor: pointer;
     border-radius: 3px;
     min-width: 90px;
@@ -457,5 +476,21 @@
       outline: 2px solid #0078d4;
       outline-offset: 1px;
     }
+
+    &.vsto-btn-install {
+      animation: vstoInstallGlow 4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes vstoInstallGlow {
+  0%, 15% {
+    outline: 2px solid var(--mbx-green);
+    outline-offset: 3px;
+    box-shadow: 0 0 8px rgba(37, 211, 102, 0.3);
+  }
+  30%, 100% {
+    outline: none;
+    box-shadow: none;
   }
 }

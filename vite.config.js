@@ -14,7 +14,8 @@ export default defineConfig(({ command }) => ({
         main:    resolve(__dirname, 'index.html'),
         about:   resolve(__dirname, 'about.html'),
         install: resolve(__dirname, 'install.html'),
-        subscription: resolve(__dirname, 'subscription.html')
+        subscription: resolve(__dirname, 'subscription.html'),
+        help:    resolve(__dirname, 'help-center.html')
       },
       output: {
         manualChunks: {
@@ -45,10 +46,11 @@ export default defineConfig(({ command }) => ({
       partialDirectory: resolve(__dirname, 'src/partials'),
       context(pagePath) {
         // Default context for all pages
-        const isIndex = pagePath.includes('index.html') && !pagePath.includes('about') && !pagePath.includes('install') && !pagePath.includes('subscription');
+        const isIndex = pagePath.includes('index.html') && !pagePath.includes('about') && !pagePath.includes('install') && !pagePath.includes('subscription') && !pagePath.includes('help');
         const isAbout = pagePath.includes('about');
         const isInstall = pagePath.includes('install');
         const isSubscription = pagePath.includes('subscription');
+        const isHelp = pagePath.includes('help');
 
         // Read page URLs from links.json (single source of truth)
         const pages = linksData.pages || {};
@@ -62,12 +64,14 @@ export default defineConfig(({ command }) => ({
           activeInstall: isInstall ? ' active' : '',
           activeAbout: isAbout ? ' active' : '',
           activeSubscription: isSubscription ? ' active' : '',
+          activeHelp: isHelp ? ' active' : '',
 
           // Page URLs from links.json (single source of truth)
           homeUrl:    pages.home    || 'index.html',
           installUrl: pages.install || 'install.html',
           aboutUrl:   pages.about   || 'about.html',
           subscriptionUrl: pages.subscription || 'subscription.html',
+          helpUrl:    pages.help    || 'help-center.html',
         };
       }
     })

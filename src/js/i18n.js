@@ -11,6 +11,7 @@ const translations = {
     nav_install:   'How to Install',
     nav_about:     'About',
     nav_subscription: 'Subscription',
+    nav_help:      'Help Center',
     nav_download:  'Download',
     hero_badge:    'Excel Intelligence Platform · v2.0',
     hero_t1:       'Your Excel.',
@@ -79,25 +80,25 @@ const translations = {
     s1_desc:         'Get the latest .zip from the official Releases page.',
     s2_title:        'Unblock the File',
     s2_desc:         'Windows blocks files downloaded from the internet by default.',
-    s2_l1:           'Right-click mbiXaddin.zip',
-    s2_l2:           'Select Properties (or press Alt+Enter)',
-    s2_l3:           'In the General tab, check Unblock',
-    s2_l4:           'Click Apply, then OK',
+    s2_l1:           'Right-click <code>mbiXaddin.zip</code>',
+    s2_l2:           'Select <strong>Properties</strong> (or press <kbd>Alt</kbd>+<kbd>Enter</kbd>)',
+    s2_l3:           'In the <strong>General</strong> tab, check <strong>Unblock</strong>',
+    s2_l4:           'Click <strong>Apply</strong>, then <strong>OK</strong>',
     s3_title:        'Extract & Run Installer',
     s3_desc:         'Extract the zip to any folder, then run the .vsto file.',
-    s3_l1:           'Extract mbiXaddin.zip',
+    s3_l1:           'Extract <code>mbiXaddin.zip</code>',
     s3_l2:           'Open the extracted folder',
-    s3_l3:           'Double-click mbiXaddin.vsto',
-    s3_l4:           'Click Install in the dialog',
+    s3_l3:           'Double-click <code>mbiXaddin.vsto</code>',
+    s3_l4:           'Click <strong>Install</strong> in the dialog',
     s4_title:        "Open Excel — You're In",
     s4_desc:         'Open Excel. A new mbiXaddin tab will appear in the Ribbon.',
     s4_btn:          'View Ribbon Tour',
     trouble_tag:     'Help',
     trouble_title:   'Troubleshooting',
     t1_title:        'Tab not appearing in Excel',
-    t1_desc:         'Did you Unblock the zip BEFORE extracting?',
+    t1_desc:         'Did you restart Excel after installation? Close all Excel windows completely, then reopen Excel.',
     t2_title:        '"Cannot install" error',
-    t2_desc:         'Make sure all Excel windows are closed.',
+    t2_desc:         'Did you unblock the zip file BEFORE extracting? Right-click the zip → Properties → check "Unblock" → Apply → then extract again.',
     t3_title:        'Antivirus blocks installer',
     t3_desc:         'Add the folder to antivirus exclusions.',
     t4_title:        'Need more help?',
@@ -114,6 +115,7 @@ const translations = {
     nav_install:   'كيفية التثبيت',
     nav_about:     'من نحن',
     nav_subscription: 'الاشتراك',
+    nav_help:      'مركز المساعدة',
     nav_download:  'تحميل',
     hero_badge:    'منصة ذكاء إكسل · v2.0',
     hero_t1:       'إكسل الخاص بك.',
@@ -182,25 +184,25 @@ const translations = {
     s1_desc:         'احصل على آخر إصدار .zip من صفحة الإصدارات الرسمية.',
     s2_title:        'إلغاء حظر الملف',
     s2_desc:         'يحظر ويندوز الملفات المُنزّلة من الإنترنت افتراضياً.',
-    s2_l1:           'انقر بالزر الأيمن على mbiXaddin.zip',
-    s2_l2:           'اختر خصائص (أو اضغط Alt+Enter)',
-    s2_l3:           'في تبويب عام، فعّل إلغاء الحظر',
-    s2_l4:           'اضغط تطبيق ثم موافق',
+    s2_l1:           'انقر بالزر الأيمن على <code>mbiXaddin.zip</code>',
+    s2_l2:           'اختر <strong>خصائص</strong> (أو اضغط <kbd>Alt</kbd>+<kbd>Enter</kbd>)',
+    s2_l3:           'في تبويب <strong>عام</strong>، فعّل <strong>إلغاء الحظر</strong>',
+    s2_l4:           'اضغط <strong>تطبيق</strong> ثم <strong>موافق</strong>',
     s3_title:        'فك الضغط وتشغيل المثبّت',
     s3_desc:         'فك ضغط الملف، ثم شغّل ملف .vsto.',
-    s3_l1:           'فك ضغط mbiXaddin.zip',
+    s3_l1:           'فك ضغط <code>mbiXaddin.zip</code>',
     s3_l2:           'افتح المجلد المُستخرج',
-    s3_l3:           'انقر مرتين على mbiXaddin.vsto',
-    s3_l4:           'اضغط تثبيت في النافذة',
+    s3_l3:           'انقر مرتين على <code>mbiXaddin.vsto</code>',
+    s3_l4:           'اضغط <strong>تثبيت</strong> في النافذة',
     s4_title:        'افتح إكسل — أنت جاهز',
     s4_desc:         'افتح إكسل. سيظهر تبويب جديد mbiXaddin في الشريط.',
     s4_btn:          'جولة في الشريط',
     trouble_tag:     'المساعدة',
     trouble_title:   'حل المشكلات',
     t1_title:        'التبويب لا يظهر في إكسل',
-    t1_desc:         'هل قمت بإلغاء حظر الملف قبل فك الضغط؟',
-    t2_title:        'خطأ "لا يمكن التثبيت"',
-    t2_desc:         'تأكد من إغلاق جميع نوافذ إكسل.',
+    t1_desc:         'هل أعدت تشغيل إكسل بعد التثبيت؟ أغلق جميع نوافذ إكسل تماماً، ثم أعد فتحها. سيجب أن يظهر تبويب mbiX في الشريط.',
+    t2_title:        'خطأ \u201cلا يمكن التثبيت\u201d',
+    t2_desc:         'هل قمت بإلغاء حظر ملف الـ zip قبل فك الضغط؟ انقر بالزر الأيمن على الملف → خصائص → فعّل \u201cإلغاء الحظر\u201d → تطبيق → ثم فك الضغط وأعد المحاولة.',
     t3_title:        'برنامج الحماية يحظر المثبّت',
     t3_desc:         'أضف المجلد إلى استثناءات برنامج الحماية.',
     t4_title:        'تحتاج مساعدة إضافية؟',
@@ -229,24 +231,29 @@ export function getLang() {
 }
 
 /**
- * Replace text content of an element while preserving all child elements.
- * Only replaces direct text nodes, leaving elements (icons, spans, etc.) untouched.
+ * Replace text content while preserving ONLY decorative child elements (icons).
+ * Content inline elements like <code>, <kbd>, <strong> are NOT preserved
+ * because translations include them inline (e.g., "Click <strong>Install</strong>").
+ * Re-appending them would cause text duplication.
  */
 function setTextPreserveChildren(el, text) {
-  // If element has no element children, simple textContent is fine
-  if (el.children.length === 0) {
-    el.textContent = text;
+  // Check if translation already contains HTML tags
+  if (text.includes('<')) {
+    el.innerHTML = text;
     return;
   }
 
-  // Collect all child elements to preserve their order
-  const childElements = Array.from(el.childNodes).filter(node => node.nodeType === Node.ELEMENT_NODE);
+  // Collect only decorative child elements (icons, arrows) — skip <code>, <kbd>, <strong>, etc.
+  const decorativeChildren = Array.from(el.children).filter(child => {
+    const cls = child.className || '';
+    return cls.includes('bi-') || cls.includes('btn-arrow');
+  });
 
   // Clear all content
   el.textContent = text;
 
-  // Re-append child elements in their original order
-  childElements.forEach(child => el.appendChild(child));
+  // Re-append only decorative children at the end
+  decorativeChildren.forEach(child => el.appendChild(child));
 }
 
 let pendingLangUpdate = null;
@@ -266,8 +273,18 @@ function applyLang(lang) {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('is-rtl', lang === 'ar');
 
-    // Apply translations — preserve all child elements (icons, spans, etc.)
+    // Apply translations with inline HTML (e.g., <code>, <strong>)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key]) {
+        el.innerHTML = t[key];
+      }
+    });
+
+    // Apply plain text translations — preserve icons only
     document.querySelectorAll('[data-i18n]').forEach(el => {
+      // Skip if element already has data-i18n-html (handled above)
+      if (el.hasAttribute('data-i18n-html')) return;
       const key = el.getAttribute('data-i18n');
       if (t[key]) {
         setTextPreserveChildren(el, t[key]);
