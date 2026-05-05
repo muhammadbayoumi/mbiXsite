@@ -1,0 +1,74 @@
+// ═══════════════════════════════════════════
+// ABOUT PAGE
+// ═══════════════════════════════════════════
+
+.about-photo-wrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--mbx-green);
+  padding: 4px;
+  box-shadow: 0 0 40px rgba(37, 211, 102, 0.15);
+  margin: 0 auto;
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+  flex-shrink: 0;
+
+  &:hover {
+    box-shadow: 0 0 60px rgba(37, 211, 102, 0.3);
+  }
+}
+
+.about-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--mbx-dark2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--mbx-text3);
+
+  i {
+    font-size: 3rem;
+    margin-bottom: 0.25rem;
+  }
+
+  small {
+    font-size: 0.7rem;
+  }
+}
+
+// Skills badges
+.badge-skill {
+  display: inline-block;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  color: var(--mbx-green);
+  font-size: 0.78rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: rgba(37, 211, 102, 0.2);
+    transform: translateY(-1px);
+  }
+}
+
+.social-link {
+  color: var(--mbx-text2);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  padding-bottom: 2px;
+
+  &:hover, &:focus-visible {
+    color: var(--mbx-green);
+    border-bottom-color: var(--mbx-green);
+  }
+}

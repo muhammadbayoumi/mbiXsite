@@ -1,0 +1,75 @@
+// ═══════════════════════════════════════════
+// TIMELINE
+// ═══════════════════════════════════════════
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--mbx-border);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+
+  &:last-child { padding-bottom: 0; }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(-2rem + 2px);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--mbx-green);
+  border: 2px solid var(--mbx-dark3);
+  box-shadow: 0 0 10px rgba(36, 192, 95, 0.4);
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--mbx-green);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-text {
+  font-size: 0.88rem;
+  color: var(--mbx-text2);
+  line-height: 1.5;
+}
+
+// RTL
+.is-rtl {
+  .timeline {
+    padding-left: 0;
+    padding-right: 2rem;
+
+    &::before { left: unset; right: 6px; }
+  }
+
+  .timeline-dot {
+    left: unset;
+    right: calc(-2rem + 2px);
+  }
+
+  .steps-ol li {
+    padding-left: 0;
+    padding-right: 2.75rem;
+
+    &::before {
+      left: unset;
+      right: 0;
+    }
+  }
+}

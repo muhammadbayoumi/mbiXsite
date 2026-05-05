@@ -1,0 +1,105 @@
+// ═══════════════════════════════════════════
+// LAYOUT HELPERS — Grid Background + Sections
+// ═══════════════════════════════════════════
+
+// ── GRID PATTERN MIXIN ──
+@mixin grid-overlay($color) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient($color 1px, transparent 1px),
+      linear-gradient(90deg, $color 1px, transparent 1px);
+    background-size: var(--mbx-grid-size) var(--mbx-grid-size);
+    mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 40%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 40%, transparent 85%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ── SECTIONS WITH GRID ──
+.section-dark0  { background: var(--mbx-dark0);  @include grid-overlay(var(--mbx-grid-color)); }
+.section-dark1  { background: var(--mbx-dark1);  @include grid-overlay(var(--mbx-grid-color)); }
+.section-dark2  { background: var(--mbx-dark2);  @include grid-overlay(var(--mbx-grid-color)); }
+.section-dark3  { background: var(--mbx-dark3);  @include grid-overlay(var(--mbx-grid-color)); }
+.section-light  { background: var(--mbx-light);  color: var(--mbx-light-text); @include grid-overlay(var(--mbx-grid-color-light)); }
+.section-light-alt { background: var(--mbx-light2); color: var(--mbx-light-text); @include grid-overlay(var(--mbx-grid-color-light)); }
+
+// ── GLOW LINE DIVIDER ──
+.glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mbx-green), transparent);
+  opacity: 0.3;
+  border: none;
+}
+
+// ── STICKY FOOTER LAYOUT ──
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+// ── CONTAINER SPACING ──
+.py-section {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+// ── SECTION HEADER HELPERS ──
+.section-tag {
+  font-size: 0.72rem;
+  color: var(--mbx-green);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--mbx-cream);
+}
+
+.section-title-light {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--mbx-light-text);
+}
+
+.section-sub {
+  color: var(--mbx-text2);
+  max-width: 560px;
+}
+
+.section-sub-light {
+  color: var(--mbx-light-text2);
+  max-width: 560px;
+  font-size: 1rem;
+}

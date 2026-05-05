@@ -1,0 +1,5 @@
+/* Force font-display: swap for all icon fonts to prevent FOIT */
+@font-face {
+  font-family: "bootstrap-icons";
+  font-display: swap;
+}

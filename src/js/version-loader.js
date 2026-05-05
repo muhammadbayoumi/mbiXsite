@@ -1,39 +1,55 @@
 // ═══════════════════════════════════════════
 // VERSION LOADER
-// Fetches version.json from server and applies:
-//   - data-version       → version number text
-//   - data-version-url   → href = download URL
-//   - data-version-notes → release notes (newlines → <br>)
-//   - data-version-sha   → SHA256 hash
 // ═══════════════════════════════════════════
 
 import { getLink } from './links.js';
 
 let versionCache = null;
 
-/**
- * Loads version.json from the live server.
- */
+/** Create a fetch with timeout (in ms) */
+function fetchWithTimeout(url, options = {}, timeoutMs = 5000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  return fetch(url, { ...options, signal: controller.signal })
+    .finally(() => clearTimeout(timeoutId));
+}
+
+/** Get fallback data from links.json for graceful degradation */
+function getFallbackData() {
+  const fallbackUrl = getLink('fallbacks.download_url');
+  const fallbackVersion = getLink('fallbacks.version');
+  if (!fallbackUrl && !fallbackVersion) return null;
+  return {
+    version: fallbackVersion || '',
+    url: fallbackUrl || '',
+    notes: '',
+    sha256: ''
+  };
+}
+
 export async function loadVersion() {
   if (versionCache) return versionCache;
 
   const url = getLink('endpoints.version_check');
-  if (!url) return null;
+  if (!url) return getFallbackData();
 
   try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Failed to load version.json');
+    const res = await fetchWithTimeout(url, { cache: 'no-store' }, 5000);
+    if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load version.json`);
     versionCache = await res.json();
     return versionCache;
   } catch (err) {
-    console.warn('[version-loader] Failed to fetch version:', err);
+    const fallback = getFallbackData();
+    if (fallback) {
+      console.warn('[version-loader] Fetch failed, using fallback data:', err.message);
+      versionCache = fallback;
+      return fallback;
+    }
+    console.warn('[version-loader] Failed to fetch version, no fallback available:', err.message);
     return null;
   }
 }
 
-/**
- * Applies version data to all elements with version attributes.
- */
 export async function applyVersion() {
   const data = await loadVersion();
   if (!data) return;

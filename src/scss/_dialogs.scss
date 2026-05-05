@@ -1,0 +1,461 @@
+// ═══════════════════════════════════════════
+// WINDOWS FILE PROPERTIES DIALOG (Classic)
+// ═══════════════════════════════════════════
+
+.w11-dialog {
+  background: #f0f0f0;
+  border: 1px solid #919191;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.82rem;
+  color: #1a1a1a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  max-width: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+// ── Title Bar ──
+.w11-titlebar {
+  background: #f0f0f0;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .w11-title-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .w11-title-icon {
+    font-size: 1rem;
+    color: #f9a825;
+  }
+
+  .w11-title-text { font-size: 0.85rem; font-weight: 400; color: #1a1a1a; }
+
+  .w11-close {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0 4px;
+    transition: color var(--transition-fast);
+
+    &:hover { color: #c80000; }
+  }
+}
+
+// ── Tabs ──
+.w11-tabs {
+  display: flex;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 0 12px;
+  gap: 2px;
+  background: #f0f0f0;
+
+  .w11-tab {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    color: #444;
+    position: relative;
+    transition: color var(--transition-fast);
+    border: none;
+    background: none;
+    font-family: inherit;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &.active {
+      color: #0078d4;
+      font-weight: 400;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        height: 2.5px;
+        background: #0078d4;
+        border-radius: 1px;
+      }
+    }
+
+    &:hover:not(.active) { color: #0078d4; }
+  }
+}
+
+// ── Body ──
+.w11-body {
+  padding: 16px 18px;
+  background: #ffffff;
+}
+
+// ── File name row ──
+.w11-filename-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  .w11-folder-icon {
+    font-size: 1.4rem;
+    color: #f9a825;
+    flex-shrink: 0;
+  }
+
+  .w11-filename-input {
+    flex: 1;
+    border: 1px solid #c0c0c0;
+    padding: 4px 8px;
+    font-size: 0.82rem;
+    background: #fff;
+    font-family: inherit;
+    border-radius: 2px;
+    outline: none;
+    color: #1a1a1a;
+  }
+}
+
+// ── Property rows ──
+.w11-prop-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 0.78rem;
+
+  .w11-prop-label {
+    font-weight: 400;
+    min-width: 100px;
+    color: #444;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .w11-prop-value {
+    color: #1a1a1a;
+    flex: 1;
+  }
+}
+
+// ── Opens with special layout ──
+.w11-opens-with {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  .w11-folder-icon-sm {
+    font-size: 0.9rem;
+    color: #f9a825;
+  }
+}
+
+// ── Small buttons ──
+.w11-change-btn,
+.w11-advanced-btn {
+  background: #fff;
+  border: 1px solid #c0c0c0;
+  padding: 2px 12px;
+  font-size: 0.76rem;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+  margin-left: auto;
+
+  &:hover { background: #f5f5f5; border-color: #999; }
+}
+
+// ── Separator ──
+.w11-hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 8px 0;
+}
+
+// ── Attributes row ──
+.w11-attributes-row {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .w11-check {
+    font-size: 0.78rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    input { margin: 0; }
+  }
+}
+
+// ── Security row ──
+.w11-security-row {
+  align-items: flex-start;
+  margin-top: 6px;
+  gap: 0;
+
+  .w11-security-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .w11-security-text {
+    font-size: 0.76rem;
+    color: #555;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .w11-unblock-check {
+    font-size: 0.78rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 4px;
+    position: relative;
+
+    input { margin: 0; }
+
+    // Mouse-guide glow animation
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -6px -10px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      animation: guidePulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+  }
+}
+
+// ── Mouse guide animation ──
+@keyframes guidePulse {
+  0%, 20% {
+    border-color: var(--mbx-green);
+    box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
+  }
+  33%, 53% {
+    border-color: transparent;
+    box-shadow: none;
+  }
+  66%, 86% {
+    border-color: var(--mbx-green);
+    box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
+
+// Apply button glow (phase 2 of guide)
+.w11-buttons .w11-btn:nth-child(3) {
+  animation: guidePulseBtn 4s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+// OK button glow (phase 3 of guide)
+.w11-buttons .w11-btn:nth-child(1) {
+  animation: guidePulseBtn 4s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+
+@keyframes guidePulseBtn {
+  0%, 15% {
+    outline: 2px solid var(--mbx-green);
+    outline-offset: 2px;
+  }
+  30%, 100% {
+    outline: none;
+  }
+}
+
+// ── Bottom Buttons ──
+.w11-buttons {
+  background: #f0f0f0;
+  border-top: 1px solid #d0d0d0;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  .w11-btn {
+    background: #fff;
+    border: 1px solid #c0c0c0;
+    padding: 4px 22px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    border-radius: 3px;
+    min-width: 80px;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    color: #1a1a1a;
+
+    &:hover { background: #f5f5f5; }
+
+    &.w11-btn-primary {
+      background: #fff;
+      border-color: #0078d4;
+      color: #1a1a1a;
+
+      &:hover { background: #e6f2ff; }
+    }
+
+    &.w11-btn-focus {
+      outline: 1px dotted #333;
+      outline-offset: 2px;
+    }
+
+    &.w11-btn-disabled {
+      color: #888;
+      background: #f5f5f5;
+      cursor: not-allowed;
+      animation: none !important;
+
+      &:hover { background: #f5f5f5; }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════
+// VSTO INSTALL DIALOG
+// ═══════════════════════════════════════════
+
+.vsto-dialog {
+  background: linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%);
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-family: Tahoma, sans-serif;
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  max-width: 540px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.vsto-titlebar {
+  background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c0c0c0;
+
+  .vsto-title-text { font-size: 0.78rem; font-weight: 600; }
+  .vsto-close { color: #666; cursor: pointer; transition: color var(--transition-fast); }
+  .vsto-close:hover { color: #c80000; }
+}
+
+.vsto-body { padding: 14px 18px; background: #f5f5f5; }
+
+.vsto-warn-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.vsto-warn-icon { font-size: 1.5rem; color: #c80000; flex-shrink: 0; }
+.vsto-warn-content { flex: 1; }
+.vsto-warn-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #c80000;
+  margin-bottom: 2px;
+}
+.vsto-warn-sub { font-size: 0.82rem; color: #1a1a1a; }
+
+.vsto-globe-icon {
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.7;
+  color: #4a8db8;
+  flex-shrink: 0;
+}
+
+.vsto-meta { margin: 14px 0; padding: 0 4px; }
+
+.vsto-meta-row {
+  display: flex;
+  padding: 3px 0;
+  font-size: 0.82rem;
+  gap: 8px;
+
+  .vsto-meta-key { font-weight: 700; min-width: 80px; flex-shrink: 0; }
+}
+
+.vsto-unknown { color: #d97706; font-weight: 500; }
+
+.vsto-warning-box {
+  display: flex;
+  gap: 10px;
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: #4a3a1a;
+  align-items: flex-start;
+  margin-top: 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+.vsto-shield { font-size: 1.2rem; flex-shrink: 0; color: #b8860b; }
+.vsto-warning-text { line-height: 1.5; }
+.vsto-more {
+  color: #0066cc;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+.vsto-buttons {
+  background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-top: 1px solid #c0c0c0;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  .vsto-btn {
+    background: linear-gradient(180deg, #fdfdfd 0%, #e5e5e5 100%);
+    border: 1px solid #999;
+    padding: 4px 22px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    border-radius: 3px;
+    min-width: 90px;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background: linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
+      border-color: #0078d4;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #0078d4;
+      outline-offset: 1px;
+    }
+  }
+}

@@ -1,7 +1,5 @@
 // ═══════════════════════════════════════════
 // LINKS LOADER
-// Loads links.json and applies them to elements
-// with [data-link="path.to.value"]
 // ═══════════════════════════════════════════
 
 import linksData from '../data/links.json';
@@ -10,6 +8,10 @@ export function applyLinks() {
   document.querySelectorAll('[data-link]').forEach(el => {
     const path = el.getAttribute('data-link');
     const value = resolvePath(linksData, path);
+    if (value === undefined) {
+      console.warn(`[links.js] Unknown data-link path: "${path}" on element:`, el.outerHTML.substring(0, 120));
+      return;
+    }
     if (!value) return;
 
     // For <a> tags → set href
@@ -28,7 +30,11 @@ export function applyLinks() {
 }
 
 export function getLink(path) {
-  return resolvePath(linksData, path);
+  const value = resolvePath(linksData, path);
+  if (value === undefined) {
+    console.warn(`[links.js] Unknown link path: "${path}"`);
+  }
+  return value;
 }
 
 function resolvePath(obj, path) {

@@ -1,0 +1,69 @@
+// ═══════════════════════════════════════════
+// DESIGN TOKENS — From Colours.xlsx
+// ═══════════════════════════════════════════
+
+:root {
+  // ── MAIN PALETTE (WhatsApp) ──
+  --mbx-green:       #25d366;
+  --mbx-green-hover: #1da84f;
+  --mbx-green-glow:  rgba(37, 211, 102, 0.25);
+  --mbx-green-dark:  #103a27;
+  --mbx-green-mid:   #3db46e;
+  --mbx-green-light: #ddffe3;
+
+  // Dark palette
+  --mbx-dark0:       #05192d;
+  --mbx-dark1:       #111b21;
+  --mbx-dark2:       #1c1e21;
+  --mbx-dark3:       #0b131a;
+
+  // Light palette
+  --mbx-light:       #ffffff;
+  --mbx-light2:      #fcf5eb;
+  --mbx-light3:      #f7f7fc;
+
+  // Accent
+  --mbx-gold:        #ffbc4b;
+  --mbx-bright-green:#65ff8f;
+  --mbx-cyan:        #72e5fe;
+
+  // Text (dark pages)
+  --mbx-cream:       #fcf5eb;
+  --mbx-text2:       #8899b4;
+  --mbx-text3:       #4a5c78;
+
+  // Text (light pages)
+  --mbx-light-text:  #111b21;
+  --mbx-light-text2: #5a6470;
+
+  // Utility
+  --mbx-border:      #1e2738;
+  --mbx-border-light: rgba(17, 27, 33, 0.08);
+  --mbx-warn:        #ffbc4b;
+  --mbx-error:       #f87171;
+  --mbx-blue:        #72e5fe;
+
+  // Shadows
+  --mbx-shadow-sm:   0 2px 8px rgba(5, 25, 45, 0.04);
+  --mbx-shadow-md:   0 4px 16px rgba(5, 25, 45, 0.06);
+  --mbx-shadow-lg:   0 8px 28px rgba(5, 25, 45, 0.15);
+  --mbx-shadow-green: 0 4px 18px rgba(37, 211, 102, 0.12);
+
+  // Grid
+  --mbx-grid-color:       rgba(37, 211, 102, 0.03);
+  --mbx-grid-color-light: rgba(17, 27, 33, 0.03);
+  --mbx-grid-size:        48px;
+
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  // Z-index
+  --z-background: 0;
+  --z-grid:       1;
+  --z-content:    2;
+  --z-sticky:     100;
+  --z-dropdown:   200;
+  --z-modal:      300;
+}

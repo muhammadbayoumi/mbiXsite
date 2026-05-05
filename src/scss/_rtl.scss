@@ -1,0 +1,62 @@
+// ═══════════════════════════════════════════
+// RTL SUPPORT
+// ═══════════════════════════════════════════
+
+.is-rtl {
+  font-family: 'Inter', 'Tahoma', system-ui, sans-serif;
+
+  // Navbar
+  .navbar-mbx, .navbar-mbx-light {
+    direction: ltr;
+    .navbar-nav { direction: rtl; }
+  }
+
+  // Hero and sections
+  .hero, .section-light, .section-light-alt, .section-dark1, .section-dark3 {
+    direction: rtl;
+    text-align: center;
+  }
+
+  .hero-sub { direction: rtl; }
+
+  // Steps
+  .steps-ol li {
+    padding-left: 0;
+    padding-right: 2.75rem;
+
+    &::before {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  // Timeline
+  .timeline {
+    padding-left: 0;
+    padding-right: 2rem;
+
+    &::before { left: unset; right: 6px; }
+  }
+
+  .timeline-dot {
+    left: unset;
+    right: calc(-2rem + 2px);
+  }
+
+  // HIW steps
+  .hiw-step {
+    padding-left: 0;
+    padding-right: 3rem;
+
+    .hiw-number {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  // Schema table
+  .schema-table th,
+  .schema-table td {
+    text-align: right;
+  }
+}

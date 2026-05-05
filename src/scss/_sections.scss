@@ -1,0 +1,105 @@
+// ═══════════════════════════════════════════
+// SECTIONS (How it Works, Demo, Schema, etc.)
+// ═══════════════════════════════════════════
+
+// Feature grid section
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+// How it works — step cards
+.hiw-step {
+  position: relative;
+  padding-left: 3rem;
+
+  .hiw-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: rgba(36, 192, 95, 0.15);
+    border: 2px solid var(--mbx-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--mbx-green);
+    flex-shrink: 0;
+  }
+
+  .hiw-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--mbx-cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .hiw-desc {
+    font-size: 0.9rem;
+    color: var(--mbx-text2);
+    line-height: 1.6;
+  }
+}
+
+// Code/preview block
+.code-block {
+  background: var(--mbx-dark0);
+  border: 1px solid var(--mbx-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  font-family: var(--font-family-monospace);
+  font-size: 0.82rem;
+  color: var(--mbx-text2);
+  overflow-x: auto;
+  line-height: 1.7;
+
+  .code-comment { color: var(--mbx-text3); }
+  .code-keyword { color: var(--mbx-green); }
+  .code-string { color: var(--mbx-warn); }
+  .code-function { color: var(--mbx-blue); }
+}
+
+// Schema table
+.schema-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.88rem;
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--mbx-border);
+  }
+
+  th {
+    color: var(--mbx-green);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(36, 192, 95, 0.05);
+  }
+
+  td {
+    color: var(--mbx-text2);
+  }
+
+  tr:hover td {
+    background: rgba(36, 192, 95, 0.03);
+  }
+
+  code {
+    background: rgba(36, 192, 95, 0.1);
+    color: var(--mbx-green);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-family: var(--font-family-monospace);
+  }
+}
