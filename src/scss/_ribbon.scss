@@ -348,7 +348,7 @@
   color: #1a1a1a;
 }
 
-/* mbiX Tab — green (active custom tab) */
+/* mbiX Tab — green with glow (active custom tab) */
 .excel-tab-green {
   background: #217346;
   color: #fff;
@@ -356,11 +356,14 @@
   margin-right: 4px;
   border-bottom: none;
   border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 10px rgba(33, 115, 70, 0.4), 0 0 20px rgba(33, 115, 70, 0.2);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
 .excel-tab-green:hover {
   background: #1a5c38;
   color: #fff;
+  box-shadow: 0 0 14px rgba(33, 115, 70, 0.5), 0 0 28px rgba(33, 115, 70, 0.3);
 }
 
 /* ── Ribbon Content ── */
