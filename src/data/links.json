@@ -28,7 +28,6 @@
     "help":    "help-center.html"
   },
   "support": {
-    "issues":           "https://github.com/muhammadbayoumi/mbi-addin/issues",
-    "discussions":      "https://github.com/muhammadbayoumi/mbi-addin/discussions"
+    "issues": "https://github.com/muhammadbayoumi/mbi-addin/issues"
   }
 }
