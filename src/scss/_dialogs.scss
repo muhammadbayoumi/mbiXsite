@@ -246,34 +246,26 @@
 
 // ── Mouse guide animation ──
 @keyframes guidePulse {
-  0%, 20% {
+  0%, 18% {
     border-color: var(--mbx-green);
     box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
   }
-  33%, 53% {
-    border-color: transparent;
-    box-shadow: none;
-  }
-  66%, 86% {
-    border-color: var(--mbx-green);
-    box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
-  }
-  100% {
+  30%, 100% {
     border-color: transparent;
     box-shadow: none;
   }
 }
 
-// Apply button glow (phase 2 of guide)
+// Apply button glow (phase 2: after Unblock finishes)
 .w11-buttons .w11-btn:nth-child(3) {
   animation: guidePulseBtn 4s ease-in-out infinite;
-  animation-delay: 1.3s;
+  animation-delay: 1.5s;
 }
 
-// OK button glow (phase 3 of guide)
+// OK button glow (phase 3: after Apply finishes)
 .w11-buttons .w11-btn:nth-child(1) {
   animation: guidePulseBtn 4s ease-in-out infinite;
-  animation-delay: 2.6s;
+  animation-delay: 3s;
 }
 
 @keyframes guidePulseBtn {

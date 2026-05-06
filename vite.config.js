@@ -57,7 +57,7 @@ export default defineConfig(({ command }) => ({
 
         return {
           // Navbar theme
-          navbarTheme: isInstall ? 'navbar-mbx-light' : 'navbar-dark navbar-mbx',
+          navbarTheme: isInstall ? 'navbar-mbx-install' : 'navbar-dark navbar-mbx',
 
           // Active states
           activeHome: isIndex ? ' active' : '',

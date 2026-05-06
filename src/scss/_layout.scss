@@ -26,6 +26,11 @@
   }
 }
 
+// ── PAGE BACKGROUNDS ──
+.page-light   { background: var(--mbx-light2); }
+.page-install { background: var(--mbx-light2); }
+.page-dark    { background: var(--mbx-dark0); }
+
 // ── SECTIONS WITH GRID ──
 .section-dark0  { background: var(--mbx-dark0);  @include grid-overlay(var(--mbx-grid-color)); }
 .section-dark1  { background: var(--mbx-dark1);  @include grid-overlay(var(--mbx-grid-color)); }
@@ -33,6 +38,14 @@
 .section-dark3  { background: var(--mbx-dark3);  @include grid-overlay(var(--mbx-grid-color)); }
 .section-light  { background: var(--mbx-light);  color: var(--mbx-light-text); @include grid-overlay(var(--mbx-grid-color-light)); }
 .section-light-alt { background: var(--mbx-light2); color: var(--mbx-light-text); @include grid-overlay(var(--mbx-grid-color-light)); }
+
+// Install page hero — mint green header
+.install-hero {
+  background: #e6ffda;
+  color: var(--mbx-light-text);
+  padding: var(--py-section) 0;
+  @include grid-overlay(var(--mbx-grid-color-light));
+}
 
 // ── GLOW LINE DIVIDER ──
 .glow-line {
