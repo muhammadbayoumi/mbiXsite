@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mbiX — Excel Intelligence Platform | Sync Google Sheets to Excel via ETL</title>
+  <meta name="description" content="mbiX is an Excel Add-in that syncs Google Sheets data into a local SQLite database through a full ETL pipeline."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/"/>
+  <meta property="og:title" content="mbiX — Excel Intelligence Platform"/>
+  <meta property="og:description" content="Sync Google Sheets data into Excel via a full ETL pipeline."/>
+  <meta property="og:image" content="https://muhammadbayoumi.github.io/mbiXsite/og-image.png"/>
+  <link rel="preconnect" href="https://raw.githubusercontent.com"/>
+  <link rel="preload" as="style" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+{{> navbar }}
+
+  <main id="main-content">
+    <!-- ══════ HERO ══════ -->
+    <section class="hero section-dark3" id="hero" aria-label="Hero section" style="padding-top: 100px;">
+      <div class="container text-center py-5">
+        <div class="hero-badge mb-4" data-i18n="hero_badge">Excel Intelligence Platform</div>
+        <h1 class="hero-title mb-3">
+          <span data-i18n="hero_t1">Your Excel.</span><br/>
+          <span class="text-success" data-i18n="hero_t2">Supercharged</span><br/>
+          <span style="color: var(--mbx-text3)" data-i18n="hero_t3">by Real Data.</span>
+        </h1>
+        <p class="hero-sub mx-auto mb-4" data-i18n="hero_sub">
+          mbiX syncs Google Sheets data into a local SQLite database through a full
+          ETL pipeline — giving your Excel workbooks live, validated, schema-driven data.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a class="btn-pill-green" data-version-url data-i18n="nav_download">Download <i class="bi bi-download btn-arrow" aria-hidden="true"></i></a>
+          <a href="#demo" class="btn-pill-dark-on-dark" data-i18n="hero_btn2">Interactive Demo <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+        </div>
+        <!-- Stats -->
+        <div class="row justify-content-center g-4 mt-5">
+          <div class="col-6 col-md-3 text-center">
+            <div class="stat-value">5<span class="text-success">+</span></div>
+            <div class="stat-label" data-i18n="stat1_lbl">System Tables</div>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="stat-value">3</div>
+            <div class="stat-label" data-i18n="stat2_lbl">Sync Lanes</div>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="stat-value">0</div>
+            <div class="stat-label" data-i18n="stat3_lbl">Ghost Processes</div>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="stat-value">100<span class="text-success">%</span></div>
+            <div class="stat-label" data-i18n="stat4_lbl">COM Safe</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <!-- ══════ FEATURES ══════ -->
+    <section id="features" class="section-dark1 py-section" aria-labelledby="features-title">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="feat_tag">Features</div>
+          <h2 id="features-title" class="section-title mb-3" data-i18n="feat_title">Built for Data Engineers</h2>
+          <p class="section-sub mx-auto" data-i18n="feat_desc">
+            Everything you need to bridge Google Sheets and Excel — without the cloud middleware.
+          </p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h3 class="feature-title" data-i18n="feat_1_title">ETL Pipeline</h3>
+            <p class="feature-desc" data-i18n="feat_1_desc">Full extract, transform, load cycle with built-in validation and schema enforcement.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-database-fill"></i></div>
+            <h3 class="feature-title" data-i18n="feat_2_title">SQLite Engine</h3>
+            <p class="feature-desc" data-i18n="feat_2_desc">Local, fast, zero-config database that lives inside your Excel Add-in. No server needed.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-rulers"></i></div>
+            <h3 class="feature-title" data-i18n="feat_3_title">Schema Governance</h3>
+            <p class="feature-desc" data-i18n="feat_3_desc">Define rules once. mbiX validates every column, type, and relation before it hits your sheet.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></div>
+            <h3 class="feature-title" data-i18n="feat_4_title">Live Sync</h3>
+            <p class="feature-desc" data-i18n="feat_4_desc">Pull real-time data from Google Sheets with configurable refresh intervals.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+            <h3 class="feature-title" data-i18n="feat_5_title">COM Safe</h3>
+            <p class="feature-desc" data-i18n="feat_5_desc">Native VSTO architecture ensures 100% compatibility with Excel without ghost processes.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><i class="bi bi-lock-fill"></i></div>
+            <h3 class="feature-title" data-i18n="feat_6_title">Zero Dependencies</h3>
+            <p class="feature-desc" data-i18n="feat_6_desc">No cloud servers, no subscriptions, no third-party lock-in. Your data stays yours.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ HOW IT WORKS ══════ -->
+    <section id="how" class="section-dark3 py-section" aria-labelledby="how-title">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="how_tag">Architecture</div>
+          <h2 id="how-title" class="section-title mb-3" data-i18n="how_title">How It Works</h2>
+          <p class="section-sub mx-auto" data-i18n="how_desc">A 3-lane sync pipeline that moves data from cloud to workbook in seconds.</p>
+        </div>
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="hiw-step">
+              <div class="hiw-number" aria-hidden="true">1</div>
+              <h3 class="hiw-title" data-i18n="how_1_title">Configure Tables</h3>
+              <p class="hiw-desc" data-i18n="how_1_desc">Define your system tables in Google Sheets. mbiX reads the schema and knows what to sync.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="hiw-step">
+              <div class="hiw-number" aria-hidden="true">2</div>
+              <h3 class="hiw-title" data-i18n="how_2_title">Run Sync</h3>
+              <p class="hiw-desc" data-i18n="how_2_desc">One click triggers the full ETL pipeline. Data is validated, cleaned, and loaded into SQLite.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="hiw-step">
+              <div class="hiw-number" aria-hidden="true">3</div>
+              <h3 class="hiw-title" data-i18n="how_3_title">Work in Excel</h3>
+              <p class="hiw-desc" data-i18n="how_3_desc">Your data appears instantly in the Ribbon — ready to query, pivot, and analyze.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <!-- ══════ DEMO ══════ -->
+    <section id="demo" class="section-dark1 py-section" aria-labelledby="demo-title">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="demo_tag">Live Demo</div>
+          <h2 id="demo-title" class="section-title mb-3" data-i18n="demo_title">See mbiX in Action</h2>
+          <p class="section-sub mx-auto" data-i18n="demo_desc">Watch how a single click transforms raw Google Sheets into structured Excel intelligence.</p>
+        </div>
+        <figure>
+          <div class="code-block" role="img" aria-label="Demo code visualization">
+            <span class="code-comment">// mbiX Sync Pipeline — Demo Preview</span><br/>
+            <span class="code-keyword">const</span> pipeline = <span class="code-keyword">new</span> <span class="code-function">ETLPipeline</span>();<br/><br/>
+            <span class="code-comment">// 1. Extract from Google Sheets</span><br/>
+            <span class="code-keyword">await</span> pipeline.<span class="code-function">extract</span>(sheetsConfig);<br/><br/>
+            <span class="code-comment">// 2. Transform & Validate</span><br/>
+            pipeline.<span class="code-function">transform</span>(schemaRules);<br/><br/>
+            <span class="code-comment">// 3. Load into SQLite</span><br/>
+            <span class="code-keyword">await</span> pipeline.<span class="code-function">load</span>(sqliteDb);<br/><br/>
+            <span class="code-comment">// 4. Render in Excel Ribbon</span><br/>
+            ribbon.<span class="code-function">refresh</span>(pipeline.data);
+          </div>
+          <figcaption class="visually-hidden">ETL pipeline demo code</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ══════ SCHEMA ══════ -->
+    <section id="schema" class="section-dark3 py-section" aria-labelledby="schema-title">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="schema_tag">Data Model</div>
+          <h2 id="schema-title" class="section-title mb-3" data-i18n="schema_title">Schema Reference</h2>
+          <p class="section-sub mx-auto" data-i18n="schema_desc">5 system tables power the entire platform. Clean, relational, and version-controlled.</p>
+        </div>
+        <div class="table-responsive">
+          <table class="schema-table" role="table" aria-label="System tables schema">
+            <thead>
+              <tr role="row">
+                <th scope="col" data-i18n="schema_table">Table</th>
+                <th scope="col" data-i18n="schema_cols">Columns</th>
+                <th scope="col" data-i18n="schema_purpose">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr role="row"><td><code>SYS_SyncConfig</code></td><td>8</td><td>Defines sync sources, targets, and refresh intervals</td></tr>
+              <tr role="row"><td><code>SYS_SchemaRules</code></td><td>6</td><td>Column-level validation rules and data types</td></tr>
+              <tr role="row"><td><code>SYS_PipelineLog</code></td><td>5</td><td>Audit trail for every ETL run</td></tr>
+              <tr role="row"><td><code>SYS_LookupTables</code></td><td>4</td><td>Reference data for dropdowns and relations</td></tr>
+              <tr role="row"><td><code>SYS_UserSettings</code></td><td>3</td><td>Per-user preferences and licensing</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{> footer }}
+</body>
+</html>
