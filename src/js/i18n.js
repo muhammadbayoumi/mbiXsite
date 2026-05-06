@@ -62,16 +62,19 @@ const translations = {
     schema_cols:   'Columns',
     schema_purpose:'Purpose',
     about_tag:     'The Engineer',
-    about_name:    '[Your Name]',
-    about_role:    'Software Engineer & Creator of mbiX',
-    about_bio:     'The mind behind mbiX — an Excel Intelligence Platform that transforms how teams work with data inside Microsoft Excel.',
+    about_name:    'Muhammad Bayoumi',
+    about_role:    'Senior Technical Office Engineer, and <span class="about-role-highlight">The mind behind mbiX</span>',
+    about_bio_1:   'Civil engineer with <span data-years-since="2019"></span>+ years of experience in tendering, technical office work, quantity surveying, and cost estimation on large-scale construction projects across Egypt and Saudi Arabia.',
+    about_bio_2:   'The mind behind mbiX — an Excel VSTO add-in designed to help teams pull and update data inside Microsoft Excel seamlessly — eliminating the friction of manual updates.',
+    about_bio_3:   'A self-motivated, ethics-driven engineer committed to continuous learning and to delivering real value to colleagues in ways that strengthen team spirit and collaboration. My ambition is to be part of leading positive change in the world.',
     story_tag:     'The Story',
     story_title:   'Why mbiX?',
-    story_p1:      'Every data team faces the same problem: critical business data lives in Google Sheets, but the real work happens in Excel.',
-    story_p2:      'mbiX was born from this frustration. Instead of building yet another cloud tool, I built the solution where the work actually happens.',
-    timeline_1:    'First prototype — basic sync from Google Sheets to Excel',
-    timeline_2:    'Full ETL pipeline with validation, schema rules, and PipelineLogger',
-    timeline_3:    'Dynamic Ribbon, RSA licensing, Export Engine, and public release',
+    story_p1:      'In every construction project, the same problem repeats: pricing data, material rates, and BOQ breakdowns live in Google Sheets — shared across teams, updated by dozens of people. But the real engineering work happens in Excel.',
+    story_p2:      'mbiX was born from this daily frustration. Instead of waiting for an IT department to build a cloud solution, Muhammad built the tool where the work actually happens — directly inside Excel, with a full ETL pipeline, schema governance, and zero external dependencies.',
+    timeline_0:    'Joined Samco as Site Engineer, then moved to Technical Office — first exposure to the data sync problem',
+    timeline_1:    'First mbiX prototype — basic sync from Google Sheets to Excel using C# and VSTO',
+    timeline_2:    'Full ETL pipeline with validation, schema rules, and PipelineLogger. Promoted to Senior QS and Cost Estimation Engineer',
+    timeline_3:    'Moved to SAPAC in Riyadh as Senior Technical Office Engineer. Dynamic Ribbon, RSA licensing, Export Engine, and public release of mbiX',
     install_tag:    'Get Started',
     install_title:  'Install mbiX in Minutes',
     install_sub:    'Follow the steps below to install mbiX on your Windows machine — no admin rights required.',
@@ -166,16 +169,19 @@ const translations = {
     schema_cols:   'الأعمدة',
     schema_purpose:'الغرض',
     about_tag:     'المهندس',
-    about_name:    '[اسمك هنا]',
-    about_role:    'مهندس برمجيات ومبتكر mbiX',
-    about_bio:     'العقل المدبر وراء mbiX — منصة ذكاء إكسل التي تُحوّل طريقة عمل الفِرق مع البيانات داخل Microsoft Excel.',
+    about_name:    'محمد بيومي',
+    about_role:    'مهندس مكتب فني أول، <span class="about-role-highlight">والعقل المدبر وراء mbiX</span>',
+    about_bio_1:   'مهندس مدني بخبرة تتجاوز <span data-years-since="2019"></span> سنوات في المناقصات وأعمال المكتب الفني وحصر الكميات وتقدير التكاليف في مشاريع البناء الكبرى بمصر والسعودية.',
+    about_bio_2:   'العقل المدبر وراء mbiX — إضافة Excel VSTO مصممة لمساعدة الفِرق على سحب وتحديث البيانات داخل Microsoft Excel بسلاسة — مما يلغي احتكاك التحديثات اليدوية.',
+    about_bio_3:   'مهندس طموح ذاتي الدافع، ملتزم بالتعلم المستمر وتقديم قيمة حقيقية للزملاء بطرق تعزز روح الفريق والتعاون. طموحي أن أكون جزءاً من قيادة التغيير الإيجابي في العالم.',
     story_tag:     'القصة',
     story_title:   'لماذا mbiX؟',
-    story_p1:      'كل فريق بيانات يواجه نفس المشكلة: البيانات الحيوية في Google Sheets، لكن العمل الحقيقي يحدث في Excel.',
-    story_p2:      'وُلد mbiX من هذا الإحباط. بدلاً من بناء أداة سحابية أخرى، بنيت الحل حيث يحدث العمل فعلاً.',
-    timeline_1:    'النموذج الأولي — مزامنة أساسية من Google Sheets إلى Excel',
-    timeline_2:    'خط أنابيب ETL كامل مع التحقق وقواعد المخطط وPipelineLogger',
-    timeline_3:    'Ribbon ديناميكي، ترخيص RSA، محرك التصدير، والإطلاق العام',
+    story_p1:      'في كل مشروع بناء، تتكرر نفس المشكلة: بيانات التسعير ومعدلات المواد وتفاصيل جداول الكميات موجودة في Google Sheets — مشتركة بين الفِرق ويحدّثها عشرات الأشخاص. لكن العمل الهندسي الحقيقي يحدث في Excel.',
+    story_p2:      'وُلد mbiX من هذا الإحباط اليومي. بدلاً من انتظار قسم تقنية المعلومات لبناء حل سحابي، بنى محمد الأداة حيث يحدث العمل فعلاً — داخل Excel مباشرة، بخط أنابيب ETL كامل وحوكمة للمخطط وصفر تبعيات خارجية.',
+    timeline_0:    'التحق بشركة سامكو كمهندس موقع، ثم انتقل للمكتب الفني — أول تعرض لمشكلة مزامنة البيانات',
+    timeline_1:    'أول نموذج أولي لـ mbiX — مزامنة أساسية من Google Sheets إلى Excel باستخدام C# و VSTO',
+    timeline_2:    'خط أنابيب ETL كامل مع التحقق وقواعد المخطط و PipelineLogger. ترقية لمهندس حصر كميات وتقدير تكاليف أول',
+    timeline_3:    'الانتقال لشركة SAPAC بالرياض كمهندس مكتب فني أول. Ribbon ديناميكي، ترخيص RSA، محرك التصدير، والإطلاق العام لـ mbiX',
     install_tag:    'ابدأ الآن',
     install_title:  'ثبّت mbiX في دقائق',
     install_sub:    'اتبع الخطوات التالية لتثبيت mbiX على جهازك — لا حاجة لصلاحيات المسؤول.',
@@ -200,7 +206,7 @@ const translations = {
     trouble_tag:     'المساعدة',
     trouble_title:   'حل المشكلات',
     t1_title:        'التبويب لا يظهر في إكسل',
-    t1_desc:         'هل أعدت تشغيل إكسل بعد التثبيت؟ أغلق جميع نوافذ إكسل تماماً، ثم أعد فتحها. سيجب أن يظهر تبويب mbiX في الشريط.',
+    t1_desc:         'هل أعدت تشغيل إكسل بعد التثبيت؟ أغلق جميع نوافذ إكسل تماماً، ثم أعد فتحها.',
     t2_title:        'خطأ \u201cلا يمكن التثبيت\u201d',
     t2_desc:         'هل قمت بإلغاء حظر ملف الـ zip قبل فك الضغط؟ انقر بالزر الأيمن على الملف → خصائص → فعّل \u201cإلغاء الحظر\u201d → تطبيق → ثم فك الضغط وأعد المحاولة.',
     t3_title:        'برنامج الحماية يحظر المثبّت',
@@ -217,6 +223,9 @@ let currentLang = localStorage.getItem('mbx-lang') || 'en';
 
 export function initI18n() {
   applyLang(currentLang);
+
+  // Fill dynamic year calculations
+  applyDynamicYears();
 }
 
 export function setLang(lang) {
@@ -224,6 +233,9 @@ export function setLang(lang) {
   currentLang = lang;
   localStorage.setItem('mbx-lang', lang);
   applyLang(lang);
+
+  // Re-apply dynamic years after language switch
+  applyDynamicYears();
 }
 
 export function getLang() {
@@ -231,28 +243,34 @@ export function getLang() {
 }
 
 /**
+ * Fills elements with [data-years-since="YYYY"] with the dynamic year count.
+ * Example: <span data-years-since="2019"></span> → "6" (if current year is 2025)
+ */
+function applyDynamicYears() {
+  const currentYear = new Date().getFullYear();
+  document.querySelectorAll('[data-years-since]').forEach(el => {
+    const startYear = parseInt(el.getAttribute('data-years-since'), 10);
+    if (!isNaN(startYear)) {
+      el.textContent = String(currentYear - startYear);
+    }
+  });
+}
+
+/**
  * Replace text content while preserving ONLY decorative child elements (icons).
- * Content inline elements like <code>, <kbd>, <strong> are NOT preserved
- * because translations include them inline (e.g., "Click <strong>Install</strong>").
- * Re-appending them would cause text duplication.
  */
 function setTextPreserveChildren(el, text) {
-  // Check if translation already contains HTML tags
   if (text.includes('<')) {
     el.innerHTML = text;
     return;
   }
 
-  // Collect only decorative child elements (icons, arrows) — skip <code>, <kbd>, <strong>, etc.
   const decorativeChildren = Array.from(el.children).filter(child => {
     const cls = child.className || '';
-    return cls.includes('bi-') || cls.includes('btn-arrow');
+    return cls.includes('bi-') || cls.includes('btn-arrow') || cls.includes('about-role-highlight');
   });
 
-  // Clear all content
   el.textContent = text;
-
-  // Re-append only decorative children at the end
   decorativeChildren.forEach(child => el.appendChild(child));
 }
 
@@ -262,18 +280,16 @@ function applyLang(lang) {
   const t = translations[lang];
   if (!t) return;
 
-  // Cancel any pending update to batch rapid switches
   if (pendingLangUpdate) cancelAnimationFrame(pendingLangUpdate);
 
   pendingLangUpdate = requestAnimationFrame(() => {
     pendingLangUpdate = null;
 
-    // Direction & font
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('is-rtl', lang === 'ar');
 
-    // Apply translations with inline HTML (e.g., <code>, <strong>)
+    // Apply HTML translations
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const key = el.getAttribute('data-i18n-html');
       if (t[key]) {
@@ -281,9 +297,8 @@ function applyLang(lang) {
       }
     });
 
-    // Apply plain text translations — preserve icons only
+    // Apply text translations — preserve icons and highlights
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      // Skip if element already has data-i18n-html (handled above)
       if (el.hasAttribute('data-i18n-html')) return;
       const key = el.getAttribute('data-i18n');
       if (t[key]) {
@@ -291,7 +306,7 @@ function applyLang(lang) {
       }
     });
 
-    // Update document title if translated
+    // Update document title
     const titleEl = document.querySelector('title[data-i18n]');
     if (titleEl && t[titleEl.dataset.i18n]) {
       document.title = t[titleEl.dataset.i18n];

@@ -4,19 +4,19 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About — mbiX | Excel Intelligence Platform</title>
-  <meta name="description" content="Meet the engineer behind mbiX."/>
+  <meta name="description" content="Meet Muhammad Bayoumi — the civil engineer who built mbiX to solve real-world data challenges in Excel."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/about.html"/>
   <meta property="og:type" content="profile"/>
   <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/about.html"/>
   <meta property="og:title" content="About — mbiX"/>
-  <meta property="og:description" content="Meet the engineer behind mbiX."/>
+  <meta property="og:description" content="Meet Muhammad Bayoumi — the civil engineer who built mbiX."/>
   <meta property="og:image" content="https://muhammadbayoumi.github.io/mbiXsite/og-image.png"/>
   <link rel="preconnect" href="https://raw.githubusercontent.com"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
   <script type="module" crossorigin src="/mbiXsite/assets/bootstrap-BhqDHsqn.js"></script>
-  <script type="module" crossorigin src="/mbiXsite/assets/main-C8j_fC4c.js"></script>
-  <link rel="stylesheet" crossorigin href="/mbiXsite/assets/main-De4XX2Ku.css">
+  <script type="module" crossorigin src="/mbiXsite/assets/main-B8RoKlxI.js"></script>
+  <link rel="stylesheet" crossorigin href="/mbiXsite/assets/main-8NkzIMmG.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -43,40 +43,62 @@
     <!-- ══════ ABOUT HERO ══════ -->
     <section class="section-dark3" id="about-hero" aria-labelledby="about-name" style="padding-top: 100px;">
       <div class="container">
-        <div class="row align-items-center g-5 py-5">
-          <!-- Photo -->
-          <div class="col-lg-4 text-center">
-            <div class="about-photo-wrap mx-auto" role="img" aria-label="Profile photo placeholder">
-              <div class="about-photo-placeholder">
-                <i class="bi bi-person-circle"></i>
-                <small>Your Photo</small>
+        <div class="row g-5 py-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="section-tag mb-2" data-i18n="about_tag">The Engineer</div>
+            <h1 id="about-name" class="section-title mb-3" data-i18n="about_name">Muhammad Bayoumi</h1>
+            <p class="mb-3" style="color: var(--mbx-green); font-weight: 600; font-size: 1.1rem;" data-i18n="about_role">
+              Senior Technical Office Engineer &amp; Creator of mbiX
+            </p>
+            <p style="color: var(--mbx-text2); max-width: 640px; line-height: 1.8;" data-i18n="about_bio">
+              A civil engineer with 4+ years of experience in technical offices, quantity surveying,
+              and cost estimation across large-scale construction projects in Egypt and Saudi Arabia.
+              Frustrated by the daily pain of syncing Google Sheets data into Excel manually,
+              he built mbiX from scratch — a full VSTO add-in with an ETL pipeline, schema governance,
+              and zero external dependencies. What started as a personal productivity tool became
+              a complete Excel Intelligence Platform.
+            </p>
+
+            <!-- Certifications -->
+            <div class="d-flex flex-wrap gap-2 mt-4" aria-label="Certifications">
+              <span class="badge-cert"><i class="bi bi-award-fill" aria-hidden="true"></i> IPMA Level D — Certified Project Manager</span>
+              <span class="badge-cert"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Saudi Council of Engineers</span>
+              <span class="badge-cert"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Egyptian Engineering Syndicate</span>
+            </div>
+
+            <!-- Skills: Engineering -->
+            <div class="mt-4" aria-label="Engineering skills">
+              <div class="skills-group-title"><i class="bi bi-building" aria-hidden="true"></i> Engineering</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="badge-skill">Cost Estimation</span>
+                <span class="badge-skill">BOQ / Quantity Surveying</span>
+                <span class="badge-skill">Tendering</span>
+                <span class="badge-skill">Technical Office</span>
+                <span class="badge-skill">Project Management</span>
+                <span class="badge-skill">Contract Administration</span>
               </div>
             </div>
-          </div>
-          <!-- Bio -->
-          <div class="col-lg-8">
-            <div class="section-tag mb-2" data-i18n="about_tag">The Engineer</div>
-            <h1 id="about-name" class="section-title mb-3" data-i18n="about_name">[Your Name]</h1>
-            <p class="mb-3" style="color: var(--mbx-green); font-weight: 600; font-size: 1.1rem;" data-i18n="about_role">Software Engineer & Creator of mbiX</p>
-            <p style="color: var(--mbx-text2); max-width: 600px; line-height: 1.7;" data-i18n="about_bio">
-              The mind behind mbiX — an Excel Intelligence Platform that transforms how teams work with data inside Microsoft Excel.
-            </p>
-            <!-- Skills -->
-            <div class="d-flex flex-wrap gap-2 mt-4" aria-label="Technical skills">
-              <span class="badge-skill">C# / .NET</span>
-              <span class="badge-skill">VSTO</span>
-              <span class="badge-skill">Excel Interop</span>
-              <span class="badge-skill">SQLite</span>
-              <span class="badge-skill">ETL Pipelines</span>
-              <span class="badge-skill">Google Sheets API</span>
-              <span class="badge-skill">COM Interop</span>
-              <span class="badge-skill">UI/UX Design</span>
+
+            <!-- Skills: Software -->
+            <div class="mt-3" aria-label="Software skills">
+              <div class="skills-group-title"><i class="bi bi-code-slash" aria-hidden="true"></i> Software</div>
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <span class="badge-skill">C# / .NET</span>
+                <span class="badge-skill">VSTO</span>
+                <span class="badge-skill">Excel Interop</span>
+                <span class="badge-skill">SQLite</span>
+                <span class="badge-skill">ETL Pipelines</span>
+                <span class="badge-skill">Google Sheets API</span>
+                <span class="badge-skill">COM Interop</span>
+                <span class="badge-skill">HTML / CSS / JS</span>
+              </div>
             </div>
+
             <!-- Social -->
             <div class="d-flex gap-3 mt-4" aria-label="Social links">
-              <a class="social-link" data-link="social.github_user" rel="noopener noreferrer">GitHub</a>
-              <a class="social-link" data-link="social.linkedin" rel="noopener noreferrer">LinkedIn</a>
-              <a class="social-link" data-link="social.email">Email</a>
+              <a class="social-link" data-link="social.github_user" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
+              <a class="social-link" data-link="social.linkedin" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
+              <a class="social-link" data-link="social.email"><i class="bi bi-envelope" aria-hidden="true"></i> Email</a>
             </div>
           </div>
         </div>
@@ -92,29 +114,48 @@
           <div class="col-lg-6">
             <div class="section-tag mb-2" data-i18n="story_tag">The Story</div>
             <h2 id="story-title" class="section-title mb-4" data-i18n="story_title">Why mbiX?</h2>
-            <p style="color: var(--mbx-text2); line-height: 1.7;" data-i18n="story_p1">
-              Every data team faces the same problem: critical business data lives in Google Sheets, but the real work happens in Excel.
+            <p style="color: var(--mbx-text2); line-height: 1.8;" data-i18n="story_p1">
+              In every construction project, the same problem repeats: pricing data, material rates,
+              and BOQ breakdowns live in Google Sheets — shared across teams, updated by dozens of people.
+              But the real engineering work happens in Excel. Copy-pasting is error-prone, manual syncing
+              wastes hours every week, and there is no validation layer in between.
             </p>
-            <p class="mt-3" style="color: var(--mbx-text2); line-height: 1.7;" data-i18n="story_p2">
-              mbiX was born from this frustration. Instead of building yet another cloud tool, I built the solution where the work actually happens.
+            <p class="mt-3" style="color: var(--mbx-text2); line-height: 1.8;" data-i18n="story_p2">
+              mbiX was born from this daily frustration. Instead of waiting for an IT department to build
+              a cloud solution, Muhammad built the tool where the work actually happens — directly inside
+              Excel, with a full ETL pipeline, schema governance, and zero external dependencies.
+              What started as a personal automation script grew into a complete Excel Intelligence Platform.
             </p>
           </div>
           <div class="col-lg-6">
-            <div class="timeline" role="list" aria-label="Project timeline">
+            <div class="timeline" role="list" aria-label="Career and project timeline">
+              <div class="timeline-item" role="listitem">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-year">2021</div>
+                <div class="timeline-text" data-i18n="timeline_0">
+                  Joined Samco as Site Engineer, then moved to Technical Office — first exposure to the data sync problem
+                </div>
+              </div>
               <div class="timeline-item" role="listitem">
                 <div class="timeline-dot" aria-hidden="true"></div>
                 <div class="timeline-year">2023</div>
-                <div class="timeline-text" data-i18n="timeline_1">First prototype — basic sync from Google Sheets to Excel</div>
+                <div class="timeline-text" data-i18n="timeline_1">
+                  First mbiX prototype — basic sync from Google Sheets to Excel using C# and VSTO
+                </div>
               </div>
               <div class="timeline-item" role="listitem">
                 <div class="timeline-dot" aria-hidden="true"></div>
                 <div class="timeline-year">2024</div>
-                <div class="timeline-text" data-i18n="timeline_2">Full ETL pipeline with validation, schema rules, and PipelineLogger</div>
+                <div class="timeline-text" data-i18n="timeline_2">
+                  Full ETL pipeline with validation, schema rules, and PipelineLogger. Promoted to Senior QS and Cost Estimation Engineer
+                </div>
               </div>
               <div class="timeline-item" role="listitem">
                 <div class="timeline-dot" aria-hidden="true"></div>
                 <div class="timeline-year">2025</div>
-                <div class="timeline-text" data-i18n="timeline_3">Dynamic Ribbon, RSA licensing, Export Engine, and public release</div>
+                <div class="timeline-text" data-i18n="timeline_3">
+                  Moved to SAPAC in Riyadh as Senior Technical Office Engineer. Dynamic Ribbon, RSA licensing, Export Engine, and public release of mbiX
+                </div>
               </div>
             </div>
           </div>
