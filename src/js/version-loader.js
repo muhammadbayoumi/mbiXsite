@@ -33,8 +33,13 @@ export async function loadVersion() {
   const url = getLink('endpoints.version_check');
   if (!url) return getFallbackData();
 
+  // raw.githubusercontent.com caches for ~5 minutes at the CDN, which
+  // `cache: 'no-store'` does not bypass (that only covers the browser cache).
+  // A unique query param makes each request a distinct cache key.
+  const bustedUrl = `${url}${url.includes('?') ? '&' : '?'}t=${Date.now()}`;
+
   try {
-    const res = await fetchWithTimeout(url, { cache: 'no-store' }, 5000);
+    const res = await fetchWithTimeout(bustedUrl, { cache: 'no-store' }, 5000);
     if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load version.json`);
     versionCache = await res.json();
     return versionCache;

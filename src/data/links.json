@@ -17,8 +17,8 @@
     "sheets_map":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Sheets/sheets_map.json"
   },
   "fallbacks": {
-    "download_url": "https://github.com/muhammadbayoumi/mbi-addin/releases/latest/download/mbiXaddin.zip",
-    "version": "2.0.0"
+    "download_url": "https://github.com/muhammadbayoumi/mbiX-hub/releases/latest",
+    "version": "1.0.1.75"
   },
   "pages": {
     "home":    "index.html",
