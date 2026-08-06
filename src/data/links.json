@@ -11,7 +11,7 @@
     "email":            "mailto:muhammad.bayoumi.ali@gmail.com"
   },
   "endpoints": {
-    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/version.json",
+    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/Xadd-in/json/version.json",
     "icons_map":        "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/icons_map.json",
     "icons_base":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/",
     "sheets_map":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Sheets/sheets_map.json"
