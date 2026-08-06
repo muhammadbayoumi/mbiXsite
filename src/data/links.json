@@ -1,6 +1,6 @@
 {
   "downloads": {
-    "all_releases": "https://github.com/muhammadbayoumi/mbi-addin/releases"
+    "all_releases": "https://github.com/muhammadbayoumi/mbiX-hub/releases"
   },
   "social": {
     "github_user":      "https://github.com/muhammadbayoumi",
@@ -8,20 +8,10 @@
     "email":            "mailto:muhammad.bayoumi.ali@gmail.com"
   },
   "endpoints": {
-    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/Xadd-in/json/version.json",
-    "icons_map":        "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/icons_map.json",
-    "icons_base":       "https://raw.githubusercontent.com/muhammadbayoumi/mbi-addin/main/Icons/"
+    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/Xadd-in/json/version.json"
   },
   "fallbacks": {
-    "download_url": "https://github.com/muhammadbayoumi/mbiX-hub/releases/latest",
-    "version": "1.0.1.75"
-  },
-  "pages": {
-    "home":    "index.html",
-    "about":   "about.html",
-    "install": "install.html",
-    "subscription": "subscription.html",
-    "help":    "help-center.html"
+    "download_url": "https://github.com/muhammadbayoumi/mbiX-hub/releases/latest"
   },
   "support": {
     "issues": "https://github.com/muhammadbayoumi/mbiX-hub/issues"

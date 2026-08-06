@@ -14,14 +14,20 @@ function fetchWithTimeout(url, options = {}, timeoutMs = 5000) {
     .finally(() => clearTimeout(timeoutId));
 }
 
-/** Get fallback data from links.json for graceful degradation */
+/**
+ * Get fallback data from links.json for graceful degradation.
+ *
+ * Deliberately carries no version number: a hard-coded one goes stale on
+ * every release, and telling a visitor they are on the latest build when
+ * we could not check is worse than telling them nothing. The download URL
+ * points at the releases page, where the real number is always correct.
+ */
 function getFallbackData() {
   const fallbackUrl = getLink('fallbacks.download_url');
-  const fallbackVersion = getLink('fallbacks.version');
-  if (!fallbackUrl && !fallbackVersion) return null;
+  if (!fallbackUrl) return null;
   return {
-    version: fallbackVersion || '',
-    url: fallbackUrl || '',
+    version: '',
+    url: fallbackUrl,
     notes: '',
     sha256: ''
   };
@@ -35,11 +41,18 @@ export async function loadVersion() {
 
   // raw.githubusercontent.com caches for ~5 minutes at the CDN, which
   // `cache: 'no-store'` does not bypass (that only covers the browser cache).
-  // A unique query param makes each request a distinct cache key.
-  const bustedUrl = `${url}${url.includes('?') ? '&' : '?'}t=${Date.now()}`;
+  //
+  // Bucket the cache key by the minute rather than using a unique timestamp:
+  // everyone loading the page within the same minute shares one cache entry,
+  // so the CDN still absorbs almost every request, while the data is never
+  // more than a minute stale. A per-request timestamp would push every single
+  // visitor through to origin, which measurably slowed the fetch and made the
+  // timeout below far more likely to fire.
+  const bucket = Math.floor(Date.now() / 60000);
+  const bustedUrl = `${url}${url.includes('?') ? '&' : '?'}t=${bucket}`;
 
   try {
-    const res = await fetchWithTimeout(bustedUrl, { cache: 'no-store' }, 5000);
+    const res = await fetchWithTimeout(bustedUrl, { cache: 'no-store' }, 8000);
     if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load version.json`);
     versionCache = await res.json();
     return versionCache;
@@ -59,9 +72,11 @@ export async function applyVersion() {
   const data = await loadVersion();
   if (!data) return;
 
-  // Version number
+  // Version number. Only overwrite when we actually have one, so a failed
+  // fetch leaves the markup's own placeholder ("v—") visible instead of
+  // blanking it or showing a stale hard-coded number.
   document.querySelectorAll('[data-version]').forEach(el => {
-    el.textContent = data.version || '';
+    if (data.version) el.textContent = data.version;
   });
 
   // Download URL
