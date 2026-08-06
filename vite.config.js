@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
-import linksData from './src/data/links.json' with { type: 'json' };
 
 export default defineConfig(({ command }) => ({
   root: '.',
@@ -19,8 +18,7 @@ export default defineConfig(({ command }) => ({
       },
       output: {
         manualChunks: {
-          bootstrap: ['bootstrap'],
-          gsap: ['gsap']
+          bootstrap: ['bootstrap']
         }
       }
     }
@@ -35,7 +33,7 @@ export default defineConfig(({ command }) => ({
     devSourcemap: true
   },
   optimizeDeps: {
-    include: ['bootstrap', 'gsap']
+    include: ['bootstrap']
   },
   server: {
     port: 3000,
@@ -46,14 +44,11 @@ export default defineConfig(({ command }) => ({
       partialDirectory: resolve(__dirname, 'src/partials'),
       context(pagePath) {
         // Default context for all pages
-        const isIndex = pagePath.includes('index.html') && !pagePath.includes('about') && !pagePath.includes('install') && !pagePath.includes('subscription') && !pagePath.includes('help');
+        const isIndex = pagePath.includes('index.html');
         const isAbout = pagePath.includes('about');
         const isInstall = pagePath.includes('install');
-        const isNewsletter = pagePath.includes('newsletter') || pagePath.includes('join-newsletter');
+        const isNewsletter = pagePath.includes('newsletter');
         const isHelp = pagePath.includes('help');
-
-        // Read page URLs from links.json (single source of truth)
-        const pages = linksData.pages || {};
 
         return {
           // Navbar theme
@@ -66,12 +61,12 @@ export default defineConfig(({ command }) => ({
           activeNewsletter: isNewsletter ? ' active' : '',
           activeHelp: isHelp ? ' active' : '',
 
-          // Page URLs from links.json (single source of truth)
-          homeUrl:    pages.home    || 'index.html',
-          installUrl: pages.install || 'install.html',
-          aboutUrl:   pages.about   || 'about.html',
-          newsletterUrl: pages.newsletter || 'join-newsletter.html',
-          helpUrl:    pages.help    || 'help-center.html',
+          // Page URLs
+          homeUrl:    'index.html',
+          installUrl: 'install.html',
+          aboutUrl:   'about.html',
+          newsletterUrl: 'join-newsletter.html',
+          helpUrl:    'help-center.html',
         };
       }
     })

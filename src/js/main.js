@@ -31,30 +31,6 @@ function safeInit(name, fn) {
   }
 }
 
-/**
- * Conditionally load a module only if its DOM elements are present.
- * Reduces bundle overhead for pages that don't need certain features.
- */
-function safeInitAsync(name, importFn, selector) {
-  // Skip if no relevant DOM elements exist
-  if (selector && !document.querySelector(selector)) {
-    return;
-  }
-  importFn()
-    .then(mod => {
-      if (typeof mod.default === 'function') {
-        safeInit(name, mod.default);
-      } else if (typeof mod[name] === 'function') {
-        safeInit(name, mod[name]);
-      } else {
-        // Try common export names
-        const fn = mod.applyVersion || mod.applyIcons || mod.initIcons || mod.loadAndApply;
-        if (fn) safeInit(name, fn);
-      }
-    })
-    .catch(err => console.error(`[main] Failed to load module "${name}":`, err));
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   // Core modules needed on every page
   safeInit('applyLinks', applyLinks);
@@ -63,21 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
   safeInit('initNavbar', initNavbar);
   safeInit('initFooter', initFooter);
 
-  // Lazy-load optional modules in parallel when their DOM elements are present
-  const lazyModules = [
-    { name: 'applyVersion', importer: () => import('./version-loader.js'), selector: '[data-version], [data-version-url], [data-version-notes], [data-version-sha]' },
-    { name: 'applyIcons',   importer: () => import('./icons-loader.js'),   selector: '[data-icon]' },
-  ].filter(m => document.querySelector(m.selector));
-
-  if (lazyModules.length > 0) {
-    Promise.all(lazyModules.map(m => m.importer()))
-      .then(modules => {
-        modules.forEach((mod, i) => {
-          const name = lazyModules[i].name;
-          const fn = mod.applyVersion || mod.applyIcons;
-          if (fn) safeInit(name, fn);
-        });
-      })
-      .catch(err => console.error('[main] Failed to load lazy modules:', err));
+  // Version data is only fetched on pages that actually display it
+  if (document.querySelector('[data-version], [data-version-url], [data-version-notes], [data-version-sha]')) {
+    import('./version-loader.js')
+      .then(mod => safeInit('applyVersion', mod.applyVersion))
+      .catch(err => console.error('[main] Failed to load version-loader:', err));
   }
 });

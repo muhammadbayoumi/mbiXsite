@@ -40,5 +40,3 @@ export function getLink(path) {
 function resolvePath(obj, path) {
   return path.split('.').reduce((acc, key) => acc?.[key], obj);
 }
-
-export default linksData;
