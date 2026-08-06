@@ -87,73 +87,6 @@
   color: #fff;
 }
 
-/* ── Mid Bar (QAT + Title + Comments/Share) ── */
-.excel-midbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f9fa;
-  padding: 4px 12px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.excel-qat {
-  display: flex;
-  gap: 4px;
-}
-
-.excel-qat-icon {
-  font-size: 0.85rem;
-  cursor: pointer;
-  padding: 3px 5px;
-  border-radius: 2px;
-  color: #555;
-}
-
-.excel-qat-icon:hover {
-  background: #e0e0e0;
-}
-
-.excel-title-center {
-  flex: 1;
-  text-align: center;
-  font-size: 0.72rem;
-  color: #555;
-}
-
-.excel-actions-top {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.excel-comments-btn,
-.excel-share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  font-size: 0.72rem;
-  cursor: pointer;
-  border-radius: 3px;
-  color: #444;
-  transition: background 0.15s;
-}
-
-.excel-comments-btn:hover {
-  background: #f0f0f0;
-}
-
-.excel-share-btn {
-  background: #217346;
-  color: #fff;
-  border: none;
-}
-
-.excel-share-btn:hover {
-  background: #1a5c38;
-}
-
 /* ── Ribbon Tabs ── */
 .excel-tabs {
   display: flex;
@@ -186,21 +119,6 @@
   background: #fff;
   font-weight: 600;
   border-bottom-color: #217346;
-}
-
-/* File Tab — normal */
-.excel-tab-file {
-  background: #f3f3f3;
-  color: #444;
-  font-weight: 400;
-  margin-right: 4px;
-  border-bottom: none;
-  border-radius: 2px 2px 0 0;
-}
-
-.excel-tab-file:hover {
-  background: #e8e8e8;
-  color: #1a1a1a;
 }
 
 /* mbiX Tab — green with glow (active custom tab) */
