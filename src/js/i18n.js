@@ -114,6 +114,7 @@ const translations = {
     releases_error:  'Could not load the release history.',
     releases_rate_limited: 'GitHub rate limit reached. Please try again later.',
     releases_empty:  'No releases published yet.',
+    footer_privacy:  'Privacy Policy',
 
     // ── Products
     nav_products:      'Products',
@@ -314,6 +315,7 @@ const translations = {
     releases_error:  'تعذّر تحميل سجل الإصدارات.',
     releases_rate_limited: 'تم بلوغ حد الطلبات على GitHub. حاول لاحقًا.',
     releases_empty:  'لا توجد إصدارات منشورة بعد.',
+    footer_privacy:  'سياسة الخصوصية',
 
     // ── المنتجات
     nav_products:      'المنتجات',
@@ -405,7 +407,28 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('mbx-lang') || 'en';
+/**
+ * Languages offered to visitors.
+ *
+ * Arabic is written and complete — 192 keys, at parity with English — but its
+ * rendered layout has not been reviewed yet, and RTL is the kind of thing that
+ * looks fine in the data and wrong on the page. It stays out of the picker
+ * until someone has actually looked at it.
+ *
+ * To bring it back, add 'ar' here. Nothing else needs to change: the strings,
+ * the RTL stylesheet and the dropdown entry are all already in place.
+ */
+export const ENABLED_LANGS = ['en'];
+
+export function isLangEnabled(lang) {
+  return ENABLED_LANGS.includes(lang);
+}
+
+// A visitor who already chose Arabic has it in localStorage. Honouring that
+// now would drop them into the very state we are holding back, so the stored
+// value is only trusted while its language is enabled.
+const storedLang = localStorage.getItem('mbx-lang');
+let currentLang = isLangEnabled(storedLang) ? storedLang : ENABLED_LANGS[0];
 
 export function initI18n() {
   applyLang(currentLang);
@@ -415,7 +438,7 @@ export function initI18n() {
 }
 
 export function setLang(lang) {
-  if (!translations[lang]) return;
+  if (!translations[lang] || !isLangEnabled(lang)) return;
   currentLang = lang;
   localStorage.setItem('mbx-lang', lang);
   applyLang(lang);
