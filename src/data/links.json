@@ -8,7 +8,8 @@
     "email":            "mailto:muhammad.bayoumi.ali@gmail.com"
   },
   "endpoints": {
-    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/Xadd-in/json/version.json"
+    "version_check":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/Xadd-in/json/version.json",
+    "releases_api":     "https://api.github.com/repos/muhammadbayoumi/mbiX-hub/releases?per_page=10"
   },
   "fallbacks": {
     "download_url": "https://github.com/muhammadbayoumi/mbiX-hub/releases/latest"

@@ -187,6 +187,64 @@
   line-height: 1.7;
 }
 
+// Release history — collapsed by default; the list loads on first open
+.release-history {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.release-history-toggle {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mbx-light-text2);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--transition-fast), background var(--transition-fast);
+
+  &:hover { color: var(--mbx-green); }
+  &:focus-visible { outline: 2px solid var(--mbx-green); outline-offset: -2px; }
+}
+
+.release-history-body {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.82rem;
+}
+
+.release-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:first-child { border-top: none; }
+}
+
+.release-row-tag {
+  font-weight: 600;
+  color: var(--mbx-light-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.release-row-date {
+  color: var(--mbx-light-text2);
+  white-space: nowrap;
+}
+
+// Pushes the download link to the far edge in both LTR and RTL
+.release-row-link {
+  margin-inline-start: auto;
+  color: var(--mbx-green);
+  text-decoration: none;
+  word-break: break-all;
+
+  &:hover { text-decoration: underline; }
+}
+
+.release-row-msg {
+  color: var(--mbx-light-text2);
+}
+
 // Steps list
 .step-tag {
   display: inline-block;

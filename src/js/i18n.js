@@ -109,6 +109,11 @@ const translations = {
     t4_btn:          'Open GitHub Issue',
     footer_brand:    'mbiX',
     footer_copy:     '© 2025 mbiX · Excel Intelligence Platform',
+    releases_title:  'Release history',
+    releases_loading:'Loading releases…',
+    releases_error:  'Could not load the release history.',
+    releases_rate_limited: 'GitHub rate limit reached. Please try again later.',
+    releases_empty:  'No releases published yet.',
   },
   ar: {
     nav_home:      'الرئيسية',
@@ -216,6 +221,11 @@ const translations = {
     t4_btn:          'فتح تذكرة GitHub',
     footer_brand:    'mbiX',
     footer_copy:     '© 2025 mbiX · Excel Intelligence Platform',
+    releases_title:  'سجل الإصدارات',
+    releases_loading:'جارٍ تحميل الإصدارات…',
+    releases_error:  'تعذّر تحميل سجل الإصدارات.',
+    releases_rate_limited: 'تم بلوغ حد الطلبات على GitHub. حاول لاحقًا.',
+    releases_empty:  'لا توجد إصدارات منشورة بعد.',
   }
 };
 
@@ -240,6 +250,17 @@ export function setLang(lang) {
 
 export function getLang() {
   return currentLang;
+}
+
+/**
+ * Look up a single string in the current language.
+ *
+ * For content built in JS after load, where the usual [data-i18n] sweep has
+ * already run. Set the attribute too and applyLang() will keep it in sync on
+ * later language switches.
+ */
+export function t(key) {
+  return translations[currentLang]?.[key] ?? '';
 }
 
 /**

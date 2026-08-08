@@ -40,9 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
   safeInit('initFooter', initFooter);
 
   // Version data is only fetched on pages that actually display it
-  if (document.querySelector('[data-version], [data-version-url], [data-version-notes], [data-version-sha]')) {
+  if (document.querySelector('[data-version], [data-version-url], [data-version-notes], [data-version-sha], [data-releases]')) {
     import('./version-loader.js')
-      .then(mod => safeInit('applyVersion', mod.applyVersion))
+      .then(mod => {
+        safeInit('applyVersion', mod.applyVersion);
+        // Only binds a listener; the release list is fetched on first open.
+        safeInit('initReleases', mod.initReleases);
+      })
       .catch(err => console.error('[main] Failed to load version-loader:', err));
   }
 });
