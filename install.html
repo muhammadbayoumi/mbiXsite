@@ -406,6 +406,40 @@
         </div>
       </div>
     </section>
+
+    <!-- ══════ PRODUCTS ══════
+         index.html redirects here, so this is the site's landing page and the
+         place a visitor learns there is a second product. Appended after the
+         install flow so it does not interrupt it. -->
+    <section class="section-light-alt py-section" aria-labelledby="home-products-title">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="home_products_tag">Two products</div>
+          <h2 id="home-products-title" class="section-title-light mb-3" data-i18n="home_products_title">One platform, two tools</h2>
+          <p class="section-sub-light mx-auto" data-i18n="home_products_sub">
+            Xadd-in brings your pricing data into Excel. ScrapeX collects published prices from the web into a database on your own machine.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <article class="home-product-card">
+              <i class="bi bi-file-earmark-spreadsheet home-product-icon" aria-hidden="true"></i>
+              <h3 class="home-product-title" data-i18n="home_addin_title">Xadd-in for Excel</h3>
+              <p class="home-product-desc" data-i18n="home_addin_desc">An Excel add-in for tendering, quantity surveying and cost estimation.</p>
+              <a class="btn-pill-light" href="{{{installUrl}}}" data-i18n="home_addin_btn">How to install <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <article class="home-product-card">
+              <i class="bi bi-braces-asterisk home-product-icon" aria-hidden="true"></i>
+              <h3 class="home-product-title" data-i18n="home_scrapex_title">ScrapeX for Chrome</h3>
+              <p class="home-product-desc" data-i18n="home_scrapex_desc">A Chrome panel and a local Windows engine that collect published prices into a database you own.</p>
+              <a class="btn-pill-green" href="{{{scrapexUrl}}}" data-i18n="home_scrapex_btn">How to install <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
 {{> footer }}

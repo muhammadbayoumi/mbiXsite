@@ -49,4 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(err => console.error('[main] Failed to load version-loader:', err));
   }
+
+  // ScrapeX pages only — keeps its manifest and markdown fetches off every
+  // other page, and its renderer out of their bundles.
+  if (document.querySelector('[data-sx-version], [data-sx-url], [data-sx-webstore], [data-sx-doc]')) {
+    import('./scrapex-loader.js')
+      .then(mod => {
+        safeInit('applyScrapexVersion', mod.applyScrapexVersion);
+        safeInit('applyWebstoreLink', mod.applyWebstoreLink);
+        safeInit('applyScrapexDoc', mod.applyScrapexDoc);
+      })
+      .catch(err => console.error('[main] Failed to load scrapex-loader:', err));
+  }
 });

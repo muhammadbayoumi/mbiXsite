@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Install ScrapeX — mbiX | Price Collection for Windows</title>
+  <meta name="description" content="Install the ScrapeX Chrome extension and its local engine. Windows only, no administrator rights, nothing runs on a server."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://muhammadbayoumi.github.io/mbiXsite/scrapex-install.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://muhammadbayoumi.github.io/mbiXsite/scrapex-install.html"/>
+  <meta property="og:title" content="Install ScrapeX — mbiX"/>
+  <meta property="og:description" content="The Chrome extension and its local Windows engine."/>
+  <meta property="og:image" content="https://muhammadbayoumi.github.io/mbiXsite/og-image.png"/>
+  <link rel="preconnect" href="https://raw.githubusercontent.com"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+{{> navbar }}
+
+  <main id="main-content">
+    <!-- ══════ HERO ══════ -->
+    <section class="section-dark3" style="padding-top: 100px;" aria-labelledby="sx-title">
+      <div class="container py-5 text-center">
+        <div class="section-tag mb-2" data-i18n="sx_tag">ScrapeX</div>
+        <h1 id="sx-title" class="section-title mb-3" data-i18n="sx_title">Install ScrapeX</h1>
+        <p class="section-sub mx-auto mb-4" data-i18n="sx_sub">
+          Collect published prices from sites you choose into a database on your own machine. Nothing runs on a server.
+        </p>
+        <div class="sx-facts" role="list">
+          <span class="sx-fact" role="listitem"><i class="bi bi-windows" aria-hidden="true"></i> <span data-i18n="sx_fact_windows">Windows only</span></span>
+          <span class="sx-fact" role="listitem"><i class="bi bi-shield-check" aria-hidden="true"></i> <span data-i18n="sx_fact_noadmin">No administrator rights</span></span>
+          <span class="sx-fact" role="listitem"><i class="bi bi-hdd-network" aria-hidden="true"></i> <span data-i18n="sx_fact_noserver">No account, no server</span></span>
+          <span class="sx-fact" role="listitem"><i class="bi bi-browser-chrome" aria-hidden="true"></i> <span data-i18n="sx_fact_chrome">Chrome or Chromium</span></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <!-- ══════ THE TWO HALVES ══════ -->
+    <section class="section-light py-section" aria-labelledby="sx-halves-title">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="sx_halves_tag">How it fits together</div>
+          <h2 id="sx-halves-title" class="section-title-light mb-3" data-i18n="sx_halves_title">ScrapeX installs in two halves</h2>
+          <p class="section-sub-light mx-auto" data-i18n="sx_halves_sub">
+            A panel inside Chrome, and a small program on your computer that does the collecting. You need both — with only one, the panel looks broken.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="sx-half-card">
+              <div class="sx-half-num" aria-hidden="true">1</div>
+              <h3 class="sx-half-title" data-i18n="sx_half1_title">The extension</h3>
+              <p class="sx-half-desc" data-i18n="sx_half1_desc">
+                Installs from the Chrome Web Store like any other extension. It gives you the side panel where you add sites and read results.
+              </p>
+              <a class="btn-pill-green is-disabled" data-sx-webstore aria-disabled="true" data-i18n="sx_half1_btn">Get it on the Chrome Web Store <i class="bi bi-box-arrow-up-right btn-arrow" aria-hidden="true"></i></a>
+              <p class="sx-half-note" data-i18n="sx_half1_pending">The store listing is being created. This button becomes active as soon as it is published.</p>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="sx-half-card">
+              <div class="sx-half-num" aria-hidden="true">2</div>
+              <h3 class="sx-half-title" data-i18n="sx_half2_title">The engine</h3>
+              <p class="sx-half-desc" data-i18n="sx_half2_desc">
+                A single program that fetches pages and stores what it finds. <strong>The extension downloads and installs it for you</strong> from its own Engine page — that is the route to use.
+              </p>
+              <ol class="steps-ol">
+                <li data-i18n="sx_half2_s1">Open the ScrapeX panel in Chrome</li>
+                <li data-i18n="sx_half2_s2">Go to <strong>Engine</strong></li>
+                <li data-i18n="sx_half2_s3">Choose <strong>Install engine</strong> and let it finish</li>
+              </ol>
+              <p class="sx-half-note" data-i18n="sx_half2_manual">Installing by hand works too — see below.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ MANUAL INSTALL ══════ -->
+    <section class="section-light-alt py-section" aria-labelledby="sx-manual-title">
+      <div class="container py-3">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="step-tag" aria-hidden="true">MANUAL</div>
+            <h2 id="sx-manual-title" class="step-title-light" data-i18n="sx_manual_title">Installing the engine by hand</h2>
+            <p class="step-desc-light" data-i18n="sx_manual_desc">
+              If you would rather not let the extension do it, download the engine yourself. Put it anywhere and run it — there is no installer to step through.
+            </p>
+            <ol class="steps-ol">
+              <li data-i18n="sx_manual_s1">Download the engine using the button opposite</li>
+              <li data-i18n="sx_manual_s2">Put it anywhere you like — your Downloads folder is fine</li>
+              <li data-i18n="sx_manual_s3">Run it. It installs for your user only, into <code>%LOCALAPPDATA%\ScrapeX\engine\</code></li>
+              <li data-i18n="sx_manual_s4">Open the ScrapeX panel in Chrome; it finds the engine within a few seconds</li>
+            </ol>
+            <p class="step-desc-light" data-i18n="sx_manual_uninstall">
+              It appears in <strong>Apps &amp; features</strong> like any other program, and is removed the same way.
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <article class="download-card" aria-labelledby="sx-dl-title">
+              <div class="download-card-header">
+                <i class="bi bi-file-earmark-binary download-icon" aria-hidden="true"></i>
+                <div>
+                  <div class="download-name" id="sx-dl-title"><span data-sx-file>scrapex-engine.exe</span> <span data-sx-version>—</span></div>
+                  <div class="download-meta" data-i18n="sx_dl_meta">Engine for Windows</div>
+                </div>
+              </div>
+              <div class="sx-dl-body">
+                <a class="btn-pill-green" data-sx-url data-i18n="sx_dl_btn">Download the engine <i class="bi bi-download btn-arrow" aria-hidden="true"></i></a>
+
+                <div class="sx-dl-rows">
+                  <div class="sx-dl-row" data-sx-when-released hidden>
+                    <span class="sx-dl-label" data-i18n="sx_dl_size">Size</span>
+                    <span class="sx-dl-value" data-sx-size>—</span>
+                  </div>
+                  <div class="sx-dl-row sx-dl-row-sha" data-sx-when-released hidden>
+                    <span class="sx-dl-label" data-i18n="sx_dl_sha">SHA-256</span>
+                    <code class="sx-dl-sha" data-sx-sha>—</code>
+                  </div>
+                </div>
+
+                <p class="sx-dl-note" data-sx-when-unreleased hidden data-i18n="sx_dl_unreleased">
+                  The first release is not published yet, so there is no version number or checksum to show. This button opens the releases page, which always lists the newest build.
+                </p>
+                <p class="sx-dl-note" data-sx-when-released hidden data-i18n="sx_dl_verify">
+                  Verify the file before running it: in PowerShell, <code>Get-FileHash .\scrapex-engine.exe</code> should print the hash above.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ SMARTSCREEN ══════ -->
+    <section class="section-light py-section" aria-labelledby="sx-ss-title">
+      <div class="container py-3">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="step-tag" aria-hidden="true">EXPECT THIS</div>
+            <h2 id="sx-ss-title" class="step-title-light" data-i18n="sx_ss_title">Windows will warn you once</h2>
+            <p class="step-desc-light" data-i18n="sx_ss_desc">
+              The engine is not code-signed, so the first time you run it Windows shows a blue SmartScreen dialog. This is expected. It says nothing about whether the file is safe — only that Windows has not seen it signed by a paid certificate.
+            </p>
+            <p class="step-desc-light" data-i18n="sx_ss_what">Here is exactly what it says, and what to press:</p>
+            <ol class="steps-ol">
+              <li data-i18n="sx_ss_s1">Click <strong>More info</strong></li>
+              <li data-i18n="sx_ss_s2">Click <strong>Run anyway</strong></li>
+            </ol>
+            <p class="step-desc-light" data-i18n="sx_ss_verify">
+              If you would rather check the file first, compare its SHA-256 against the one published with the release above. That tells you far more than a signature would.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="sx-ss-dialog" role="img" aria-label="Windows SmartScreen warning dialog">
+              <div class="sx-ss-dialog-title" data-i18n="sx_ss_dlg_title">Windows protected your PC</div>
+              <p class="sx-ss-dialog-body" data-i18n="sx_ss_dlg_body">
+                Microsoft Defender SmartScreen prevented an unrecognised app from starting. Running this app might put your PC at risk.
+              </p>
+              <div class="sx-ss-dialog-more" data-i18n="sx_ss_dlg_more">More info</div>
+              <div class="sx-ss-dialog-btns">
+                <span class="sx-ss-dialog-btn is-primary" data-i18n="sx_ss_dlg_run">Run anyway</span>
+                <span class="sx-ss-dialog-btn" data-i18n="sx_ss_dlg_dont">Don't run</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ WHAT IT DOES NOT DO ══════ -->
+    <section class="section-light-alt py-section" aria-labelledby="sx-priv-title">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <div class="section-tag mb-2" data-i18n="sx_priv_tag">Your data</div>
+          <h2 id="sx-priv-title" class="section-title-light mb-3" data-i18n="sx_priv_title">Everything stays on your machine</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="feature-card">
+              <i class="bi bi-hdd feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title" data-i18n="sx_priv_1_title">No account, no server</h3>
+              <p class="feature-desc" data-i18n="sx_priv_1_desc">There is nothing to sign up for and nowhere for your data to be sent. If your machine is off, nothing runs.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <i class="bi bi-database-lock feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title" data-i18n="sx_priv_2_title">A database you own</h3>
+              <p class="feature-desc" data-i18n="sx_priv_2_desc">What you collect is written to a file in your own user folder. Deleting it is a matter of deleting a folder.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <i class="bi bi-eye-slash feature-icon" aria-hidden="true"></i>
+              <h3 class="feature-title" data-i18n="sx_priv_3_title">No telemetry</h3>
+              <p class="feature-desc" data-i18n="sx_priv_3_desc">No analytics, no crash reports, no usage counts. The full detail is in the privacy policy.</p>
+            </article>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a class="btn-pill-light" href="scrapex-privacy.html" data-i18n="sx_priv_btn">Read the privacy policy <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ HELP ══════ -->
+    <section class="section-light py-section" aria-labelledby="sx-help-title">
+      <div class="container py-3 text-center">
+        <h2 id="sx-help-title" class="section-title-light mb-3" data-i18n="sx_help_title">Something not working?</h2>
+        <p class="section-sub-light mx-auto mb-4" data-i18n="sx_help_desc">
+          The support page lists the three problems that account for most of what goes wrong, and exactly which two version numbers to include in a report.
+        </p>
+        <a class="btn-pill-green" href="scrapex-support.html" data-i18n="sx_help_btn">Open ScrapeX support <i class="bi bi-arrow-right btn-arrow" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+{{> footer }}
+</body>
+</html>

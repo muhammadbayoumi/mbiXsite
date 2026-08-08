@@ -1,0 +1,131 @@
+// ═══════════════════════════════════════════
+// MARKDOWN — styling for the rendered upstream documents
+// ═══════════════════════════════════════════
+//
+// Applies to output built by src/js/markdown.js. Element selectors are scoped
+// under .md-doc: the content is fetched at runtime and carries no classes of
+// its own, so there is nothing else to hook onto.
+
+.md-doc {
+  max-width: 780px;
+  margin-inline: auto;
+  color: var(--mbx-light-text2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+
+  // markdown.js demotes the document's own H1 to H2, so the page keeps a
+  // single H1 of its own.
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--mbx-light-text);
+    margin: 2.5rem 0 1rem;
+    letter-spacing: -0.4px;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--mbx-light-text);
+    margin: 2rem 0 0.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--mbx-light-text);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  > :first-child { margin-top: 0; }
+
+  p { margin-bottom: 1.1rem; }
+
+  strong { color: var(--mbx-light-text); font-weight: 700; }
+
+  a {
+    color: var(--mbx-green);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover { color: var(--mbx-green-hover, var(--mbx-green)); }
+  }
+
+  code {
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    color: var(--mbx-light-text);
+    word-break: break-word;
+  }
+
+  hr {
+    margin: 2.25rem 0;
+    border: 0;
+    border-top: 1px solid var(--mbx-border-light);
+  }
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-inline-start: 3px solid var(--mbx-green);
+
+    p { margin-bottom: 0; }
+  }
+}
+
+.md-list {
+  margin: 0 0 1.2rem;
+  padding-inline-start: 1.3rem;
+
+  li { margin-bottom: 0.5rem; }
+}
+
+// Tables are the one construct that can outgrow a phone, so they scroll
+// inside their own box rather than widening the page.
+.md-table-wrap {
+  margin: 0 0 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--mbx-border-light);
+  border-radius: 10px;
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+
+  th,
+  td {
+    padding: 0.7rem 0.9rem;
+    text-align: start;
+    vertical-align: top;
+    border-bottom: 1px solid var(--mbx-border-light);
+  }
+
+  th {
+    font-weight: 700;
+    color: var(--mbx-light-text);
+    background: rgba(0, 0, 0, 0.025);
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+}
+
+// Loading / unpublished / error states
+.md-notice {
+  padding: 1rem 1.15rem;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--mbx-border-light);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--mbx-light-text2);
+  margin-bottom: 0.75rem;
+}
+
+.md-notice-link {
+  font-size: 0.85rem;
+  color: var(--mbx-green);
+}

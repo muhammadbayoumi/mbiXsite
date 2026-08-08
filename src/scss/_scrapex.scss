@@ -1,0 +1,252 @@
+// ═══════════════════════════════════════════
+// SCRAPEX — install page
+// ═══════════════════════════════════════════
+
+// Fact strip under the hero
+.sx-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1rem;
+}
+
+.sx-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mbx-light2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--mbx-border);
+  border-radius: var(--radius-pill);
+
+  i { color: var(--mbx-green); }
+}
+
+// The two halves
+.sx-half-card {
+  position: relative;
+  height: 100%;
+  padding: 2rem 1.75rem 1.75rem;
+  background: #fff;
+  border: 1px solid var(--mbx-border-light);
+  border-radius: var(--radius-lg, 14px);
+  box-shadow: var(--mbx-shadow-sm);
+}
+
+.sx-half-num {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: var(--mbx-green);
+  background: rgba(36, 192, 95, 0.1);
+  border: 1px solid rgba(36, 192, 95, 0.3);
+  border-radius: 50%;
+}
+
+.sx-half-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--mbx-light-text);
+  margin-bottom: 0.6rem;
+}
+
+.sx-half-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--mbx-light-text2);
+  margin-bottom: 1rem;
+}
+
+.sx-half-note {
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+  font-size: 0.78rem;
+  color: var(--mbx-light-text2);
+  opacity: 0.85;
+}
+
+// A button whose destination does not exist yet. Kept in the layout so the
+// page reads correctly, but not clickable and not announced as a link.
+.btn-pill-green.is-disabled,
+.btn-pill-light.is-disabled {
+  pointer-events: none;
+  opacity: 0.45;
+  cursor: default;
+  filter: grayscale(1);
+}
+
+// Download card body
+.sx-dl-body {
+  padding: 1.25rem;
+}
+
+.sx-dl-rows {
+  margin-top: 1.1rem;
+}
+
+.sx-dl-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.82rem;
+
+  &:first-child { border-top: none; }
+}
+
+.sx-dl-label {
+  min-width: 5.5rem;
+  font-weight: 600;
+  color: var(--mbx-light-text);
+}
+
+.sx-dl-value {
+  color: var(--mbx-light-text2);
+}
+
+// A SHA-256 is 64 characters and must be allowed to wrap rather than
+// stretching the card on a phone.
+.sx-dl-sha {
+  font-size: 0.72rem;
+  color: var(--mbx-light-text2);
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.sx-dl-note {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: var(--mbx-light-text2);
+
+  code { font-size: 0.74rem; word-break: break-all; }
+}
+
+// ── SmartScreen reproduction ──
+// A styled likeness of the real dialog, so the warning is recognised rather
+// than feared. Marked role="img" with a label: read aloud it is one object,
+// not a set of buttons a screen-reader user might try to press.
+.sx-ss-dialog {
+  max-width: 420px;
+  margin-inline: auto;
+  padding: 1.5rem 1.4rem 1.2rem;
+  background: #0067b8;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: var(--mbx-shadow-lg);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  // The dialog is a Windows artefact and reads left-to-right even on the
+  // Arabic page, where its text is kept in English deliberately.
+  direction: ltr;
+  text-align: left;
+}
+
+.sx-ss-dialog-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.sx-ss-dialog-body {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  opacity: 0.95;
+}
+
+.sx-ss-dialog-more {
+  font-size: 0.84rem;
+  text-decoration: underline;
+  margin-bottom: 1.4rem;
+}
+
+.sx-ss-dialog-btns {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.sx-ss-dialog-btn {
+  padding: 0.35rem 1.1rem;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+
+  &.is-primary {
+    background: #fff;
+    color: #0067b8;
+    font-weight: 600;
+  }
+}
+
+// ── Products dropdown in the navbar ──
+.dropdown-menu-mbx {
+  background: var(--mbx-dark2);
+  border: 1px solid var(--mbx-border);
+  border-radius: 10px;
+  padding: 0.4rem;
+  box-shadow: var(--mbx-shadow-lg);
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 7px;
+    font-size: 0.88rem;
+    color: var(--mbx-light2);
+
+    i { color: var(--mbx-green); }
+
+    &:hover,
+    &:focus {
+      background: rgba(36, 192, 95, 0.12);
+      color: #fff;
+    }
+  }
+}
+
+// ── Home page product cards ──
+.home-product-card {
+  height: 100%;
+  padding: 1.75rem;
+  background: #fff;
+  border: 1px solid var(--mbx-border-light);
+  border-radius: var(--radius-lg, 14px);
+  box-shadow: var(--mbx-shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--mbx-shadow-md);
+  }
+
+  .home-product-icon {
+    font-size: 1.6rem;
+    color: var(--mbx-green);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .home-product-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--mbx-light-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .home-product-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--mbx-light-text2);
+    margin-bottom: 1.1rem;
+  }
+}

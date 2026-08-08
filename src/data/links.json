@@ -14,6 +14,14 @@
   "fallbacks": {
     "download_url": "https://github.com/muhammadbayoumi/mbiX-hub/releases/latest"
   },
+  "scrapex": {
+    "version_check": "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/ScrapeX/json/version.json",
+    "privacy_md":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/ScrapeX/docs/privacy-policy.md",
+    "support_md":    "https://raw.githubusercontent.com/muhammadbayoumi/mbiX-hub/main/ScrapeX/docs/support.md",
+    "releases":      "https://github.com/muhammadbayoumi/mbiX-hub/releases",
+    "issues":        "https://github.com/muhammadbayoumi/mbiX-hub/issues",
+    "webstore":      ""
+  },
   "support": {
     "issues": "https://github.com/muhammadbayoumi/mbiX-hub/issues"
   }
