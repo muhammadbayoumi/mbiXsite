@@ -50,9 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(err => console.error('[main] Failed to load version-loader:', err));
   }
 
+  // Legal document pages own their own fetch: legal-doc.js has to build the
+  // section list from the outline the render returns, so it awaits
+  // applyScrapexDoc itself rather than having it called out from under it here.
+  //
+  // Hence the else — both branches match [data-sx-doc], and running them both
+  // would fetch and render the document twice.
+  if (document.querySelector('[data-legal-doc]')) {
+    import('./legal-doc.js')
+      .then(mod => safeInit('initLegalDoc', mod.initLegalDoc))
+      .catch(err => console.error('[main] Failed to load legal-doc:', err));
+
   // ScrapeX pages only — keeps its manifest and markdown fetches off every
   // other page, and its renderer out of their bundles.
-  if (document.querySelector('[data-sx-version], [data-sx-url], [data-sx-webstore], [data-sx-doc]')) {
+  } else if (document.querySelector('[data-sx-version], [data-sx-url], [data-sx-webstore], [data-sx-doc]')) {
     import('./scrapex-loader.js')
       .then(mod => {
         safeInit('applyScrapexVersion', mod.applyScrapexVersion);

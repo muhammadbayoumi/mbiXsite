@@ -1,0 +1,31 @@
+{
+  "_comment": [
+    "Registry of the site's legal / policy documents. It drives the document",
+    "index in the legal pages' sidebar and the 'previous versions' link.",
+    "",
+    "Adding a document is a pure data edit: append an entry here and add its",
+    "titleKey to both language blocks in src/js/i18n.js. Nothing in the layout",
+    "or the JavaScript needs to change — the sidebar groups by `group` and",
+    "marks the current page by matching `url` against the location.",
+    "",
+    "archiveUrl points at the upstream file's commit history, which is the",
+    "actual version archive: the documents live in mbiX-hub and every revision",
+    "is public there, which is what the policies themselves promise."
+  ],
+  "documents": [
+    {
+      "id": "scrapex-privacy",
+      "group": "ScrapeX",
+      "titleKey": "sxp_title",
+      "url": "scrapex-privacy.html",
+      "archiveUrl": "https://github.com/muhammadbayoumi/mbiX-hub/commits/main/ScrapeX/docs/privacy-policy.md"
+    },
+    {
+      "id": "scrapex-support",
+      "group": "ScrapeX",
+      "titleKey": "sxs_title",
+      "url": "scrapex-support.html",
+      "archiveUrl": "https://github.com/muhammadbayoumi/mbiX-hub/commits/main/ScrapeX/docs/support.md"
+    }
+  ]
+}

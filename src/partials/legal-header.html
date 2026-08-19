@@ -1,0 +1,38 @@
+  <!-- ══════ LEGAL HEADER ══════ -->
+  <!--
+    A slim bar for the document pages, not a variant of navbar.html. The main
+    navbar is a product menu with a dropdown, a collapse toggle and a download
+    button; a legal page wants a way back and nothing else, and gating all of
+    that behind a flag would put six other pages at risk on every future edit.
+
+    It is position: sticky rather than Bootstrap's fixed-top, which is what lets
+    the page drop the `padding-top: 100px` spacer the old markup needed.
+  -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="legal-header">
+    <div class="legal-header-inner">
+      <a class="legal-brand" href="{{{installUrl}}}" aria-label="mbiX Home">mbi<span>X</span></a>
+      <a class="legal-hub" href="{{{scrapexUrl}}}" data-i18n="sx_tag">ScrapeX</a>
+
+      <div class="legal-header-actions">
+        <!--
+          The ids are the ones language-dropdown.js already looks for, so the
+          picker works here with no change to that module. It also removes itself
+          while only one language is enabled (ENABLED_LANGS in i18n.js), which is
+          why this bar usually shows just the brand and the breadcrumb today.
+        -->
+        <div class="lang-dropdown">
+          <button class="lang-toggle" id="langToggleFooter" aria-expanded="false" aria-label="Select language">
+            <i class="bi bi-globe" aria-hidden="true"></i>
+            <span class="lang-label">English</span>
+            <i class="bi bi-chevron-up" aria-hidden="true"></i>
+          </button>
+          <ul class="lang-menu" id="langMenuFooter" role="list">
+            <li><button data-lang="en"><i class="bi bi-check-circle-fill"></i> English</button></li>
+            <li><button data-lang="ar"><i class="bi bi-circle"></i> &lrm;العربية</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>

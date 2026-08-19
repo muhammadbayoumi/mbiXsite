@@ -16,37 +16,112 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
   <script type="module" src="/src/js/main.js"></script>
 </head>
-<body>
-{{> navbar }}
+<!--
+  A document page rather than a marketing one: light surface, one narrow measure,
+  and a rail carrying the document index and this document's sections. See
+  src/scss/_legal-doc.scss for the layout and src/js/legal-doc.js for the
+  behaviour.
+-->
+<body class="legal-page">
+{{> legal-header }}
 
-  <main id="main-content">
-    <section class="section-dark3" style="padding-top: 100px;" aria-labelledby="sxp-title">
-      <div class="container py-5 text-center">
-        <div class="section-tag mb-2" data-i18n="sx_tag">ScrapeX</div>
-        <h1 id="sxp-title" class="section-title mb-3" data-i18n="sxp_title">Privacy Policy</h1>
-        <p class="section-sub mx-auto" data-i18n="sxp_sub">
-          Every piece of data ScrapeX touches, and where it lives.
-        </p>
-      </div>
-    </section>
+  <main id="main-content" class="legal-main">
+    <div class="legal-shell legal-shell-rail">
 
-    <div class="glow-line" aria-hidden="true"></div>
+      <!--
+        The prose column comes first in the DOM so that keyboard users reach the
+        document before its index; the rail is placed back to its side with grid
+        (see .legal-shell-rail). That placement follows the writing mode, so an
+        RTL page mirrors the pair with no extra rule.
+      -->
+      <div class="legal-col">
+        <header class="legal-doc-head">
+          <div class="legal-eyebrow" data-i18n="sx_tag">ScrapeX</div>
+          <h1 class="legal-title" id="legalTitle" data-i18n="sxp_title">Privacy Policy</h1>
+          <p class="legal-lede" data-i18n="sxp_sub">
+            Every piece of data ScrapeX touches, and where it lives.
+          </p>
+          <!--
+            Filled from the document's own "Last updated" line, which legal-doc.js
+            lifts out of the prose so it reads as the document's date rather than
+            as its first paragraph. Stays hidden if the document carries no such
+            line — no date is invented here.
+          -->
+          <p class="legal-meta" data-legal-meta hidden></p>
+        </header>
 
-    <section class="section-light py-section">
-      <div class="container py-3">
+        <!--
+          The small-screen copy of the section list. A second copy rather than one
+          node moved between places: CSS cannot open a <details>, and display:none
+          keeps the inactive copy out of the accessibility tree, so exactly one is
+          ever exposed. Both are filled by legal-doc.js.
+        -->
+        <details class="legal-toc-mobile" data-legal-toc-mobile hidden>
+          <summary data-i18n="legal_on_this_page">On this page</summary>
+          <ul class="legal-list" data-legal-toc-list></ul>
+        </details>
+
         <!--
           Rendered from ScrapeX/docs/privacy-policy.md in mbiX-hub. That copy is
           asserted against the shipped extension by tests in the ScrapeX repo,
           so it is fetched rather than duplicated here — a retyped policy could
           drift out of agreement with those tests without anything failing.
+
+          Nothing outside this element may be written into it: renderMarkdown()
+          replaces its children wholesale, so the document header, the section
+          lists and the status region all live outside it on purpose.
         -->
-        <article class="md-doc" data-sx-doc="privacy" aria-live="polite">
+        <article class="legal-prose md-doc"
+                 data-sx-doc="privacy"
+                 data-legal-doc
+                 aria-labelledby="legalTitle"
+                 aria-busy="true">
           <p class="md-notice" data-i18n="sx_doc_loading">Loading the policy…</p>
         </article>
+
+        <!--
+          Announces a load failure, and only a failure. The article itself used to
+          be aria-live, which meant screen readers read the entire policy aloud on
+          arrival, and re-read it on any later change.
+        -->
+        <p class="visually-hidden" role="status" aria-live="polite" data-legal-status></p>
+
+        <a class="legal-top" href="#main-content">
+          <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+          <span data-i18n="legal_top">Back to top</span>
+        </a>
+
+        <!-- Print only: a printed page otherwise loses where it came from. -->
+        <p class="legal-print-source">https://muhammadbayoumi.github.io/mbiXsite/scrapex-privacy.html</p>
       </div>
-    </section>
+
+      <div class="legal-rail">
+        <nav class="legal-rail-section" data-legal-docs-section aria-labelledby="legalDocsHeading">
+          <h2 class="legal-rail-title" id="legalDocsHeading" data-i18n="legal_documents">Legal documents</h2>
+          <!-- Built from src/data/legal.json; adding a document is a data edit. -->
+          <div data-legal-docs></div>
+        </nav>
+
+        <nav class="legal-rail-section legal-toc-rail" data-legal-toc-rail hidden aria-labelledby="legalTocHeading">
+          <h2 class="legal-rail-title" id="legalTocHeading" data-i18n="legal_on_this_page">On this page</h2>
+          <ul class="legal-list" data-legal-toc-list></ul>
+        </nav>
+
+        <div class="legal-rail-section legal-tools">
+          <button type="button" class="legal-tool" data-legal-print hidden>
+            <i class="bi bi-printer" aria-hidden="true"></i>
+            <span data-i18n="legal_print">Print</span>
+          </button>
+          <a class="legal-tool" data-legal-archive hidden>
+            <i class="bi bi-clock-history" aria-hidden="true"></i>
+            <span data-i18n="legal_archive">Previous versions</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-{{> footer }}
+{{> legal-footer }}
 </body>
 </html>

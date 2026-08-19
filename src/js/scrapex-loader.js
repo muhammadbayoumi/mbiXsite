@@ -167,31 +167,50 @@ const DOC_LINK_MAP = {
  * The source of truth is the copy in mbiX-hub, whose prose is asserted against
  * the shipped extension by tests in the ScrapeX repository. It is fetched, not
  * duplicated here, so this page cannot drift out of agreement with those tests.
+ *
+ * @param {Object} [options] passed straight through to renderMarkdown, so a
+ *        page can ask for heading ids and an outline (see legal-doc.js).
+ * @returns {Promise<{status: 'ok'|'unpublished'|'error'|'skipped',
+ *                    title?: string|null, outline: Array, messageKey?: string}>}
+ *          The outcome, so a caller can build chrome from the result instead of
+ *          inspecting the rendered DOM to guess what happened.
  */
-export async function applyScrapexDoc() {
+export async function applyScrapexDoc(options = {}) {
   const host = document.querySelector('[data-sx-doc]');
-  if (!host) return;
+  if (!host) return { status: 'skipped', outline: [] };
 
   const which = host.getAttribute('data-sx-doc'); // 'privacy' | 'support'
   const url = getLink(which === 'support' ? 'scrapex.support_md' : 'scrapex.privacy_md');
-  if (!url) return setDocMessage(host, 'sx_doc_error');
+  if (!url) return docFailed(host, 'sx_doc_error');
 
   try {
     const res = await fetchWithTimeout(bust(url), { cache: 'no-store' }, 10000);
 
     // Not yet published upstream. Say exactly that — an empty policy page
     // would be worse than one that admits it is waiting on its source.
-    if (res.status === 404) return setDocMessage(host, 'sx_doc_unpublished');
+    if (res.status === 404) return docFailed(host, 'sx_doc_unpublished');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const md = await res.text();
-    if (!md.trim()) return setDocMessage(host, 'sx_doc_unpublished');
+    if (!md.trim()) return docFailed(host, 'sx_doc_unpublished');
 
-    renderMarkdown(host, md, DOC_LINK_MAP);
+    const { title, outline } = renderMarkdown(host, md, DOC_LINK_MAP, options);
+    host.removeAttribute('aria-busy');
+    return { status: 'ok', title, outline };
   } catch (err) {
     console.warn('[scrapex] Failed to load document:', err.message);
-    setDocMessage(host, 'sx_doc_error');
+    return docFailed(host, 'sx_doc_error');
   }
+}
+
+function docFailed(host, key) {
+  setDocMessage(host, key);
+  host.removeAttribute('aria-busy');
+  return {
+    status: key === 'sx_doc_unpublished' ? 'unpublished' : 'error',
+    messageKey: key,
+    outline: []
+  };
 }
 
 const DOC_FALLBACK = {

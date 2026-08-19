@@ -20,14 +20,39 @@
  * @param {string} md
  * @param {Object<string,string>} [linkMap] rewrites for relative links,
  *        e.g. { 'support.md': 'scrapex-support.html' }
+ * @param {Object} [options]
+ * @param {number} [options.headingOffset=1] added to each heading's level. The
+ *        default demotes everything by one so the page keeps a single H1; pass
+ *        0 when the page has lifted the document's own H1 out of the flow.
+ * @param {boolean} [options.liftTitle=false] omit a leading level-1 heading and
+ *        report its text as `title` instead of rendering it.
+ * @param {boolean} [options.headingIds=false] give headings slug ids, a focus
+ *        target and an anchor link, and collect them into `outline`.
+ * @returns {{ title: string|null, outline: Array<{id: string, level: number, text: string}> }}
  */
-export function renderMarkdown(host, md, linkMap = {}) {
+export function renderMarkdown(host, md, linkMap = {}, options = {}) {
+  const ctx = {
+    linkMap,
+    headingOffset: options.headingOffset ?? 1,
+    liftTitle: options.liftTitle === true,
+    headingIds: options.headingIds === true,
+    slugs: new Map(),
+    outline: [],
+    title: null,
+    emitted: 0
+  };
+
   const frag = document.createDocumentFragment();
   for (const block of splitBlocks(md.replace(/\r\n/g, '\n'))) {
-    const el = renderBlock(block, linkMap);
-    if (el) frag.append(el);
+    const el = renderBlock(block, ctx);
+    if (el) {
+      frag.append(el);
+      ctx.emitted++;
+    }
   }
   host.replaceChildren(frag);
+
+  return { title: ctx.title, outline: ctx.outline };
 }
 
 /** Split into blocks on blank lines, keeping table and list runs together. */
@@ -55,7 +80,8 @@ function splitBlocks(md) {
   return blocks;
 }
 
-function renderBlock(lines, linkMap) {
+function renderBlock(lines, ctx) {
+  const linkMap = ctx.linkMap;
   const first = lines[0];
 
   // Horizontal rule
@@ -64,12 +90,41 @@ function renderBlock(lines, linkMap) {
   // Heading
   const heading = first.match(/^(#{1,6})\s+(.*)$/);
   if (heading) {
-    // The document's own H1 duplicates the page title, so it is demoted:
-    // two H1s on one page is a real accessibility problem, and the page
-    // heading is the one that belongs to the site.
-    const level = Math.min(heading[1].length + 1, 6);
+    const hashes = heading[1].length;
+
+    // The document opens by naming itself, which duplicates the page's own <h1>.
+    // Where the page says so, that heading is reported rather than rendered.
+    //
+    // The test is structural — first block emitted, one hash — not a comparison
+    // against the page title. A reworded or retitled document still lifts
+    // correctly, and one that does not open with an H1 keeps every heading it
+    // has rather than quietly losing one to a failed text match.
+    if (ctx.liftTitle && ctx.emitted === 0 && hashes === 1) {
+      ctx.title = heading[2].replace(/[*_`]/g, '').trim();
+      return null;
+    }
+
+    // Headings are demoted by default so that the document's own H1 cannot
+    // become a second H1 on the page. Once the page lifts that H1 out itself
+    // (headingOffset: 0) the reason is gone, and the document's sections land on
+    // h2 where they belong. Never above h2, either way.
+    const level = Math.min(Math.max(hashes + ctx.headingOffset, 2), 6);
     const el = document.createElement(`h${level}`);
     el.append(...renderInline(heading[2], linkMap));
+
+    if (ctx.headingIds) {
+      // Read before the anchor is appended, so the anchor's "#" stays out of
+      // both the id and the outline.
+      const text = el.textContent.trim();
+      const id = uniqueSlug(text, ctx.slugs);
+      el.id = id;
+      // Focusable so that jumping to a section can move focus to the section,
+      // rather than leaving it behind in the navigation.
+      el.tabIndex = -1;
+      el.append(anchorLink(id));
+      ctx.outline.push({ id, level, text });
+    }
+
     return el;
   }
 
@@ -95,6 +150,52 @@ function renderBlock(lines, linkMap) {
   const p = document.createElement('p');
   p.append(...renderInline(lines.join(' '), linkMap));
   return p;
+}
+
+// ── Heading slugs ──────────────────────────
+//
+// A heading's slug is its id and the fragment people share when they link to a
+// section. That means rewording a heading upstream changes its anchor and breaks
+// links already shared to it. Accepted rather than solved: it is what GitHub,
+// MDN and policies.google.com all do, and the alternative — anchors maintained
+// by hand next to prose that is asserted by another repository's tests — would
+// drift far more quietly than a dead fragment does.
+
+function slugify(text) {
+  return text
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '') // fold accents onto their base letters
+    // Unicode-aware on purpose: an Arabic heading keeps Arabic in its id
+    // instead of collapsing to a numbered placeholder.
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function uniqueSlug(text, seen) {
+  let base = slugify(text);
+
+  // An id starting with a digit is legal HTML but cannot be written as a CSS
+  // selector, and resolving a fragment is done with querySelector.
+  if (!base || /^\d/.test(base)) base = `section-${base || seen.size + 1}`;
+
+  const count = (seen.get(base) || 0) + 1;
+  seen.set(base, count);
+  return count === 1 ? base : `${base}-${count}`;
+}
+
+// Decorative by design. The section list already offers every heading as a real,
+// keyboard-reachable, translated link, and applyLang() writes only textContent —
+// so naming this one would ship an accessible name that no language switch can
+// ever update.
+function anchorLink(id) {
+  const a = document.createElement('a');
+  a.className = 'legal-anchor';
+  a.href = `#${id}`;
+  a.textContent = '#';
+  a.tabIndex = -1;
+  a.setAttribute('aria-hidden', 'true');
+  return a;
 }
 
 function renderTable(lines, linkMap) {

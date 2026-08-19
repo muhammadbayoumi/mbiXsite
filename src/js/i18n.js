@@ -203,6 +203,13 @@ const translations = {
     sx_doc_unpublished:'This document has not been published yet. It appears here as soon as ScrapeX publishes its first release.',
     sx_doc_error:      'Could not load this document. Please try again later.',
     sx_doc_source:     'View the source repository',
+
+    // ── Legal document pages (chrome around the fetched documents)
+    legal_documents:   'Legal documents',
+    legal_on_this_page:'On this page',
+    legal_print:       'Print',
+    legal_archive:     'Previous versions',
+    legal_top:         'Back to top',
   },
   ar: {
     nav_home:      'الرئيسية',
@@ -404,6 +411,13 @@ const translations = {
     sx_doc_unpublished:'هذا المستند لم يُنشر بعد، وسيظهر هنا بمجرّد أن ينشر ScrapeX إصداره الأول.',
     sx_doc_error:      'تعذّر تحميل هذا المستند. حاول مرة أخرى لاحقًا.',
     sx_doc_source:     'اعرض المستودع المصدر',
+
+    // ── صفحات المستندات القانونية
+    legal_documents:   'المستندات القانونية',
+    legal_on_this_page:'في هذه الصفحة',
+    legal_print:       'طباعة',
+    legal_archive:     'الإصدارات السابقة',
+    legal_top:         'عودة إلى الأعلى',
   }
 };
 
