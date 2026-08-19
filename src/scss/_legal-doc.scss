@@ -358,6 +358,16 @@
 
 .legal-meta-value { font-weight: 600; color: var(--mbx-light-text); }
 
+// For a document whose readers mostly arrived to *do* something — the support
+// page's "Open an issue". Sits below the metadata so the title, lede and date
+// stay one uninterrupted block of text.
+.legal-doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
 // ── The fetched document ───────────────────
 
 .legal-prose.md-doc {
@@ -636,6 +646,7 @@
   .legal-rail,
   .legal-toc-mobile,
   .legal-tools,
+  .legal-doc-actions,
   .legal-top,
   .legal-anchor,
   .skip-link { display: none !important; }

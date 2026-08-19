@@ -205,7 +205,7 @@ const translations = {
     sx_doc_source:     'View the source repository',
 
     // ── Legal document pages (chrome around the fetched documents)
-    legal_documents:   'Legal documents',
+    legal_documents:   'Documents',
     legal_on_this_page:'On this page',
     legal_print:       'Print',
     legal_archive:     'Previous versions',
@@ -413,7 +413,7 @@ const translations = {
     sx_doc_source:     'اعرض المستودع المصدر',
 
     // ── صفحات المستندات القانونية
-    legal_documents:   'المستندات القانونية',
+    legal_documents:   'المستندات',
     legal_on_this_page:'في هذه الصفحة',
     legal_print:       'طباعة',
     legal_archive:     'الإصدارات السابقة',

@@ -16,33 +16,82 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23111b21' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2325d366' font-family='Consolas,monospace'%3EX%3C/text%3E%3C/svg%3E"/>
   <script type="module" src="/src/js/main.js"></script>
 </head>
-<body>
-{{> navbar }}
+<!-- Same document layout as scrapex-privacy.html; see the note in that file. -->
+<body class="legal-page">
+{{> legal-header }}
 
-  <main id="main-content">
-    <section class="section-dark3" style="padding-top: 100px;" aria-labelledby="sxs-title">
-      <div class="container py-5 text-center">
-        <div class="section-tag mb-2" data-i18n="sx_tag">ScrapeX</div>
-        <h1 id="sxs-title" class="section-title mb-3" data-i18n="sxs_title">Support</h1>
-        <p class="section-sub mx-auto mb-4" data-i18n="sxs_sub">
-          What to include in a report, and the problems that account for most of what goes wrong.
-        </p>
-        <a class="btn-pill-green" data-link="scrapex.issues" data-i18n="sxs_issue_btn">Open an issue <i class="bi bi-github btn-arrow" aria-hidden="true"></i></a>
-      </div>
-    </section>
+  <main id="main-content" class="legal-main">
+    <div class="legal-shell legal-shell-rail">
 
-    <div class="glow-line" aria-hidden="true"></div>
+      <div class="legal-col">
+        <header class="legal-doc-head">
+          <div class="legal-eyebrow" data-i18n="sx_tag">ScrapeX</div>
+          <h1 class="legal-title" id="legalTitle" data-i18n="sxs_title">Support</h1>
+          <p class="legal-lede" data-i18n="sxs_sub">
+            What to include in a report, and the problems that account for most of what goes wrong.
+          </p>
+          <p class="legal-meta" data-legal-meta hidden></p>
 
-    <section class="section-light py-section">
-      <div class="container py-3">
+          <!--
+            Kept as a prominent action rather than folded into the rail's tools:
+            opening an issue is what most people arrive on this page to do, and
+            the document's own first section points at the same place.
+          -->
+          <div class="legal-doc-actions">
+            <a class="btn-pill-green" data-link="scrapex.issues" data-i18n="sxs_issue_btn">Open an issue <i class="bi bi-github btn-arrow" aria-hidden="true"></i></a>
+          </div>
+        </header>
+
+        <details class="legal-toc-mobile" data-legal-toc-mobile hidden>
+          <summary data-i18n="legal_on_this_page">On this page</summary>
+          <ul class="legal-list" data-legal-toc-list></ul>
+        </details>
+
         <!-- Rendered from ScrapeX/docs/support.md in mbiX-hub — see the note in scrapex-privacy.html. -->
-        <article class="md-doc" data-sx-doc="support" aria-live="polite">
+        <article class="legal-prose md-doc"
+                 data-sx-doc="support"
+                 data-legal-doc
+                 aria-labelledby="legalTitle"
+                 aria-busy="true">
           <p class="md-notice" data-i18n="sx_doc_loading">Loading the page…</p>
         </article>
+
+        <p class="visually-hidden" role="status" aria-live="polite" data-legal-status></p>
+
+        <a class="legal-top" href="#main-content">
+          <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+          <span data-i18n="legal_top">Back to top</span>
+        </a>
+
+        <p class="legal-print-source">https://muhammadbayoumi.github.io/mbiXsite/scrapex-support.html</p>
       </div>
-    </section>
+
+      <div class="legal-rail">
+        <nav class="legal-rail-section" data-legal-docs-section aria-labelledby="legalDocsHeading">
+          <h2 class="legal-rail-title" id="legalDocsHeading" data-i18n="legal_documents">Documents</h2>
+          <div data-legal-docs></div>
+        </nav>
+
+        <nav class="legal-rail-section legal-toc-rail" data-legal-toc-rail hidden aria-labelledby="legalTocHeading">
+          <h2 class="legal-rail-title" id="legalTocHeading" data-i18n="legal_on_this_page">On this page</h2>
+          <ul class="legal-list" data-legal-toc-list></ul>
+        </nav>
+
+        <div class="legal-rail-section legal-tools">
+          <button type="button" class="legal-tool" data-legal-print hidden>
+            <i class="bi bi-printer" aria-hidden="true"></i>
+            <span data-i18n="legal_print">Print</span>
+          </button>
+          <a class="legal-tool" data-legal-archive hidden>
+            <i class="bi bi-clock-history" aria-hidden="true"></i>
+            <span data-i18n="legal_archive">Previous versions</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-{{> footer }}
+{{> legal-footer }}
 </body>
 </html>
